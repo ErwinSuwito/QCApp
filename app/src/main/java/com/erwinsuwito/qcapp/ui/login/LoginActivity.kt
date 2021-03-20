@@ -15,7 +15,9 @@ import com.erwinsuwito.qcapp.graph.GraphHelper
 import com.erwinsuwito.qcapp.graph.AuthenticationHelper
 import com.microsoft.graph.concurrency.ICallback
 import com.microsoft.graph.core.ClientException
+import com.microsoft.graph.models.extensions.DirectoryObject
 import com.microsoft.graph.models.extensions.User
+import com.microsoft.graph.requests.extensions.IDirectoryObjectCollectionWithReferencesPage
 import com.microsoft.identity.client.AuthenticationCallback
 import com.microsoft.identity.client.IAuthenticationResult
 import com.microsoft.identity.client.exception.MsalClientException
@@ -29,6 +31,8 @@ class LoginActivity : AppCompatActivity() {
     private var isSignedIn = false
     private lateinit var authHelper: AuthenticationHelper
     private var attemptInteractiveSignIn: Boolean = false
+
+    private var groupList: MutableList<DirectoryObject>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,11 +120,19 @@ class LoginActivity : AppCompatActivity() {
             result?.apply {
                 Log.d("AUTH", "User: $displayName")
             }
+
             updateUI()
         }
 
         override fun failure(ex: ClientException?) {
             Log.e("AUTH", "Error getting /me", ex)
+            if (ex != null) {
+                // !! is a not null assertion. Use only when you're sure something is not going to be null
+                if (ex.message!!.contains("Connection is not availalbe to refresh token")) {
+                    findViewById<LinearLayout>(R.id.linearLayout).isVisible = true
+                    findViewById<TextView>(R.id.textView4).text = "You're offline."
+                }
+            }
             updateUI()
         }
 
@@ -141,4 +153,16 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun getMemberOfCallback(): ICallback<IDirectoryObjectCollectionWithReferencesPage> =
+        object : ICallback<IDirectoryObjectCollectionWithReferencesPage> {
+            override fun success(result: IDirectoryObjectCollectionWithReferencesPage?) {
+                groupList = result?.currentPage
+            }
+
+            override fun failure(ex: ClientException?) {
+                Log.e("GRAPH", "Error getting memberOf", ex)
+            }
+
+        }
 }
