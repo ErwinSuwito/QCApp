@@ -1,0 +1,15 @@
+{
+  "client_id" : "YOUR-CLIENT-ID-HERE",
+  "redirect_uri" : "msauth://com.erwinsuwito.qcapp/callback",
+  "broker_redirect_uri_registered": false,
+  "account_mode": "SINGLE",
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADandPersonalMicrosoftAccount"
+      },
+      "default": true
+    }
+  ]
+}
