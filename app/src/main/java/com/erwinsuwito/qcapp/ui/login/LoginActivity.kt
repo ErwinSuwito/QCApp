@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.erwinsuwito.qcapp.MainActivity
@@ -45,14 +42,12 @@ class LoginActivity : AppCompatActivity() {
             signIn()
         }
 
-        findViewById<ProgressBar>(R.id.progressBar).isVisible = true
-
         savedInstanceState?.apply {
             isSignedIn = getBoolean(SAVED_IS_SIGNED_IN)
         } ?: run {
             val handler = Handler().postDelayed({
                 doSilentSignIn()
-            }, 2000)
+            }, 500)
         }
     }
 
@@ -89,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
         override fun onCancel() {
             // User canceled the authentication
             Log.d("AUTH", "Authentication canceled")
+            findViewById<TextView>(R.id.textView4).text = "Sorry that didn't work. Please try again."
         }
 
         override fun onError(exception: MsalException?): Unit = with(exception) {
@@ -111,8 +107,6 @@ class LoginActivity : AppCompatActivity() {
 
             findViewById<LinearLayout>(R.id.linearLayout).isVisible = true
             findViewById<Button>(R.id.button).isVisible = true
-            findViewById<ProgressBar>(R.id.progressBar).isVisible = false
-
             attemptInteractiveSignIn = true
         }
     }
