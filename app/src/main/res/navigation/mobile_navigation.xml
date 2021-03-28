@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.erwinsuwito.qcapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_qc"
+        android:name="com.erwinsuwito.qcapp.ui.qc.QcFragment"
+        android:label="@string/title_qc"
+        tools:layout="@layout/fragment_qc" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.erwinsuwito.qcapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_more"
+        android:name="com.erwinsuwito.qcapp.ui.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" />
 </navigation>

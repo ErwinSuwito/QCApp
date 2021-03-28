@@ -1,4 +1,4 @@
-package com.erwinsuwito.qcapp.ui.dashboard
+package com.erwinsuwito.qcapp.ui.more
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.erwinsuwito.qcapp.R
 
-class DashboardFragment : Fragment() {
+class MoreFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var moreViewModel: MoreViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        moreViewModel =
+                ViewModelProvider(this).get(MoreViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_more, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        moreViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
