@@ -39,10 +39,11 @@ public class GraphHelper : IAuthenticationProvider {
         client.me().buildRequest().get(callback)
     }
 
-    fun getGroups(accessToken: String, callback: ICallback<IDirectoryObjectCollectionWithReferencesPage>) {
+    fun getJoinedTeams(accessToken: String, callback: ICallback<ITeamCollectionPage>) {
         this.accessToken = accessToken
 
-        client.me().memberOf().buildRequest().get(callback)
+        // GET /me/joinedTeam (logged in user)
+        client.me().joinedTeams().buildRequest().get(callback)
     }
 
     fun getEvents(accessToken: String, callback: ICallback<IEventCollectionPage>) {
