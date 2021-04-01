@@ -7,4 +7,5 @@ class TroubleshootSteps {
     lateinit var author: String
     lateinit var content: String
     lateinit var addedOn: LocalDateTime
+    var clossesIssue: Boolean = false
 }
