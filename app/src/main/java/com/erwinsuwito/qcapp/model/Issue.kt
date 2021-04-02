@@ -2,12 +2,34 @@ package com.erwinsuwito.qcapp.model
 
 import java.time.LocalDateTime
 
-class Issue {
+class Issue(var classroom: Classroom, var creator: String, var problem: String,
+            var openedOn: LocalDateTime = LocalDateTime.now(), var isOpen: Boolean = true) : IModel {
+
     lateinit var issueId: String
-    lateinit var classroom: Classroom
-    lateinit var creator: String
     lateinit var closedOn: LocalDateTime
-    lateinit var openedOn: LocalDateTime
     lateinit var closedBy: String
-    var isOpen: Boolean = true
+
+    constructor(classroom: Classroom, creator: String, problem: String,
+                openedOn: LocalDateTime = LocalDateTime.now(), isOpen: Boolean = true,
+                issueId: String, closedOn: LocalDateTime, closedBy: String) : this(classroom, creator, problem, openedOn, isOpen) {
+                    this.issueId = issueId
+                    this.closedOn = closedOn
+                    this.closedBy = closedBy
+                }
+
+    override fun create() : Boolean
+    {
+        // TODO: Add code to save to database
+        return false
+    }
+
+    override fun delete(): Boolean {
+        // TODO: Add code to delete from database
+        return false
+    }
+
+    override fun update(): Boolean {
+        // TODO: Add code to update database data
+        return false
+    }
 }

@@ -1,14 +1,13 @@
 package com.erwinsuwito.qcapp.model
 
-class ClassCheck {
-    lateinit var checkedBy: String
-    lateinit var classId: String
+class ClassCheck(var checkedBy: String, var classId: String) : IModel {
+
     var highLampHour: Int = 0
     var lowHighLampHour: Int = 0
     var isAlignmentOk:  Boolean = false
     var isClarityOk: Boolean = false
     var isScreenOk: Boolean = false
-    var isProjectorRemoteOk: Boolean = false
+    var isRemoteOk: Boolean = false
     var isShortHdmiOk: Boolean? = null
     var isLongHdmiOk: Boolean? = null
     var isEasyMPOk: Boolean? = null
@@ -21,4 +20,20 @@ class ClassCheck {
     var ulSpeed: Float = 0F
     lateinit var ipAddress: String
     var isPowerExtAvailable: Boolean = false
+
+    override fun create() : Boolean
+    {
+        // TODO: Add code to save to database
+        return false
+    }
+
+    override fun delete(): Boolean {
+        // TODO: Add code to delete from database
+        return false
+    }
+
+    override fun update(): Boolean {
+        // TODO: Add code to update database data
+        return false
+    }
 }
