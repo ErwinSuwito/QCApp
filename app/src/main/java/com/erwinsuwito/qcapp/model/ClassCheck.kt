@@ -1,6 +1,6 @@
 package com.erwinsuwito.qcapp.model
 
-class ClassCheck(var checkedBy: String, var classId: String) : IModel {
+class ClassCheck(var checkedBy: String, var checkedByName: String, var classId: String) : IModel {
 
     var highLampHour: Int = 0
     var lowHighLampHour: Int = 0

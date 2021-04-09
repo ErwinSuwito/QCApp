@@ -2,7 +2,7 @@ package com.erwinsuwito.qcapp.model
 
 import java.time.LocalDateTime
 
-class TroubleshootSteps(var author: String, var content: String,
+class TroubleshootSteps(var author: String, var authorName: String, var content: String,
                         var addedOn: LocalDateTime = LocalDateTime.now(),
                         var clossesIssue: Boolean = false) : IModel {
 
