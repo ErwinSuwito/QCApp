@@ -1,6 +1,6 @@
 package com.erwinsuwito.qcapp.model
 
-class Classroom(var className: String) : IModel {
+data class Classroom(var className: String) : IModel {
     lateinit var projector: Projector
     var isChecked: Boolean = false
 
