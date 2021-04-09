@@ -1,4 +1,4 @@
-package com.erwinsuwito.qcapp.graph
+package com.erwinsuwito.qcapp.apis
 
 import com.microsoft.graph.authentication.IAuthenticationProvider
 import com.microsoft.graph.concurrency.ICallback

@@ -1,18 +1,16 @@
 package com.erwinsuwito.qcapp.ui.login
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.erwinsuwito.qcapp.MainActivity
 import com.erwinsuwito.qcapp.R
-import com.erwinsuwito.qcapp.graph.GraphHelper
-import com.erwinsuwito.qcapp.graph.AuthenticationHelper
+import com.erwinsuwito.qcapp.apis.GraphHelper
+import com.erwinsuwito.qcapp.apis.AuthenticationHelper
 import com.microsoft.graph.concurrency.ICallback
 import com.microsoft.graph.core.ClientException
 import com.microsoft.graph.models.extensions.DirectoryObject
