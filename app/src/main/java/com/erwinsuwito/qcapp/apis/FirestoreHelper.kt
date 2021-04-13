@@ -9,6 +9,6 @@ class FirestoreHelper {
 
     fun addIssue(issue: Issue) : Boolean
     {
-        return false;
+        return false
     }
 }

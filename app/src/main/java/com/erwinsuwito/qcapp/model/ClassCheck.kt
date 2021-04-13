@@ -1,6 +1,6 @@
 package com.erwinsuwito.qcapp.model
 
-data class ClassCheck(var checkedBy: String, var checkedByName: String, var classId: String) : IModel {
+class ClassCheck(var checkedBy: String, var checkedByName: String, var classId: String) {
 
     var highLampHour: Int = 0
     var lowHighLampHour: Int = 0
@@ -20,20 +20,4 @@ data class ClassCheck(var checkedBy: String, var checkedByName: String, var clas
     var ulSpeed: Float = 0F
     lateinit var ipAddress: String
     var isPowerExtAvailable: Boolean = false
-
-    override fun create() : Boolean
-    {
-        // TODO: Add code to save to database
-        return false
-    }
-
-    override fun delete(): Boolean {
-        // TODO: Add code to delete from database
-        return false
-    }
-
-    override fun update(): Boolean {
-        // TODO: Add code to update database data
-        return false
-    }
 }
