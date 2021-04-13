@@ -1,7 +1,6 @@
 package com.erwinsuwito.qcapp.model
 
 class ClassCheck(var checkedBy: String, var checkedByName: String, var classId: String) {
-
     var highLampHour: Int = 0
     var lowHighLampHour: Int = 0
     var isAlignmentOk:  Boolean = false

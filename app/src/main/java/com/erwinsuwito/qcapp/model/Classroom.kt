@@ -1,5 +1,7 @@
 package com.erwinsuwito.qcapp.model
 
+import com.erwinsuwito.qcapp.AppState
+
 class Classroom(var className: String) {
     lateinit var projector: Projector
     var isChecked: Boolean = false
@@ -7,5 +9,12 @@ class Classroom(var className: String) {
     constructor(className: String, projectorId: String) : this(className)
     {
         // TODO: Find matching projector and assign it to projector object
+        for (item in AppState.projectorList)
+        {
+            if (projectorId == item.projectorId)
+            {
+                this.projector = item
+            }
+        }
     }
 }
