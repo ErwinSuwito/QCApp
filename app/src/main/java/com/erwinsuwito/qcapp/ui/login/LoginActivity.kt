@@ -158,6 +158,7 @@ class LoginActivity : AppCompatActivity() {
         {
             if (!isAllowedSignIn)
             {
+                // https://www.geeksforgeeks.org/android-alert-dialog-box-and-how-to-create-it/#:~:text=Below%20are%20the%20steps%20for%20Creating%20the%20Alert,back%20button%20of%20your%20device.%20More%20items...%20
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(R.string.acc_not_authorized_message)
                 builder.setTitle(R.string.acc_not_authorized_header)
