@@ -7,7 +7,11 @@ import com.microsoft.graph.models.extensions.IGraphServiceClient
 import com.microsoft.graph.models.extensions.User
 import com.microsoft.graph.options.Option
 import com.microsoft.graph.options.QueryOption
-import com.microsoft.graph.requests.extensions.*
+import com.microsoft.graph.requests.extensions.GraphServiceClient
+import com.microsoft.graph.requests.extensions.IEventCollectionPage
+import com.microsoft.graph.requests.extensions.ITeamCollectionPage
+
+// import com.microsoft.graph.requests.extensions.*
 
 
 // Singleton class - the app only needs a single instance of the Graph client

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">QC App</string>
+    <!-- Common strings -->
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Navigation bar/page titles strings -->
     <string name="title_home">Home</string>
@@ -14,4 +17,6 @@
     <string name="login_header">Welcome TAs!</string>
     <string name="login_body">Login with your TA account to start QC.</string>
     <string name="login_button">Login</string>
+    <string name="acc_not_authorized_header">Account not authorized!</string>
+    <string name="acc_not_authorized_message">The account you used is not authorized to use the QC app. Make sure you use your TA account or contact HR department if you do not have one.</string>
 </resources>

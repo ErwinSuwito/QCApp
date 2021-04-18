@@ -5,17 +5,19 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.erwinsuwito.qcapp.AppState
 import com.erwinsuwito.qcapp.MainActivity
 import com.erwinsuwito.qcapp.R
-import com.erwinsuwito.qcapp.apis.GraphHelper
 import com.erwinsuwito.qcapp.apis.AuthenticationHelper
+import com.erwinsuwito.qcapp.apis.GraphHelper
 import com.microsoft.graph.concurrency.ICallback
 import com.microsoft.graph.core.ClientException
-import com.microsoft.graph.models.extensions.DirectoryObject
+import com.microsoft.graph.models.extensions.Team
 import com.microsoft.graph.models.extensions.User
-import com.microsoft.graph.requests.extensions.IDirectoryObjectCollectionWithReferencesPage
+import com.microsoft.graph.requests.extensions.ITeamCollectionPage
 import com.microsoft.identity.client.AuthenticationCallback
 import com.microsoft.identity.client.IAuthenticationResult
 import com.microsoft.identity.client.exception.MsalClientException
@@ -23,14 +25,16 @@ import com.microsoft.identity.client.exception.MsalException
 import com.microsoft.identity.client.exception.MsalServiceException
 import com.microsoft.identity.client.exception.MsalUiRequiredException
 
+
 private const val SAVED_IS_SIGNED_IN = "isSignedIn"
 
 class LoginActivity : AppCompatActivity() {
     private var isSignedIn = false
+    private var isAllowedSignIn = false
     private lateinit var authHelper: AuthenticationHelper
     private var attemptInteractiveSignIn: Boolean = false
 
-    private var groupList: MutableList<DirectoryObject>? = null
+    private var teamList: MutableList<Team>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         } ?: run {
             val handler = Handler().postDelayed({
                 doSilentSignIn()
-            }, 500)
+            }, 2000)
         }
     }
 
@@ -80,6 +84,9 @@ class LoginActivity : AppCompatActivity() {
                     // Get Graph client and get user
                     GraphHelper.getInstance().getUser(it!!, getUserCallback())
 
+                    // Get the groups of the user
+                    GraphHelper.getInstance().getJoinedTeams(it!!, getJoinedTeamsCallback())
+
                     isSignedIn = true;
                 }
 
@@ -107,9 +114,65 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("AUTH", "Service error authenticating", exception)
             }
 
-            findViewById<LinearLayout>(R.id.linearLayout).isVisible = true
+            findViewById<LinearLayout>(R.id.welcomeLayout).isVisible = true
             findViewById<Button>(R.id.button).isVisible = true
             attemptInteractiveSignIn = true
+        }
+    }
+
+    private fun getJoinedTeamsCallback(): ICallback<ITeamCollectionPage> = object : ICallback<ITeamCollectionPage> {
+        override fun success(result: ITeamCollectionPage?) {
+            teamList = result?.currentPage
+
+            teamList?.forEach {
+                if (it.displayName.equals("APU-Technical Assistant") || it.displayName.contains("TA - Trainee")) {
+                    isAllowedSignIn = true
+                }
+            }
+
+            if (!isAllowedSignIn)
+            {
+                authHelper.signOut()
+                isSignedIn = false
+            }
+
+            updateUI()
+        }
+
+        override fun failure(ex: ClientException?) {
+            Log.e("GRAPH", "Error getting teams", ex)
+            authHelper.signOut()
+            isSignedIn = false
+            updateUI()
+        }
+    }
+
+    private fun updateUI() = runOnUiThread {
+        if (isSignedIn)
+        {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else
+        {
+            if (!isAllowedSignIn)
+            {
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage(R.string.acc_not_authorized_message)
+                builder.setTitle(R.string.acc_not_authorized_header)
+                builder.setPositiveButton(R.string.okay) { dialog, which ->
+
+                }
+                val alertDialog = builder.create()
+                alertDialog.show()
+            }
+
+            attemptInteractiveSignIn = true
+            val layout: LinearLayout = findViewById(R.id.welcomeLayout)
+            layout.isVisible = true
+            val loginButton: Button = findViewById(R.id.button)
+            loginButton.isVisible = true
         }
     }
 
@@ -117,50 +180,21 @@ class LoginActivity : AppCompatActivity() {
         override fun success(result: User?) {
             result?.apply {
                 Log.d("AUTH", "User: $displayName")
+                AppState.fullName = result.displayName
             }
-
-            updateUI()
         }
 
         override fun failure(ex: ClientException?) {
             Log.e("AUTH", "Error getting /me", ex)
             if (ex != null) {
                 // !! is a not null assertion. Use only when you're sure something is not going to be null
-                if (ex.message!!.contains("Connection is not availalbe to refresh token")) {
-                    findViewById<LinearLayout>(R.id.linearLayout).isVisible = true
+                if (ex.message!!.contains("Connection is not available to refresh token")) {
+                    findViewById<LinearLayout>(R.id.welcomeLayout).isVisible = true
                     findViewById<TextView>(R.id.textView4).text = "You're offline."
                 }
             }
             updateUI()
         }
-
-        private fun updateUI() = runOnUiThread {
-            if (isSignedIn)
-            {
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-            else
-            {
-                attemptInteractiveSignIn = true
-                val layout: LinearLayout = findViewById(R.id.linearLayout)
-                layout.isVisible = true
-                val loginButton: Button = findViewById(R.id.button)
-                loginButton.isVisible = true
-            }
-        }
     }
 
-    private fun getMemberOfCallback(): ICallback<IDirectoryObjectCollectionWithReferencesPage> =
-        object : ICallback<IDirectoryObjectCollectionWithReferencesPage> {
-            override fun success(result: IDirectoryObjectCollectionWithReferencesPage?) {
-                groupList = result?.currentPage
-            }
-
-            override fun failure(ex: ClientException?) {
-                Log.e("GRAPH", "Error getting memberOf", ex)
-            }
-
-        }
 }

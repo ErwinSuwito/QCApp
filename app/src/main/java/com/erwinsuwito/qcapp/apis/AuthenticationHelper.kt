@@ -14,7 +14,9 @@ import com.microsoft.identity.client.exception.MsalException
 public class AuthenticationHelper private constructor(ctx: Context) {
 
     private var pca: ISingleAccountPublicClientApplication? = null
-    private val scopes = arrayOf("User.Read", "Calendars.Read")
+
+    // TO-DO: Revise scopes when needed
+    private val scopes = arrayOf("User.Read", "profile", "Team.ReadBasic.All")
 
     init {
         PublicClientApplication.createSingleAccountPublicClientApplication(
