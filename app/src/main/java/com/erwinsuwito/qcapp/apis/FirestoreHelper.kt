@@ -3,6 +3,8 @@ package com.erwinsuwito.qcapp.apis
 import android.app.Activity
 import android.util.Log
 import com.erwinsuwito.qcapp.model.*
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FirestoreHelper {
@@ -34,8 +36,6 @@ class FirestoreHelper {
                         }
                          */
                     }
-
-                    Log.e(activity.javaClass.simpleName, "Error: " + it.message)
                 }
     }
 
@@ -66,8 +66,6 @@ class FirestoreHelper {
                         }
                          */
                     }
-
-                    Log.e(activity.javaClass.simpleName, "Error: " + it.message)
                 }
     }
 
@@ -95,8 +93,6 @@ class FirestoreHelper {
                         }
                          */
                     }
-
-                    Log.e(activity.javaClass.simpleName, "Error: " + it.message)
                 }
     }
 
@@ -124,8 +120,6 @@ class FirestoreHelper {
                         }
                          */
                     }
-
-                    Log.e(activity.javaClass.simpleName, "Error: " + it.message)
                 }
     }
 
@@ -153,8 +147,6 @@ class FirestoreHelper {
                         }
                          */
                     }
-
-                    Log.e(activity.javaClass.simpleName, "Error: " + it.message)
                 }
     }
 }
