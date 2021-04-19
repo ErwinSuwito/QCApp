@@ -38,19 +38,12 @@
     <string name="login_button">Login</string>
     <string name="acc_not_authorized_header">Account not authorized!</string>
     <string name="acc_not_authorized_message">The account you used is not authorized to use the QC app. Make sure you use your TA account or contact HR department if you do not have one.</string>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- External Links -->
+    <string name="li_ta_portal">https://cloudmails-my.sharepoint.com/personal/ta_cloudmails_apu_edu_my/taportal/</string>
+    <string name="li_trainee_portal">https://cloudmails.sharepoint.com/sites/TechnicalAssistantsTrainee</string>
+    <string name="li_planner">https://tasks.office.com</string>
+    <string name="li_teams">https://teams.microsoft.com</string>
+    <string name="teams_chat_deep_link">https://teams.microsoft.com/l/chat/0/0?users=${users}</string>
 
 </resources>

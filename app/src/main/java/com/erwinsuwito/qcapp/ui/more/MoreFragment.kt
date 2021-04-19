@@ -1,6 +1,8 @@
 package com.erwinsuwito.qcapp.ui.more
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +14,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.AppState
+import com.erwinsuwito.qcapp.MainActivity
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.MoreItemsAdapter
+import com.erwinsuwito.qcapp.apis.AuthenticationHelper
 import com.erwinsuwito.qcapp.model.MoreItem
+import com.erwinsuwito.qcapp.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_more.*
 
 class MoreFragment : Fragment() {
@@ -43,7 +48,8 @@ class MoreFragment : Fragment() {
         )
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.moreActionsListView)
-        recyclerView.adapter = MoreItemsAdapter(this, moreItems)
+        recyclerView.adapter = MoreItemsAdapter(this, moreItems, { moreItem -> moreItemClicked(root.context, moreItem)})
+
         recyclerView.setHasFixedSize(true)
 
         val dividerItemDecoration = DividerItemDecoration(
@@ -64,6 +70,38 @@ class MoreFragment : Fragment() {
 
     private fun moreItemClicked(context: Context, moreItem: MoreItem)
     {
-        Toast.makeText(context, "More item ${moreItem.actionId} is clicked.", Toast.LENGTH_SHORT).show()
+        var action: String = getString(moreItem.actionId)
+        //Toast.makeText(context, "$string is clicked.", Toast.LENGTH_SHORT).show()
+        when (action) {
+            "Logout" -> {
+                var authHelper: AuthenticationHelper = AuthenticationHelper.getInstance()
+                authHelper.signOut()
+
+                val intent = Intent(activity, LoginActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+            }
+            "Open TA Portal" -> {
+                // Code taken from:
+                // https://www.tutorialspoint.com/how-to-open-a-website-in-android-s-web-browser-from-my-application-using-kotlin
+                val url = getString(R.string.li_ta_portal)
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+            "Open Trainee Portal" -> {
+                val url = getString(R.string.li_trainee_portal)
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+            "Open Planner" -> {
+                val url = getString(R.string.li_planner)
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+            "Open Microsoft Teams" -> {
+                val url = getString(R.string.li_teams)
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+            else -> {
+                Toast.makeText(context, "$action is clicked.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
