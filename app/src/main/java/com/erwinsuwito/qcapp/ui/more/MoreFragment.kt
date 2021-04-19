@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,13 +40,20 @@ class MoreFragment : Fragment() {
                 ViewModelProvider(this).get(MoreViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_more, container, false)
 
-        val moreItems = listOf<MoreItem>(
+        var moreItems = mutableListOf<MoreItem>(
             MoreItem(R.string.ta_portal, R.drawable.ic_sharepoint),
             MoreItem(R.string.trainee_portal, R.drawable.ic_sharepoint),
             MoreItem(R.string.planner, R.drawable.ic_planner),
             MoreItem(R.string.teams, R.drawable.ic_teams),
-            MoreItem(R.string.logout, R.drawable.ic_logout_24),
+            MoreItem(R.string.logout, R.drawable.ic_logout_24)
         )
+
+        if (AppState.role == "Trainee") {
+            moreItems.removeAt(0)
+        }
+        else if (AppState.role == "Technical Assistant") {
+            moreItems.removeAt(1)
+        }
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.moreActionsListView)
         recyclerView.adapter = MoreItemsAdapter(this, moreItems, { moreItem -> moreItemClicked(root.context, moreItem)})
@@ -97,7 +105,33 @@ class MoreFragment : Fragment() {
             }
             "Open Microsoft Teams" -> {
                 val url = getString(R.string.li_teams)
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                val teamsIntent = getString(R.string.intent_teams)
+                try
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+                }
+                catch (e: Exception)
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                }
+
+            }
+            // TO-DO: Move this code to where Chat on Teams option is available
+            "Chat on Teams" -> {
+                var users: String = "TP045000@mail.apu.edu.my" // Append all chat participants with ","
+                val url = getString(R.string.teams_chat_link).replace("|users", users)
+                val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", users)
+
+                Log.d("TEAMS", url)
+
+                try
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+                }
+                catch (e: Exception)
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                }
             }
             else -> {
                 Toast.makeText(context, "$action is clicked.", Toast.LENGTH_SHORT).show()

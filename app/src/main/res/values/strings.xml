@@ -44,6 +44,8 @@
     <string name="li_trainee_portal">https://cloudmails.sharepoint.com/sites/TechnicalAssistantsTrainee</string>
     <string name="li_planner">https://tasks.office.com</string>
     <string name="li_teams">https://teams.microsoft.com</string>
-    <string name="teams_chat_deep_link">https://teams.microsoft.com/l/chat/0/0?users=${users}</string>
+    <string name="intent_teams">msteams://</string>
+    <string name="teams_chat_link">https://teams.microsoft.com/l/chat/0/0?users=|users</string>
+    <string name="teams_chat_intent">msteams://teams.microsoft.com/l/chat/0/0?users=|users</string>
 
 </resources>
