@@ -22,4 +22,10 @@
         android:name="com.erwinsuwito.qcapp.ui.more.MoreFragment"
         android:label="@string/title_more"
         tools:layout="@layout/fragment_more" />
+
+    <fragment
+        android:id="@+id/qcAdminFragment"
+        android:name="com.erwinsuwito.qcapp.ui.qcadmin.QcAdminFragment"
+        android:label="qc_admin_fragment"
+        tools:layout="@layout/qc_admin_fragment" />
 </navigation>
