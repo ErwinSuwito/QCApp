@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="152dp"
+        android:layout_height="180dp"
         android:background="@color/theme_purple"
         android:gravity="bottom"
         android:orientation="vertical"

@@ -124,11 +124,28 @@ class LoginActivity : AppCompatActivity() {
         override fun success(result: ITeamCollectionPage?) {
             teamList = result?.currentPage
 
-            teamList?.forEach {
-                if (it.displayName.equals("APU-Technical Assistant") || it.displayName.contains("TA - Trainee")) {
-                    isAllowedSignIn = true
+            run breaker@ {
+                teamList?.forEach {
+                    when {
+                        it.displayName.equals("Board Members") -> {
+                            AppState.role = "Board Member"
+                            isAllowedSignIn = true
+                            return@breaker
+                        }
+                        it.displayName.equals("APU-Technical Assistant") -> {
+                            AppState.role = "Technical Assistant"
+                            isAllowedSignIn = true
+                            return@breaker
+                        }
+                        it.displayName.contains("TA - Trainee") -> {
+                            AppState.role = "Trainee"
+                            isAllowedSignIn = true
+                            return@breaker
+                        }
+                    }
                 }
             }
+
 
             if (!isAllowedSignIn)
             {
@@ -182,6 +199,7 @@ class LoginActivity : AppCompatActivity() {
             result?.apply {
                 Log.d("AUTH", "User: $displayName")
                 AppState.fullName = result.displayName
+                AppState.upn = result.userPrincipalName
             }
         }
 

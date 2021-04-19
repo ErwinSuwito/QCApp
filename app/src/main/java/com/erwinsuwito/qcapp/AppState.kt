@@ -6,6 +6,7 @@ import java.lang.Exception
 object AppState {
     lateinit var upn: String;
     lateinit var fullName: String;
+    lateinit var role: String;
     lateinit var lastException: Exception;
     lateinit var selectedClass: Classroom;
     lateinit var selectedIssue: Issue;
