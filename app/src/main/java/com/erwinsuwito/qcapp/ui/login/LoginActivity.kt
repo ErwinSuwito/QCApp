@@ -142,6 +142,11 @@ class LoginActivity : AppCompatActivity() {
                             isAllowedSignIn = true
                             return@breaker
                         }
+                        it.displayName.equals("Sandbox") -> {
+                            AppState.role = "Trainee"
+                            isAllowedSignIn = true
+                            return@breaker
+                        }
                     }
                 }
             }

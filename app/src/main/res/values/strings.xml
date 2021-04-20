@@ -48,4 +48,11 @@
     <string name="teams_chat_link">https://teams.microsoft.com/l/chat/0/0?users=|users</string>
     <string name="teams_chat_intent">msteams://teams.microsoft.com/l/chat/0/0?users=|users</string>
 
+    <!-- Not allowed screens -->
+    <string name="no_access_title">Not Authorized</string>
+    <string name="no_access_body">Please check if you have been have the proper permissions to use this feature.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

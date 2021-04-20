@@ -24,8 +24,19 @@
         tools:layout="@layout/fragment_more" />
 
     <fragment
-        android:id="@+id/qcAdminFragment"
+        android:id="@+id/fragment_qc_admin"
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.QcAdminFragment"
-        android:label="qc_admin_fragment"
-        tools:layout="@layout/qc_admin_fragment" />
+        android:label="@string/qc_admin"
+        tools:layout="@layout/fragment_qc_admin" >
+        <action
+            android:id="@+id/action_fragment_qc_admin_to_noPermissionsFragment"
+            app:destination="@id/noPermissionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noPermissionsFragment"
+        android:name="com.erwinsuwito.qcapp.ui.noperm.NoPermissionsFragment"
+        android:label="@string/no_access_title"
+        tools:layout="@layout/fragment_no_permissions" />
+
 </navigation>
