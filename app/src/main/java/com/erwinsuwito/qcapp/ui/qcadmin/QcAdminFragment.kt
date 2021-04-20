@@ -36,7 +36,7 @@ class QcAdminFragment : Fragment() {
 
         val role = sharedPreferences?.getString("usr_role", "")
 
-        if (!role.equals("Board Members")) {
+        if (!(role.equals("Board Member"))) {
             /// Navigation.findNavController(root).navigate(R.id.action_fragment_qc_admin_to_qcAdminNotAllowed)
             requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_noPermissionsFragment)
         }
