@@ -133,24 +133,24 @@ class LoginActivity : AppCompatActivity() {
                 teamList?.forEach {
                     when {
                         it.displayName.equals("Board Members") -> {
-                            sharedPreferences.putString("usr_role", "Board Member")
+                            sharedPreferences.putString("usr_role", getString(R.string.board))
                             AppState.role = "Board Member"
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.equals("APU-Technical Assistant") -> {
                             AppState.role = "Technical Assistant"
-                            sharedPreferences.putString("usr_role", "Technical Assistant")
+                            sharedPreferences.putString("usr_role", getString(R.string.ta))
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.contains("TA - Trainee") -> {
-                            sharedPreferences.putString("usr_role", "Trainee")
+                            sharedPreferences.putString("usr_role", getString(R.string.trainee))
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.equals("Sandbox") -> {
-                            sharedPreferences.putString("usr_role", "Trainee")
+                            sharedPreferences.putString("usr_role", getString(R.string.trainee))
                             isAllowedSignIn = true
                             return@breaker
                         }
