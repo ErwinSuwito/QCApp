@@ -1,6 +1,8 @@
 package com.erwinsuwito.qcapp.ui.login
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -33,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
     private var isAllowedSignIn = false
     private lateinit var authHelper: AuthenticationHelper
     private var attemptInteractiveSignIn: Boolean = false
+    private lateinit var sharedPreferences: SharedPreferences.Editor
 
     private var teamList: MutableList<Team>? = null
 
@@ -55,6 +58,8 @@ class LoginActivity : AppCompatActivity() {
                 doSilentSignIn()
             }, 2000)
         }
+
+        sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).edit()
     }
 
     override fun onSaveInstanceState(outState: Bundle) = with(outState) {
@@ -128,22 +133,24 @@ class LoginActivity : AppCompatActivity() {
                 teamList?.forEach {
                     when {
                         it.displayName.equals("Board Members") -> {
+                            sharedPreferences.putString("usr_role", "Board Member")
                             AppState.role = "Board Member"
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.equals("APU-Technical Assistant") -> {
                             AppState.role = "Technical Assistant"
+                            sharedPreferences.putString("usr_role", "Technical Assistant")
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.contains("TA - Trainee") -> {
-                            AppState.role = "Trainee"
+                            sharedPreferences.putString("usr_role", "Trainee")
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.equals("Sandbox") -> {
-                            AppState.role = "Trainee"
+                            sharedPreferences.putString("usr_role", "Trainee")
                             isAllowedSignIn = true
                             return@breaker
                         }
@@ -172,6 +179,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI() = runOnUiThread {
         if (isSignedIn)
         {
+            sharedPreferences.apply()
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -203,8 +211,8 @@ class LoginActivity : AppCompatActivity() {
         override fun success(result: User?) {
             result?.apply {
                 Log.d("AUTH", "User: $displayName")
-                AppState.fullName = result.displayName
-                AppState.upn = result.userPrincipalName
+                sharedPreferences.putString("usr_name", result.displayName)
+                sharedPreferences.putString("upn", result.userPrincipalName)
             }
         }
 

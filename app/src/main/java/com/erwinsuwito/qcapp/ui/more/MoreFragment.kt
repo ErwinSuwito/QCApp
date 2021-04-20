@@ -66,12 +66,14 @@ class MoreFragment : Fragment() {
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
 
+        val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+
         val userNameTextView = root.findViewById<TextView>(R.id.user_name)
-        userNameTextView.text = AppState.fullName
+        userNameTextView.text = sharedPreferences?.getString("usr_name", "User")
         val userEmailTextView = root.findViewById<TextView>(R.id.user_email)
-        userEmailTextView.text = AppState.upn
+        userEmailTextView.text = sharedPreferences?.getString("upn", "someone@cloudmails.apu.edu.my")
         val roleTextView = root.findViewById<TextView>(R.id.user_role)
-        roleTextView.text = AppState.role
+        roleTextView.text = sharedPreferences?.getString("usr_role", "Technical Assistant")
 
         return root
     }
