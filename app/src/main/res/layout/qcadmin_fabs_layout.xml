@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textview_tasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="314dp"
+        android:layout_marginEnd="88dp"
+        android:background="#212121"
+        android:padding="8dp"
+        android:text="Add Tasks and Issues"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTasksFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="304dp"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:src="@drawable/ic_bug"
+        android:visibility="invisible"
+        app:backgroundTint="@color/theme_purple_lighter"
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textview_projector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="244dp"
+        android:layout_marginEnd="88dp"
+        android:background="#212121"
+        android:padding="8dp"
+        android:text="Add Projector"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addProjectorFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="234dp"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:src="@drawable/ic_projector"
+        android:visibility="invisible"
+        app:backgroundTint="@color/theme_purple_lighter"
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textview_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="174dp"
+        android:layout_marginEnd="88dp"
+        android:background="#212121"
+        android:padding="8dp"
+        android:text="Add Class"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addClassFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="164dp"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:src="@drawable/ic_edu"
+        android:visibility="invisible"
+        app:backgroundTint="@color/theme_purple_lighter"
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/rootFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="90dp"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:src="@drawable/ic_add"
+        android:visibility="visible"
+        app:backgroundTint="@color/theme_purple_lighter"
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white"/>
+
+
+</RelativeLayout>
