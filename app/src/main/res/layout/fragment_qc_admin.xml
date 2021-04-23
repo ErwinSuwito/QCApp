@@ -94,7 +94,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/classes" />
+                        android:src="@drawable/projector" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Projectors"
+                        android:text="@string/tasks_and_issues"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         tools:text="Tasks and Issues" />
 

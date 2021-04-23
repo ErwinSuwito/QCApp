@@ -13,7 +13,7 @@
         android:layout_marginEnd="88dp"
         android:background="#212121"
         android:padding="8dp"
-        android:text="Add Tasks and Issues"
+        android:text="@string/add_task_issues"
         android:textColor="@color/white"
         android:visibility="invisible" />
 
@@ -32,7 +32,8 @@
         android:visibility="invisible"
         app:backgroundTint="@color/theme_purple_lighter"
         app:pressedTranslationZ="12dp"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/add_task_issues" />
 
     <TextView
         android:id="@+id/textview_projector"
@@ -44,7 +45,7 @@
         android:layout_marginEnd="88dp"
         android:background="#212121"
         android:padding="8dp"
-        android:text="Add Projector"
+        android:text="@string/add_projector"
         android:textColor="@color/white"
         android:visibility="invisible" />
 
@@ -63,7 +64,8 @@
         android:visibility="invisible"
         app:backgroundTint="@color/theme_purple_lighter"
         app:pressedTranslationZ="12dp"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/add_projector" />
 
     <TextView
         android:id="@+id/textview_class"
@@ -75,7 +77,7 @@
         android:layout_marginEnd="88dp"
         android:background="#212121"
         android:padding="8dp"
-        android:text="Add Class"
+        android:text="@string/add_classes"
         android:textColor="@color/white"
         android:visibility="invisible" />
 
@@ -95,7 +97,8 @@
         android:visibility="invisible"
         app:backgroundTint="@color/theme_purple_lighter"
         app:pressedTranslationZ="12dp"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/add_classes" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/rootFab"
@@ -112,7 +115,8 @@
         android:visibility="visible"
         app:backgroundTint="@color/theme_purple_lighter"
         app:pressedTranslationZ="12dp"
-        app:tint="@color/white"/>
+        app:tint="@color/white"
+        android:contentDescription="@string/add_items" />
 
 
 </RelativeLayout>

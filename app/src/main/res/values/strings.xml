@@ -57,4 +57,22 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- QC Admin Sub Sections strings -->
+    <string name="add_a_new_class">Add a new class</string>
+    <string name="class_name">Class Name</string>
+    <string name="save">Save</string>
+    <string name="is_projector_deployed">Is Projector Deployed?</string>
+    <string name="low_lamp_hour">Low Lamp Hour</string>
+    <string name="high_lamp_hour">High Lamp Hour</string>
+    <string name="serial_number">Serial Number</string>
+    <string name="projector_asset_tag">Projector Asset Tag</string>
+    <string name="add_a_projector">Add a projector</string>
+    <string name="projector_model">Projector Model</string>
+    <string name="tasks_and_issues">Tasks and Issues</string>
+
+    <string name="add_task_issues">Add Task and Issues</string>
+    <string name="add_projector">Add Projector</string>
+    <string name="add_classes">Add Classes</string>
+    <string name="add_items">Add items</string>
+
 </resources>

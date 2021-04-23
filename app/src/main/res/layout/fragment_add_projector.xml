@@ -12,67 +12,89 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add a projector"
+        android:text="@string/add_a_projector"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <EditText
-        android:id="@+id/editTextProjectorName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorAssetTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Projector Asset Tag"
         android:layout_marginTop="8dp"
-        android:inputType="textPersonName" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/projector_asset_tag">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/projectorAssetTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextModelName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorModelTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Projector Model"
         android:layout_marginTop="8dp"
-        android:inputType="textPersonName" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/projector_model">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/projectorModelTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextSerialNo"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorSerialTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Serial Number"
         android:layout_marginTop="8dp"
-        android:inputType="textPersonName" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/serial_number">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/projectorSerialTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/HighLampHourBox"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorHighLampTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="High Lamp Hour"
         android:layout_marginTop="8dp"
-        android:inputType="number" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/high_lamp_hour">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/projectorHighLampTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/lowLampHourBox"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorLowLampTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Low Lamp Hour"
         android:layout_marginTop="8dp"
-        android:inputType="number" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/low_lamp_hour">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/projectorLowLampTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Switch
         android:id="@+id/isDeployedSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Is Projector Deployed?"
+        android:text="@string/is_projector_deployed"
         android:textOff="No"
         android:textOn="Yes"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/saveButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Save" />
+        android:text="@string/save" />
 </LinearLayout>

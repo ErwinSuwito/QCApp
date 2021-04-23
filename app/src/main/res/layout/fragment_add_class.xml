@@ -12,26 +12,34 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add a new class"
+        android:text="@string/add_a_new_class"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <EditText
-        android:id="@+id/editTextClassName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/classTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Class Name"
-        android:inputType="textPersonName" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/class_name">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextClassName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextProjectorId"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/projectorTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Projector ID"
-        android:inputType="textPersonName" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/projector_asset_tag">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextProjectorId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/saveBtn"
@@ -39,6 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/theme_purple_lighter"
-        android:text="Save" />
+        android:text="@string/save" />
 
 </LinearLayout>
