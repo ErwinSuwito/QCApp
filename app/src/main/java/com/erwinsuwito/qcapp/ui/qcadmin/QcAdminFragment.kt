@@ -119,7 +119,7 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                 }
 
                 R.id.projectorCard -> {
-                    Toast.makeText(this.context, "Add Projector card clicked", Toast.LENGTH_SHORT).show()
+                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_projectorListFragment)
                 }
 
                 R.id.classCard -> {

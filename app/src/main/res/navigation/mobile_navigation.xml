@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_fragment_qc_admin_to_addProjecforFragment"
             app:destination="@id/addProjectorFragment" />
+        <action
+            android:id="@+id/action_fragment_qc_admin_to_projectorListFragment"
+            app:destination="@id/projectorListFragment" />
     </fragment>
 
     <fragment
@@ -54,5 +57,14 @@
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddClassFragment"
         android:label="@string/qc_admin"
         tools:layout="@layout/fragment_add_class" />
+    <fragment
+        android:id="@+id/projectorListFragment"
+        android:name="com.erwinsuwito.qcapp.ui.qcadmin.ProjectorListFragment"
+        android:label="@string/qc_admin"
+        tools:layout="@layout/fragment_projector_list">
+        <action
+            android:id="@+id/action_projectorListFragment_to_addProjectorFragment"
+            app:destination="@id/addProjectorFragment" />
+    </fragment>
 
 </navigation>
