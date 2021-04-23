@@ -5,32 +5,59 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.Classroom
-import kotlinx.android.synthetic.main.list_item.view.*
+import com.erwinsuwito.qcapp.model.MoreItem
+import kotlinx.android.synthetic.main.class_list_item.view.*
 
-class ClassroomAdapter (private val context: Context, private val dataset: List<Classroom>)
-    : RecyclerView.Adapter<ClassroomAdapter.ItemViewHolder>() {
+class ClassroomAdapter(private val context: Context, private val dataset: List<Classroom>, private val onClick: (Classroom) -> Unit)
+    : ListAdapter<Classroom, ClassroomAdapter.ItemViewHolder>(classItemDiffCallback)
+{
+    class ItemViewHolder(private val view: View, val onClick: (Classroom) -> Unit) : RecyclerView.ViewHolder(view) {
+        val textView: TextView = view.findViewById(R.id.class_name)
+        private var currentItem: Classroom? = null
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
-    {
-        val textView: TextView = view.findViewById(R.id.item_title)
+        init {
+            itemView.setOnClickListener {
+                currentItem?.let {
+                    onClick(it)
+                }
+            }
+        }
+
+        fun bind(item: Classroom)
+        {
+            currentItem = item
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        val adapterLayout = LayoutInflater.from(parent.context)
+                .inflate(R.layout.class_list_item, parent, false)
 
-        // Write onClickListener here?
-
-        return ItemViewHolder(adapterLayout)
-    }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        return ItemViewHolder(adapterLayout, onClick)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataset.size
+    }
+
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val item = dataset[position]
+        holder.textView.text = item.className
+        holder.bind(item)
+    }
+}
+
+object classItemDiffCallback : DiffUtil.ItemCallback<Classroom>() {
+    override fun areItemsTheSame(oldItem: Classroom, newItem: Classroom): Boolean {
+        return oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: Classroom, newItem: Classroom): Boolean {
+        return oldItem.className == newItem.className
     }
 }

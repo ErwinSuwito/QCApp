@@ -13,7 +13,7 @@ import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.MoreItem
 import com.erwinsuwito.qcapp.ui.more.MoreFragment
 
-class MoreItemsAdapter(private val context: MoreFragment, private val dataset: List<MoreItem>, private val onClick: (MoreItem) -> Unit ) : ListAdapter<MoreItem, MoreItemsAdapter.ItemViewHolder>(ItemDiffCallback) {
+class MoreItemsAdapter(private val context: MoreFragment, private val dataset: List<MoreItem>, private val onClick: (MoreItem) -> Unit ) : ListAdapter<MoreItem, MoreItemsAdapter.ItemViewHolder>(moreItemItemDiffCallback) {
     class ItemViewHolder(private val view: View, val onClick: (MoreItem) -> Unit) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.actionTextView)
         val imageView: ImageView = view.findViewById(R.id.actionIcon)
@@ -52,7 +52,7 @@ class MoreItemsAdapter(private val context: MoreFragment, private val dataset: L
     }
 }
 
-object ItemDiffCallback : DiffUtil.ItemCallback<MoreItem>() {
+private object moreItemItemDiffCallback : DiffUtil.ItemCallback<MoreItem>() {
     override fun areItemsTheSame(oldItem: MoreItem, newItem: MoreItem): Boolean {
         return oldItem == newItem
     }
