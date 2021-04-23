@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.erwinsuwito.qcapp.R
+import kotlinx.android.synthetic.main.fragment_qc_admin.*
 import kotlinx.android.synthetic.main.qcadmin_fabs_layout.*
 
 
@@ -55,6 +57,12 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
         fab_anticlock = AnimationUtils.loadAnimation(this.context, R.anim.fab_rotate_anticlock)
 
         rootFab.setOnClickListener(this)
+        addTasksFab.setOnClickListener(this)
+        addProjectorFab.setOnClickListener(this)
+        addClassFab.setOnClickListener(this)
+        classCard.setOnClickListener(this)
+        projectorCard.setOnClickListener(this)
+        issueCard.setOnClickListener(this)
     }
 
     override fun onClick(v: View?)
@@ -92,6 +100,30 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                         rootFab.startAnimation(fab_clock)
                         isOpen = true
                     }
+                }
+
+                R.id.addTasksFab -> {
+                    Toast.makeText(this.context, "Add Task or Issue FAB clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.addProjectorFab -> {
+                    Toast.makeText(this.context, "Add Projector FAB clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.addClassFab -> {
+                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_addClassFragment)
+                }
+
+                R.id.issueCard -> {
+                    Toast.makeText(this.context, "Add Task or Issue card clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.projectorCard -> {
+                    Toast.makeText(this.context, "Add Projector card clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.classCard -> {
+                    Toast.makeText(this.context, "Add Class card clicked", Toast.LENGTH_SHORT).show()
                 }
             }
         }

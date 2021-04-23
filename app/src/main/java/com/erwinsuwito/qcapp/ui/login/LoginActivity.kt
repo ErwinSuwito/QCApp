@@ -98,7 +98,7 @@ class LoginActivity : AppCompatActivity() {
         override fun onCancel() {
             // User canceled the authentication
             Log.d("AUTH", "Authentication canceled")
-            findViewById<TextView>(R.id.textView4).text = "Sorry that didn't work. Please try again."
+            findViewById<TextView>(R.id.welcomeBody).text = "Sorry that didn't work. Please try again."
         }
 
         override fun onError(exception: MsalException?): Unit = with(exception) {
@@ -222,7 +222,7 @@ class LoginActivity : AppCompatActivity() {
                 // !! is a not null assertion. Use only when you're sure something is not going to be null
                 if (ex.message!!.contains("Connection is not available to refresh token")) {
                     findViewById<LinearLayout>(R.id.welcomeLayout).isVisible = true
-                    findViewById<TextView>(R.id.textView4).text = "You're offline."
+                    findViewById<TextView>(R.id.welcomeBody).text = "You're offline."
                 }
             }
             updateUI()
