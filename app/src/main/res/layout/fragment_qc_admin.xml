@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.qcadmin.QcAdminFragment"
-    android:id="@+id/frameLayout" >
+    android:id="@+id/qcAdminLinearLayout">
 
     <ScrollView
         android:layout_width="fill_parent"

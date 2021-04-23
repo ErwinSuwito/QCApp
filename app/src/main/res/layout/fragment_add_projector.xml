@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addProjectorLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".ui.qcadmin.AddProjectorFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a projector"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/editTextProjectorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Projector Asset Tag"
+        android:layout_marginTop="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextModelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Projector Model"
+        android:layout_marginTop="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextSerialNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Serial Number"
+        android:layout_marginTop="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/HighLampHourBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="High Lamp Hour"
+        android:layout_marginTop="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/lowLampHourBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Low Lamp Hour"
+        android:layout_marginTop="8dp"
+        android:inputType="number" />
+
+    <Switch
+        android:id="@+id/isDeployedSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is Projector Deployed?"
+        android:textOff="No"
+        android:textOn="Yes"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/saveButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Save" />
+</LinearLayout>
