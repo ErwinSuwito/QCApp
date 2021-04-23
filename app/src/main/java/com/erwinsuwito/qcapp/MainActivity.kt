@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp
 
+import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,8 +10,11 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.prrogress_dialog.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var progressDialog: Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +30,23 @@ class MainActivity : AppCompatActivity() {
         // navView.setupWithNavController(navController)
         NavigationUI.setupActionBarWithNavController(this,navController, appBarConfiguration)
         NavigationUI.setupWithNavController(navView, navController)
+    }
+
+    fun showProgressDialog(message: String? = null)
+    {
+        progressDialog = Dialog(this)
+        progressDialog.setContentView(R.layout.prrogress_dialog)
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
+        if (message != null)
+        {
+            progressDialog.progressText.text = message
+        }
+        progressDialog.show()
+    }
+
+    fun hideProgressDialog()
+    {
+        progressDialog.dismiss()
     }
 }

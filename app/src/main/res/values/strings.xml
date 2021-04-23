@@ -52,6 +52,8 @@
     <string name="no_access_title">Not Authorized</string>
     <string name="no_access_body">Please check if you have been have the proper permissions to use this feature.</string>
 
+    <string name="just_a_moment">Just a moment...</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
