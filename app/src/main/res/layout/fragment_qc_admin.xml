@@ -29,7 +29,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="What do you want to manage?"
+                android:text="@string/what_do_you_want_to_manage"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -57,13 +57,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/classes" />
+                        android:src="@drawable/classes"
+                        android:contentDescription="@string/classes"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Classes"
+                        android:text="@string/classes"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 </LinearLayout>
@@ -94,13 +95,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/projector" />
+                        android:src="@drawable/projector"
+                        android:contentDescription="@string/projectors" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Projectors"
+                        android:text="@string/projectors"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 </LinearLayout>
@@ -131,7 +133,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/classes" />
+                        android:src="@drawable/bug"
+                        android:contentDescription="@string/tasks_and_issues"/>
 
                     <TextView
                         android:layout_width="match_parent"

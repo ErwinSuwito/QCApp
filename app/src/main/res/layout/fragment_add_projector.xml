@@ -82,19 +82,22 @@
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/isDeployedSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="@string/is_projector_deployed"
         android:textOff="No"
         android:textOn="Yes"
-        android:layout_marginTop="12dp" />
+        android:trackTintMode="add" />
 
     <Button
         android:id="@+id/saveButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:height="32dp"
+        android:backgroundTint="@color/theme_purple_lighter"
         android:text="@string/save" />
 </LinearLayout>

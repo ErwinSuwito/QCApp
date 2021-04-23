@@ -74,5 +74,8 @@
     <string name="add_projector">Add Projector</string>
     <string name="add_classes">Add Classes</string>
     <string name="add_items">Add items</string>
+    <string name="what_do_you_want_to_manage">What do you want to manage?</string>
+    <string name="classes">Classes</string>
+    <string name="projectors">Projectors</string>
 
 </resources>
