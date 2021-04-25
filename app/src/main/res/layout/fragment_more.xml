@@ -14,7 +14,7 @@
         android:background="@color/theme_purple"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
