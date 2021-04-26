@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.erwinsuwito.qcapp.R
+import kotlinx.android.synthetic.main.fragment_issue_list.*
+import kotlinx.android.synthetic.main.fragment_projector_list.*
+import kotlinx.android.synthetic.main.fragment_projector_list.addProjectorFab2
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,6 +41,15 @@ class IssueListFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_issue_list, container, false)
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        addTaskFab.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_issueListFragment_to_addTaskFragment)
+        }
+    }
+
 
     companion object {
         /**
