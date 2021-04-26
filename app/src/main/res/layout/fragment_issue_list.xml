@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.qcadmin.ProjectorListFragment">
-    
+    tools:context=".ui.qcadmin.IssueListFragment">
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
@@ -13,7 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:text="Select a projector to view its details. Click on the Add button below to add a new projector."
+        android:text="Below are tasks and issues that are open. You can view closed issues when you view classroom details. Select an issue to view its details. Click on the Add button below to add a new task or issue."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Projectors"
+        android:text="Task and Issues"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,4 +62,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:pressedTranslationZ="12dp"
         app:tint="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

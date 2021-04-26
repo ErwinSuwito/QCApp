@@ -77,5 +77,7 @@
     <string name="what_do_you_want_to_manage">What do you want to manage?</string>
     <string name="classes">Classes</string>
     <string name="projectors">Projectors</string>
+    <string name="add_a_task">Add a task</string>
+    <string name="problem">Problem</string>
 
 </resources>

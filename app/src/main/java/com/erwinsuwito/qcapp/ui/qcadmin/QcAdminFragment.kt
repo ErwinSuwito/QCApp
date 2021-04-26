@@ -103,7 +103,7 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                 }
 
                 R.id.addTasksFab -> {
-                    Toast.makeText(this.context, "Add Task or Issue FAB clicked", Toast.LENGTH_SHORT).show()
+                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_addTaskFragment)
                 }
 
                 R.id.addProjectorFab -> {
@@ -115,7 +115,7 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                 }
 
                 R.id.issueCard -> {
-                    Toast.makeText(this.context, "Add Task or Issue card clicked", Toast.LENGTH_SHORT).show()
+                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_issueListFragment)
                 }
 
                 R.id.projectorCard -> {
@@ -123,7 +123,7 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                 }
 
                 R.id.classCard -> {
-                    Toast.makeText(this.context, "Add Class card clicked", Toast.LENGTH_SHORT).show()
+                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_classListFragment)
                 }
             }
         }

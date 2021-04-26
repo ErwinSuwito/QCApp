@@ -92,6 +92,7 @@ class MoreFragment : Fragment() {
                 activity?.finish()
             }
             "Open TA Portal" -> {
+                // TO-DO: 
                 // Code taken from:
                 // https://www.tutorialspoint.com/how-to-open-a-website-in-android-s-web-browser-from-my-application-using-kotlin
                 val url = getString(R.string.li_ta_portal)
