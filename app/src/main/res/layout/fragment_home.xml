@@ -132,86 +132,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="24dp"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="24dp"
-                android:clickable="true"
-                app:cardElevation="4dp"
-                app:cardMaxElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Headline6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxWidth="360dp"
-                        android:maxLines="2"
-                        android:text="@string/lipsum_header" />
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:ellipsize="end"
-                        android:maxWidth="360dp"
-                        android:maxLines="3"
-                        android:text="@string/lipsum" />
-
-                    <LinearLayout android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="16dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Added on " />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="21/05/2021" />
-                    </LinearLayout>
-
-                    <LinearLayout android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
-
-                        <com.microsoft.fluentui.persona.AvatarView
-                            android:id="@+id/avatar_author"
-                            android:layout_gravity="start"
-                            app:avatarSize="medium"
-                            app:name="Erwin Suwitoandojo"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            style="@style/TextAppearance.MaterialComponents.Body1"
-                            android:layout_gravity="center_vertical"
-                            android:text="Erwin Suwitoandojo" />
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/task_card_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:scrollbars="none"
                 android:orientation="horizontal"
-                android:scrollbars="horizontal" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
 
