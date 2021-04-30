@@ -9,13 +9,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
-import com.erwinsuwito.qcapp.model.Classroom
-import com.erwinsuwito.qcapp.model.Issue
-import com.erwinsuwito.qcapp.model.MoreItem
 import com.erwinsuwito.qcapp.model.Task
 import com.microsoft.fluentui.persona.AvatarView
 import kotlinx.android.synthetic.main.class_list_item.view.*
-import org.w3c.dom.Text
+import java.time.format.DateTimeFormatter
 
 class TaskCardAdapter(private val context: Context, private val dataset: List<Task>, private val onClick: (Task) -> Unit)
     : ListAdapter<Task, TaskCardAdapter.ItemViewHolder>(taskItemDiffCallback)
@@ -56,9 +53,12 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
+
+        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a")
+
         holder.taskTitle.text = item.taskTitle
         holder.taskDesc.text = item.problem
-        holder.taskAddedDate.text = item.openedOn.toString()
+        holder.taskAddedDate.text = item.openedOn.format(formatter)
         holder.taskAuthor.text = item.creatorName
         holder.avatarAuthor.name = item.creatorName
 
