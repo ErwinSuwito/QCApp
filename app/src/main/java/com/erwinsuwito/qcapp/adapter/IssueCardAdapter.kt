@@ -13,12 +13,16 @@ import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.MoreItem
 import kotlinx.android.synthetic.main.class_list_item.view.*
+import java.time.format.DateTimeFormatter
 
-class IssueAdapter(private val context: Context, private val dataset: List<Issue>, private val onClick: (Issue) -> Unit)
-    : ListAdapter<Issue, IssueAdapter.ItemViewHolder>(issueItemDiffCallback)
+class IssueCardAdapter(private val context: Context, private val dataset: List<Issue>, private val onClick: (Issue) -> Unit)
+    : ListAdapter<Issue, IssueCardAdapter.ItemViewHolder>(issueItemDiffCallback)
 {
     class ItemViewHolder(private val view: View, val onClick: (Issue) -> Unit) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.class_name)
+        val className: TextView = view.findViewById(R.id.issue_class_name)
+        val problem: TextView = view.findViewById(R.id.issue_desc)
+        val submittedOn: TextView = view.findViewById(R.id.issue_added_date)
+
         private var currentItem: Issue? = null
 
         init {
@@ -37,7 +41,7 @@ class IssueAdapter(private val context: Context, private val dataset: List<Issue
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
-                .inflate(R.layout.class_list_item, parent, false)
+                .inflate(R.layout.issues_card_item_template, parent, false)
 
         return ItemViewHolder(adapterLayout, onClick)
     }
@@ -47,8 +51,12 @@ class IssueAdapter(private val context: Context, private val dataset: List<Issue
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a")
+
         val item = dataset[position]
-        holder.textView.text = item.issueId
+        holder.className.text = item.classroom
+        holder.problem.text = item.problem
+        holder.submittedOn.text = item.openedOn.format(formatter)
         holder.bind(item)
     }
 }

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.Task
 import com.microsoft.fluentui.persona.AvatarView
-import kotlinx.android.synthetic.main.class_list_item.view.*
 import java.time.format.DateTimeFormatter
 
 class TaskCardAdapter(private val context: Context, private val dataset: List<Task>, private val onClick: (Task) -> Unit)
@@ -42,7 +41,7 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
-                .inflate(R.layout.tasks_list_view_item_template, parent, false)
+                .inflate(R.layout.tasks_card_item_template, parent, false)
 
         return ItemViewHolder(adapterLayout, onClick)
     }

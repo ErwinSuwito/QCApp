@@ -13,7 +13,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.AppState
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
+import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.MoreItem
 import com.erwinsuwito.qcapp.model.Task
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -37,11 +39,17 @@ class HomeFragment : Fragment() {
             Task("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(), true)
         )
 
+        var dummyIssuesList = mutableListOf(
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false),
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false),
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false)
+        )
+
         val task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
         task_card_list.adapter = TaskCardAdapter(root.context, dummyTasksList, { issue -> taskItemClicked(root.context, issue)})
 
         val issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
-        issues_card_list.adapter = TaskCardAdapter(root.context, dummyTasksList, { issue -> taskItemClicked(root.context, issue)})
+        issues_card_list.adapter = IssueCardAdapter(root.context, dummyIssuesList, { issue -> issueItemClicked(root.context, issue)})
 
         return root
     }
@@ -54,5 +62,10 @@ class HomeFragment : Fragment() {
     fun taskItemClicked(context: Context, taskItem: Task)
     {
         Toast.makeText(context, "A task is clicked.", Toast.LENGTH_SHORT).show()
+    }
+
+    fun issueItemClicked(context: Context, issueItem: Issue)
+    {
+        Toast.makeText(context, "An issue is clicked.", Toast.LENGTH_SHORT).show()
     }
 }
