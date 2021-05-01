@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -22,6 +23,8 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
         val taskAddedDate: TextView = view.findViewById(R.id.task_added_date)
         val avatarAuthor: AvatarView = view.findViewById(R.id.avatar_author)
         val taskAuthor: TextView = view.findViewById(R.id.task_author)
+        val completedPanel: LinearLayout = view.findViewById(R.id.taskCompletedPanel)
+        val taskAddedText: TextView = view.findViewById(R.id.task_added_text)
 
         private var currentItem: Task? = null
 
@@ -57,9 +60,20 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
 
         holder.taskTitle.text = item.taskTitle
         holder.taskDesc.text = item.problem
-        holder.taskAddedDate.text = item.openedOn.format(formatter)
         holder.taskAuthor.text = item.creatorName
         holder.avatarAuthor.name = item.creatorName
+
+        if (item.isOpen)
+        {
+            holder.taskAddedText.text = context.resources.getString(R.string.added_on)
+            holder.taskAddedDate.text = item.openedOn.format(formatter)
+        }
+        else
+        {
+            holder.taskAddedText.text = context.resources.getString(R.string.completed_on)
+            holder.taskAddedDate.text = item.closedOn.format(formatter)
+            holder.completedPanel.visibility = View.VISIBLE
+        }
 
         holder.bind(item)
     }

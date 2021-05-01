@@ -72,7 +72,7 @@
                 android:id="@+id/addedOnText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/added_on" />
+                tools:text="@string/added_on" />
 
             <TextView
                 android:id="@+id/issue_added_date"

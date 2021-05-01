@@ -64,6 +64,7 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
 
         if (item.isOpen)
         {
+            holder.addedOnText.text = context.resources.getString(R.string.added_on)
             holder.submittedOn.text = item.openedOn.format(formatter)
         }
         else

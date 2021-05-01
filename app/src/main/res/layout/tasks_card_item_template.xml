@@ -36,20 +36,49 @@
             android:maxLines="3"
             tools:text="@string/lipsum" />
 
-        <LinearLayout android:layout_height="wrap_content"
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:id="@+id/taskCompletedPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_verified"
+                android:visibility="visible" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Added on " />
+                android:layout_marginStart="6dp"
+                tools:text="@string/completed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <TextView
+                android:id="@+id/task_added_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Added on" />
 
             <TextView
                 android:id="@+id/task_added_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21/05/2021" />
+                android:layout_marginStart="4dp"
+                tools:text="21/05/2021" />
         </LinearLayout>
 
         <LinearLayout android:layout_height="wrap_content"
@@ -72,7 +101,7 @@
                 android:layout_marginStart="8dp"
                 style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_gravity="center_vertical"
-                android:text="Erwin Suwitoandojo" />
+                tools:text="Erwin Suwitoandojo" />
         </LinearLayout>
     </LinearLayout>
 
