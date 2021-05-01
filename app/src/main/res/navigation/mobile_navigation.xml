@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.erwinsuwito.qcapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_classDetailFragment"
+            app:destination="@id/classDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_qc"
@@ -101,5 +105,10 @@
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddTaskFragment"
         android:label="@string/qc_admin"
         tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/classDetailFragment"
+        android:name="com.erwinsuwito.qcapp.ui.classrooms.ClassDetailFragment"
+        android:label="fragment_class_detail"
+        tools:layout="@layout/fragment_class_detail" />
 
 </navigation>

@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Nullable
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.ui.qcadmin.IssueListFragment
+import com.google.android.material.tabs.TabLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +39,52 @@ class ClassDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_class_detail, container, false)
+        val root = inflater.inflate(R.layout.fragment_class_detail, container, false)
+
+        var tab_viewpager = root.findViewById<ViewPager>(R.id.class_viewpager)
+        var tab_tablayout = root.findViewById<TabLayout>(R.id.tabLayout)
+
+        setupViewPager(tab_viewpager)
+        tab_tablayout.setupWithViewPager(tab_viewpager)
+
+        return root
+    }
+
+    private fun setupViewPager(viewpager: ViewPager)
+    {
+        var adapter: ViewPagerAdapter = ViewPagerAdapter(childFragmentManager)
+
+        adapter.addFragment(ClassInfoFragment(), "Info")
+        adapter.addFragment(IssueListFragment(), "Issues")
+
+        viewpager.setAdapter(adapter)
+    }
+
+    class ViewPagerAdapter : FragmentPagerAdapter {
+        private final var fragmentList1: ArrayList<Fragment> = ArrayList()
+        private final var fragmentTitleList1: ArrayList<String> = ArrayList()
+
+        public constructor(supportFragmentManager: FragmentManager)
+                : super(supportFragmentManager)
+
+        override fun getItem(position: Int): Fragment {
+            return fragmentList1.get(position)
+        }
+
+        @Nullable
+        override fun getPageTitle(position: Int): CharSequence {
+            return fragmentTitleList1.get(position)
+        }
+
+        override fun getCount(): Int {
+            return fragmentList1.size
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            fragmentList1.add(fragment)
+            fragmentTitleList1.add(title)
+        }
+
     }
 
     companion object {

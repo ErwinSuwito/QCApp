@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.AppState
 import com.erwinsuwito.qcapp.R
@@ -63,7 +64,7 @@ class HomeFragment : Fragment() {
 
     fun taskItemClicked(context: Context, taskItem: Task)
     {
-        Toast.makeText(context, "A task is clicked.", Toast.LENGTH_SHORT).show()
+        requireView().findNavController().navigate(R.id.action_navigation_home_to_classDetailFragment)
     }
 
     fun issueItemClicked(context: Context, issueItem: Issue)
