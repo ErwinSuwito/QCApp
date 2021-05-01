@@ -58,10 +58,8 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
 
         rootFab.setOnClickListener(this)
         addTasksFab.setOnClickListener(this)
-        addProjectorFab.setOnClickListener(this)
         addClassFab.setOnClickListener(this)
         classCard.setOnClickListener(this)
-        projectorCard.setOnClickListener(this)
         issueCard.setOnClickListener(this)
     }
 
@@ -75,13 +73,10 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                     if (isOpen)
                     {
                         textview_class.visibility = View.INVISIBLE
-                        textview_projector.visibility = View.INVISIBLE
                         textview_tasks.visibility = View.INVISIBLE
                         addClassFab.startAnimation(fab_close)
-                        addProjectorFab.startAnimation(fab_close)
                         addTasksFab.startAnimation(fab_close)
                         addClassFab.isClickable = false
-                        addProjectorFab.isClickable = false
                         addTasksFab.isClickable = false
                         rootFab.startAnimation(fab_anticlock)
                         isOpen = false
@@ -89,13 +84,10 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                     else
                     {
                         textview_class.visibility = View.VISIBLE
-                        textview_projector.visibility = View.VISIBLE
                         textview_tasks.visibility = View.VISIBLE
                         addClassFab.startAnimation(fab_open)
-                        addProjectorFab.startAnimation(fab_open)
                         addTasksFab.startAnimation(fab_open)
                         addClassFab.isClickable = true
-                        addProjectorFab.isClickable = true
                         addTasksFab.isClickable = true
                         rootFab.startAnimation(fab_clock)
                         isOpen = true
@@ -106,20 +98,12 @@ class QcAdminFragment : Fragment(), View.OnClickListener {
                     requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_addTaskFragment)
                 }
 
-                R.id.addProjectorFab -> {
-                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_addProjecforFragment)
-                }
-
                 R.id.addClassFab -> {
                     requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_addClassFragment)
                 }
 
                 R.id.issueCard -> {
                     requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_issueListFragment)
-                }
-
-                R.id.projectorCard -> {
-                    requireView().findNavController().navigate(R.id.action_fragment_qc_admin_to_projectorListFragment)
                 }
 
                 R.id.classCard -> {

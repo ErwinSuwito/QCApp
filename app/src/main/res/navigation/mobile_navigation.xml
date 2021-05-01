@@ -39,12 +39,6 @@
             android:id="@+id/action_fragment_qc_admin_to_addClassFragment"
             app:destination="@id/addClassFragment" />
         <action
-            android:id="@+id/action_fragment_qc_admin_to_addProjecforFragment"
-            app:destination="@id/addProjectorFragment" />
-        <action
-            android:id="@+id/action_fragment_qc_admin_to_projectorListFragment"
-            app:destination="@id/projectorListFragment" />
-        <action
             android:id="@+id/action_fragment_qc_admin_to_classListFragment"
             app:destination="@id/classListFragment" />
         <action
@@ -61,11 +55,6 @@
         android:label="@string/no_access_title"
         tools:layout="@layout/fragment_no_permissions" />
     <fragment
-        android:id="@+id/addProjectorFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddProjectorFragment"
-        android:label="@string/qc_admin"
-        tools:layout="@layout/fragment_add_projector" />
-    <fragment
         android:id="@+id/addClassFragment"
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddClassFragment"
         android:label="@string/qc_admin"
@@ -74,11 +63,7 @@
         android:id="@+id/projectorListFragment"
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.ProjectorListFragment"
         android:label="@string/qc_admin"
-        tools:layout="@layout/fragment_projector_list">
-        <action
-            android:id="@+id/action_projectorListFragment_to_addProjectorFragment"
-            app:destination="@id/addProjectorFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_projector_list"/>
     <fragment
         android:id="@+id/classListFragment"
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.ClassListFragment"
