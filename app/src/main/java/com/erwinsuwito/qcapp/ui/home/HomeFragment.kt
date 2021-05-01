@@ -32,10 +32,10 @@ class HomeFragment : Fragment() {
         })
 
         var dummyTasksList = mutableListOf(
-            Task("B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(), true),
-            Task("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(), true),
-            Task("B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(), true),
-            Task("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(), true)
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
         )
 
         var dummyIssuesList = mutableListOf(
