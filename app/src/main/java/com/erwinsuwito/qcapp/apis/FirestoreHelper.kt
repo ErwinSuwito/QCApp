@@ -93,33 +93,6 @@ class FirestoreHelper {
                 }
     }
 
-    fun addProjectors(activity: Activity, projector: Projector) {
-        mFireStore.collection("projectors")
-                .add(projector)
-                .addOnSuccessListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
-                }
-                .addOnFailureListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
-                }
-    }
-
     fun addClass(activity: Activity, classroom: Classroom) {
         mFireStore.collection("classes")
                 .add(classroom)
