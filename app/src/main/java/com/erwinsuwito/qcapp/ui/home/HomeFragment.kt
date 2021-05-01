@@ -6,21 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.erwinsuwito.qcapp.AppState
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
 import com.erwinsuwito.qcapp.model.Issue
-import com.erwinsuwito.qcapp.model.MoreItem
 import com.erwinsuwito.qcapp.model.Task
-import kotlinx.android.synthetic.main.fragment_home.*
 import java.time.LocalDateTime
 
 class HomeFragment : Fragment() {

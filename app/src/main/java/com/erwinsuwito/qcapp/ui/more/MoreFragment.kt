@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.more
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -14,18 +15,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import com.erwinsuwito.qcapp.AppState
-import com.erwinsuwito.qcapp.MainActivity
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.MoreItemsAdapter
 import com.erwinsuwito.qcapp.apis.AuthenticationHelper
 import com.erwinsuwito.qcapp.model.MoreItem
 import com.erwinsuwito.qcapp.ui.login.LoginActivity
-import kotlinx.android.synthetic.main.fragment_more.*
 
 class MoreFragment : Fragment() {
 
     private lateinit var moreViewModel: MoreViewModel
+    var sharedPreferences: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +47,12 @@ class MoreFragment : Fragment() {
             MoreItem(R.string.logout, R.drawable.ic_logout_24)
         )
 
-        if (AppState.role == "Trainee") {
+        if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Trainee")
+        {
             moreItems.removeAt(0)
         }
-        else if (AppState.role == "Technical Assistant") {
+        else if (sharedPreferences!!.getString("usr_role", "Trainee") == "Trainee")
+        {
             moreItems.removeAt(1)
         }
 
@@ -66,7 +67,7 @@ class MoreFragment : Fragment() {
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
 
-        val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
         val userNameTextView = root.findViewById<TextView>(R.id.user_name)
         userNameTextView.text = sharedPreferences?.getString("usr_name", "User")

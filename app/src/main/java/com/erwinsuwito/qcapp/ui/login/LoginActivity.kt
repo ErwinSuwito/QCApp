@@ -10,7 +10,6 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.erwinsuwito.qcapp.AppState
 import com.erwinsuwito.qcapp.MainActivity
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.apis.AuthenticationHelper
@@ -134,12 +133,10 @@ class LoginActivity : AppCompatActivity() {
                     when {
                         it.displayName.equals("Board Members") -> {
                             sharedPreferences.putString("usr_role", getString(R.string.board))
-                            AppState.role = "Board Member"
                             isAllowedSignIn = true
                             return@breaker
                         }
                         it.displayName.equals("APU-Technical Assistant") -> {
-                            AppState.role = "Technical Assistant"
                             sharedPreferences.putString("usr_role", getString(R.string.ta))
                             isAllowedSignIn = true
                             return@breaker
