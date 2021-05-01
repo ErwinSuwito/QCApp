@@ -60,11 +60,6 @@
         android:label="@string/qc_admin"
         tools:layout="@layout/fragment_add_class" />
     <fragment
-        android:id="@+id/projectorListFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.ProjectorListFragment"
-        android:label="@string/qc_admin"
-        tools:layout="@layout/fragment_projector_list"/>
-    <fragment
         android:id="@+id/classListFragment"
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.ClassListFragment"
         android:label="@string/qc_admin"
