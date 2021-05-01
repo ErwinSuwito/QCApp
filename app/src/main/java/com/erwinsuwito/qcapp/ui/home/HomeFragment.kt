@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         task_card_list.adapter = TaskCardAdapter(root.context, dummyTasksList, { issue -> taskItemClicked(root.context, issue)})
 
         val issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
-        issues_card_list.adapter = IssueCardAdapter(root.context, dummyIssuesList, { issue -> issueItemClicked(root.context, issue)})
+        issues_card_list.adapter = IssueCardAdapter(root.context, dummyIssuesList, true, { issue -> issueItemClicked(root.context, issue)})
 
         return root
     }

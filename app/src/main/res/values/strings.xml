@@ -83,4 +83,6 @@
     <string name="add_a_task">Add a task</string>
     <string name="problem">Problem</string>
     <string name="tasks">Tasks</string>
+    <string name="added_on">Added on</string>
+    <string name="completed_on">Completed on</string>
 </resources>

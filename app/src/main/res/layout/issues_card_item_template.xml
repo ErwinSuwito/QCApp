@@ -25,7 +25,6 @@
             android:ellipsize="end"
             android:maxWidth="360dp"
             android:maxLines="2"
-            android:layout_marginTop="4dp"
             tools:text="D-08-09" />
 
         <TextView
@@ -38,20 +37,48 @@
             android:maxLines="3"
             tools:text="@string/lipsum" />
 
-        <LinearLayout android:layout_height="wrap_content"
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:id="@+id/issueSolvedPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_verified"
+                android:visibility="visible" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Added on " />
+                android:layout_marginStart="6dp"
+                android:text="Solved" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/added_on" />
 
             <TextView
                 android:id="@+id/issue_added_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21/05/2021" />
+                android:layout_marginStart="4dp"
+                tools:text="21/05/2021" />
         </LinearLayout>
     </LinearLayout>
 

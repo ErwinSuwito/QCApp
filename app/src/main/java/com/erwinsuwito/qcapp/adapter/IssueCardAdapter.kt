@@ -4,7 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -15,13 +18,14 @@ import com.erwinsuwito.qcapp.model.MoreItem
 import kotlinx.android.synthetic.main.class_list_item.view.*
 import java.time.format.DateTimeFormatter
 
-class IssueCardAdapter(private val context: Context, private val dataset: List<Issue>, private val onClick: (Issue) -> Unit)
+class IssueCardAdapter(private val context: Context, private val dataset: List<Issue>, private val showClassName: Boolean, private val onClick: (Issue) -> Unit)
     : ListAdapter<Issue, IssueCardAdapter.ItemViewHolder>(issueItemDiffCallback)
 {
     class ItemViewHolder(private val view: View, val onClick: (Issue) -> Unit) : RecyclerView.ViewHolder(view) {
         val className: TextView = view.findViewById(R.id.issue_class_name)
         val problem: TextView = view.findViewById(R.id.issue_desc)
         val submittedOn: TextView = view.findViewById(R.id.issue_added_date)
+        val issueSolvedPanel: LinearLayout = view.findViewById(R.id.issueSolvedPanel)
 
         private var currentItem: Issue? = null
 
@@ -57,6 +61,17 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
         holder.className.text = item.classroom
         holder.problem.text = item.problem
         holder.submittedOn.text = item.openedOn.format(formatter)
+
+        if (!item.isOpen)
+        {
+            holder.issueSolvedPanel.visibility = View.VISIBLE
+        }
+
+        if (!showClassName)
+        {
+            holder.className.visibility = View.GONE
+        }
+
         holder.bind(item)
     }
 }
