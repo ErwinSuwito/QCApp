@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
-import com.erwinsuwito.qcapp.model.Projector
 import com.erwinsuwito.qcapp.model.Steps
-import kotlinx.android.synthetic.main.class_list_item.view.*
 
 class StepsAdapter(private val context: Context, private val dataset: List<Steps>, private val onClick: (Steps) -> Unit)
     : ListAdapter<Steps, StepsAdapter.ItemViewHolder>(stepsItemDiffCallback)

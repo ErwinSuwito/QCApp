@@ -1,3 +1,5 @@
 package com.erwinsuwito.qcapp.model
 
-data class Classroom(var className: String, var projectorId: String, var ipAddress: String, var lampHourLimit: Int, var isChecked: Boolean = false)
+import java.time.LocalDateTime
+
+data class Classroom(var className: String, var projectorId: String, var ipAddress: String, var lampHourLimit: Int, var isChecked: Boolean = false, var lastChecked: LocalDateTime)

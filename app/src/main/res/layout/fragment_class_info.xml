@@ -32,6 +32,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="High Lamp Hour"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="177dp"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Lamp Hour"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="177dp"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Last Checked"
             android:layout_margin="4dp" />
 
@@ -55,6 +71,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Projector IP Address"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Lamp Hour"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="177dp"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Lamp Hour"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="177dp"
             android:layout_margin="4dp" />
 
         <TextView
