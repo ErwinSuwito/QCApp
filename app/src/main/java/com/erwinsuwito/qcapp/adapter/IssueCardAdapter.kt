@@ -26,6 +26,7 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
         val problem: TextView = view.findViewById(R.id.issue_desc)
         val submittedOn: TextView = view.findViewById(R.id.issue_added_date)
         val issueSolvedPanel: LinearLayout = view.findViewById(R.id.issueSolvedPanel)
+        val addedOnText: TextView = view.findViewById(R.id.addedOnText)
 
         private var currentItem: Issue? = null
 
@@ -60,10 +61,15 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
         val item = dataset[position]
         holder.className.text = item.classroom
         holder.problem.text = item.problem
-        holder.submittedOn.text = item.openedOn.format(formatter)
 
-        if (!item.isOpen)
+        if (item.isOpen)
         {
+            holder.submittedOn.text = item.openedOn.format(formatter)
+        }
+        else
+        {
+            holder.submittedOn.text = item.closedOn.format(formatter)
+            holder.addedOnText.text = context.resources.getString(R.string.solved_on)
             holder.issueSolvedPanel.visibility = View.VISIBLE
         }
 
