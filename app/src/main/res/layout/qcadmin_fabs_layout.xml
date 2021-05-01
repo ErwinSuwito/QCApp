@@ -9,11 +9,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="254dp"
+        android:layout_marginBottom="184dp"
         android:layout_marginEnd="88dp"
         android:background="#212121"
         android:padding="8dp"
-        android:text="@string/add_task_issues"
+        android:text="@string/add_task"
         android:textColor="@color/white"
         android:visibility="invisible" />
 
@@ -24,7 +24,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="244dp"
+        android:layout_marginBottom="174dp"
         android:clickable="true"
         android:elevation="16dp"
         android:focusable="true"
@@ -33,39 +33,7 @@
         app:backgroundTint="@color/theme_purple_lighter"
         app:pressedTranslationZ="12dp"
         app:tint="@color/white"
-        android:contentDescription="@string/add_task_issues" />
-
-    <TextView
-        android:id="@+id/textview_projector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="184dp"
-        android:layout_marginEnd="88dp"
-        android:background="#212121"
-        android:padding="8dp"
-        android:text="@string/add_projector"
-        android:textColor="@color/white"
-        android:visibility="invisible" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addProjectorFab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="174dp"
-        android:clickable="true"
-        android:elevation="16dp"
-        android:focusable="true"
-        android:src="@drawable/ic_projector"
-        android:visibility="invisible"
-        app:backgroundTint="@color/theme_purple_lighter"
-        app:pressedTranslationZ="12dp"
-        app:tint="@color/white"
-        android:contentDescription="@string/add_projector" />
+        android:contentDescription="@string/add_task" />
 
     <TextView
         android:id="@+id/textview_class"

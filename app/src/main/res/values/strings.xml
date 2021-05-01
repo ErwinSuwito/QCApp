@@ -1,4 +1,8 @@
 <resources>
+    <!-- Lorem ipsum -->
+    <string name="lipsum_header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
     <string name="app_name">QC App</string>
 
     <!-- Common strings -->
@@ -68,9 +72,8 @@
     <string name="projector_asset_tag">Projector Asset Tag</string>
     <string name="add_a_projector">Add a projector</string>
     <string name="projector_model">Projector Model</string>
-    <string name="tasks_and_issues">Tasks and Issues</string>
 
-    <string name="add_task_issues">Add Task and Issues</string>
+    <string name="add_task">Add Tasks</string>
     <string name="add_projector">Add Projector</string>
     <string name="add_classes">Add Classes</string>
     <string name="add_items">Add items</string>
@@ -79,8 +82,5 @@
     <string name="projectors">Projectors</string>
     <string name="add_a_task">Add a task</string>
     <string name="problem">Problem</string>
-
-    <!-- Lorem ipsum -->
-    <string name="lipsum_header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
-    <string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="tasks">Tasks</string>
 </resources>
