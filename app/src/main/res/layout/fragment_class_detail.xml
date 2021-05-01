@@ -31,6 +31,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        app:tabTextAppearance="@style/AppTabTextAppearance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -38,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_status"
         app:tabMode="scrollable"
-        app:tabContentStart="40dp">
+        app:tabContentStart="36dp">
 
     </com.google.android.material.tabs.TabLayout>
 
