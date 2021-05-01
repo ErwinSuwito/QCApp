@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".ui.classrooms.ClassInfoFragment">
 
     <LinearLayout
@@ -17,19 +18,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector Model" />
+            android:text="Projector Model"
+            android:layout_margin="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Projector IP Address"
             tools:layout_editor_absoluteX="256dp"
-            tools:layout_editor_absoluteY="177dp" />
+            tools:layout_editor_absoluteY="177dp"
+            android:layout_margin="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Checked" />
+            android:text="Last Checked"
+            android:layout_margin="4dp" />
 
     </LinearLayout>
 
@@ -44,17 +48,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector Model" />
+            android:text="Projector Model"
+            android:layout_margin="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector IP Address" />
+            android:text="Projector IP Address"
+            android:layout_margin="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Checked" />
+            android:text="Last Checked"
+            android:layout_margin="4dp" />
 
     </LinearLayout>
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.erwinsuwito.qcapp.ui.qcadmin.IssueListFragment
 import com.google.android.material.tabs.TabLayout
 
@@ -55,7 +56,7 @@ class ClassDetailFragment : Fragment() {
         var adapter: ViewPagerAdapter = ViewPagerAdapter(childFragmentManager)
 
         adapter.addFragment(ClassInfoFragment(), "Info")
-        adapter.addFragment(IssueListFragment(), "Issues")
+        adapter.addFragment(ClassIssueListFragment(), "Issues")
 
         viewpager.setAdapter(adapter)
     }
