@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
+import com.erwinsuwito.qcapp.model.Issue
+import java.time.LocalDateTime
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +39,23 @@ class ClassIssueListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_class_issue_list, container, false)
+        val root = inflater.inflate(R.layout.fragment_class_issue_list, container, false)
+
+        var dummyIssuesList = mutableListOf(
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false),
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false),
+                Issue("D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), false)
+        )
+
+        val issues_recyclerview_classIssues = root.findViewById<RecyclerView>(R.id.issues_recyclerview_classIssues)
+        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, dummyIssuesList, { issue -> itemClicked() } )
+
+        return root
+    }
+
+    fun itemClicked()
+    {
+
     }
 
     companion object {

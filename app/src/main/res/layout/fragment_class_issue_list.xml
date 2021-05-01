@@ -13,7 +13,14 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="8dp"
+        android:clipToPadding="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
