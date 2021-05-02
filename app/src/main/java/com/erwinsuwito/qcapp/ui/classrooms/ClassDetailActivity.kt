@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.classrooms
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -9,14 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.erwinsuwito.qcapp.BaseActivity
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
+import com.microsoft.fluentui.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_class_detail.*
 
 
-class ClassDetailActivity : AppCompatActivity() {
+class ClassDetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_detail)
@@ -32,6 +35,15 @@ class ClassDetailActivity : AppCompatActivity() {
         var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
         topAppBar.setNavigationOnClickListener { onBackPressed() }
+
+        checkClassBtn.setOnClickListener {
+            showSnackbar(getString(R.string.lipsum_header), "Click Me", { snackbarActionClicked() })
+        }
+    }
+
+    fun snackbarActionClicked()
+    {
+        Toast.makeText(this, "Snackbar action clicked", Toast.LENGTH_SHORT).show()
     }
 
     private fun setupViewPager(viewpager: ViewPager) {
