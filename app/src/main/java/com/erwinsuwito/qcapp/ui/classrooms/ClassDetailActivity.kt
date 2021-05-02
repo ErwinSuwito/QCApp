@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_class_detail.*
 
@@ -28,16 +29,9 @@ class ClassDetailActivity : AppCompatActivity() {
 
         var selectedClass: String? = intent.extras?.getString("selectedClass")
 
+        var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
-        setSupportActionBar(toolbar_classDetails)
-        val actionBar = supportActionBar
-        if (actionBar != null)
-        {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_close)
-        }
-
-        toolbar_classDetails.setNavigationOnClickListener { onBackPressed()}
+        topAppBar.setNavigationOnClickListener { onBackPressed() }
     }
 
     private fun setupViewPager(viewpager: ViewPager) {
