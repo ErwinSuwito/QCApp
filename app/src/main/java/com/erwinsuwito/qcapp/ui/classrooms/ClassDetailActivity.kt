@@ -1,6 +1,7 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.annotation.Nullable
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_class_detail.*
 
 
 class ClassDetailActivity : AppCompatActivity() {
@@ -27,13 +29,15 @@ class ClassDetailActivity : AppCompatActivity() {
         var selectedClass: String? = intent.extras?.getString("selectedClass")
 
 
-        val actionBar: ActionBar? = supportActionBar
-
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_close)
+        setSupportActionBar(toolbar_classDetails)
+        val actionBar = supportActionBar
+        if (actionBar != null)
+        {
             actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_close)
         }
 
+        toolbar_classDetails.setNavigationOnClickListener { onBackPressed()}
     }
 
     private fun setupViewPager(viewpager: ViewPager) {
