@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.home
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.Task
+import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import java.time.LocalDateTime
 
 class HomeFragment : Fragment() {
@@ -60,7 +62,10 @@ class HomeFragment : Fragment() {
 
     fun taskItemClicked(context: Context, taskItem: Task)
     {
-        requireView().findNavController().navigate(R.id.action_navigation_home_to_classDetailFragment)
+        val intent = Intent(activity, ClassDetailActivity::class.java)
+        intent.putExtra("selectedClass", "D-08-09")
+        activity?.startActivity(intent)
+        //requireView().findNavController().navigate(R.id.action_navigation_home_to_classDetailFragment)
     }
 
     fun issueItemClicked(context: Context, issueItem: Issue)

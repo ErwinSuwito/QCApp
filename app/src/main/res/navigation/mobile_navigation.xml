@@ -85,10 +85,5 @@
         android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddTaskFragment"
         android:label="@string/qc_admin"
         tools:layout="@layout/fragment_add_task" />
-    <fragment
-        android:id="@+id/classDetailFragment"
-        android:name="com.erwinsuwito.qcapp.ui.classrooms.ClassDetailFragment"
-        android:label="fragment_class_detail"
-        tools:layout="@layout/fragment_class_detail" />
 
 </navigation>
