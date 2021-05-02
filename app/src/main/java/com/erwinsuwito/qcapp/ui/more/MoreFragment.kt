@@ -47,6 +47,8 @@ class MoreFragment : Fragment() {
             MoreItem(R.string.logout, R.drawable.ic_logout_24)
         )
 
+        sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+
         if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Trainee")
         {
             moreItems.removeAt(0)
@@ -66,8 +68,6 @@ class MoreFragment : Fragment() {
             1
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
-
-        sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
         val userNameTextView = root.findViewById<TextView>(R.id.user_name)
         userNameTextView.text = sharedPreferences?.getString("usr_name", "User")
