@@ -1,8 +1,9 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.Nullable
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -10,6 +11,7 @@ import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.tabs.TabLayout
+
 
 class ClassDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,17 @@ class ClassDetailActivity : AppCompatActivity() {
 
         setupViewPager(tab_viewpager)
         tab_tablayout.setupWithViewPager(tab_viewpager)
+
+        var selectedClass: String? = intent.extras?.getString("selectedClass")
+
+
+        val actionBar: ActionBar? = supportActionBar
+
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_close)
+            actionBar.setDisplayHomeAsUpEnabled(true)
+        }
+
     }
 
     private fun setupViewPager(viewpager: ViewPager) {

@@ -10,9 +10,6 @@
         android:name="com.erwinsuwito.qcapp.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_classDetailFragment"
-            app:destination="@id/classDetailFragment" />
     </fragment>
 
     <fragment
