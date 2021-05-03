@@ -60,13 +60,13 @@ class HomeFragment : Fragment() {
 
         B_06_08Chip.setOnClickListener {
             val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, true, LocalDateTime.now()))
+            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, LocalDateTime.now()))
             activity?.startActivity(intent)
         }
 
         B_06_10Chip.setOnClickListener {
             val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, false, LocalDateTime.now()))
+            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, true, LocalDateTime.now()))
             activity?.startActivity(intent)
         }
 

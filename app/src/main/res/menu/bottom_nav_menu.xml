@@ -11,10 +11,12 @@
         android:icon="@drawable/ic_qc"
         android:title="@string/title_qc" />
 
+    <!--
     <item
         android:id="@+id/fragment_qc_admin"
         android:title="@string/qc_admin"
         android:icon="@drawable/ic_qc_admin" />
+        -->
 
     <item
         android:id="@+id/navigation_more"
