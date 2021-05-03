@@ -48,10 +48,10 @@ class ClassDetailActivity : BaseActivity() {
             builder.setTitle(R.string.before_we_continue)
             builder.setMessage(R.string.qc_start_notice_message)
             builder.setPositiveButton(R.string.next) { dialog, which ->
-
+                Toast.makeText(this, "Next button selected", Toast.LENGTH_SHORT).show()
             }
             builder.setNegativeButton(R.string.cancel) { dialog, which ->
-
+                Toast.makeText(this, "Cancel button selected", Toast.LENGTH_SHORT).show()
             }
             val alertDialog = builder.create()
             alertDialog.show()
@@ -60,12 +60,13 @@ class ClassDetailActivity : BaseActivity() {
         class_name.text = classroom?.className
         if (classroom?.isChecked == true)
         {
-            class_status.text = "No problems found"
-            checkClassBtn.visibility = View.GONE
+            class_status.text = getString(R.string.no_problems_found)
+            checkClassBtn.isEnabled = false
+            checkClassBtn.text = getString(R.string.class_checked)
         }
         else
         {
-            class_status.text = "Problems found"
+            class_status.text = getString(R.string.problems_found)
         }
     }
 

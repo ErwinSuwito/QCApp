@@ -13,6 +13,7 @@
     <string name="task">Task</string>
     <string name="issue">Issue</string>
     <string name="chat_teams">Chat on Teams</string>
+    <string name="offline">You\'re offline</string>
 
     <!-- More strings -->
     <string name="qc_admin">QC Admin</string>
@@ -93,4 +94,8 @@
     <string name="next">Next</string>
     <string name="notice">Notice</string>
     <string name="qc_start_notice_message">Connect the HDMI cable to this device before clicking on the next button. To cancel, press Cancel or the back button.</string>
+
+    <string name="no_problems_found">No problems found</string>
+    <string name="class_checked">Class has been checked</string>
+    <string name="problems_found">Problems found</string>
 </resources>

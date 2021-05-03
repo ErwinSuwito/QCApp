@@ -219,7 +219,7 @@ class LoginActivity : AppCompatActivity() {
                 // !! is a not null assertion. Use only when you're sure something is not going to be null
                 if (ex.message!!.contains("Connection is not available to refresh token")) {
                     findViewById<LinearLayout>(R.id.welcomeLayout).isVisible = true
-                    findViewById<TextView>(R.id.welcomeBody).text = "You're offline."
+                    findViewById<TextView>(R.id.welcomeBody).text = getString(R.string.offline)
                 }
             }
             updateUI()
