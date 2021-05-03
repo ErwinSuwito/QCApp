@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.erwinsuwito.qcapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,7 +18,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ClassInfoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClassInfoFragment(var className: String) : Fragment() {
+class ClassInfoFragment(var projectorModel: String, var projectorIpAddress: String,
+var highLampHour: Int, var lowLampHour: Int, var lastChecked: String) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,6 +37,20 @@ class ClassInfoFragment(var className: String) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_class_info, container, false)
+        val root = inflater.inflate(R.layout.fragment_class_info, container, false)
+
+        val projModelTxt = root.findViewById<TextView>(R.id.projectorModelTextBox)
+        val projIpAddress = root.findViewById<TextView>(R.id.projector_ip_address_textView)
+        val highLampHourTxt = root.findViewById<TextView>(R.id.high_lamp_hour_textView)
+        val lowLampHourText = root.findViewById<TextView>(R.id.low_lamp_hour_textView)
+        val lastCheckedTxt = root.findViewById<TextView>(R.id.last_checked_textView)
+
+        projModelTxt.text = projectorModel
+        projIpAddress.text = projectorIpAddress
+        highLampHourTxt.text = highLampHour.toString()
+        lowLampHourText.text = lowLampHour.toString()
+        lastCheckedTxt.text = lastChecked
+
+        return root;
     }
 }

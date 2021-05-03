@@ -8,6 +8,7 @@ import java.time.LocalDateTime
 data class Classroom(var className: String,
                      var projectorId: String,
                      var ipAddress: String,
-                     var lampHourLimit: Int,
+                     var highLampHour: Int,
+                     var lowLampHour: Int,
                      var isChecked: Boolean,
                      var lastChecked: LocalDateTime) : Parcelable

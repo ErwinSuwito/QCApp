@@ -78,10 +78,12 @@ class ClassDetailActivity : BaseActivity() {
         Toast.makeText(this, "Snackbar action clicked", Toast.LENGTH_SHORT).show()
     }
 
-    private fun setupViewPager(viewpager: ViewPager) {
+    private fun setupViewPager(viewpager: ViewPager, classroom: Classroom?) {
         var adapter: ViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        adapter.addFragment(ClassInfoFragment("D-08-09"), "Info")
+        if (classroom != null) {
+            adapter.addFragment(ClassInfoFragment(classroom.projectorId, classroom.ipAddress, classroom.highLampHour, classroom.lowLampHour, classroom.lastChecked.toString()), "Info")
+        }
         adapter.addFragment(ClassIssueListFragment("D-08-09"), "Issues")
 
         var sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
