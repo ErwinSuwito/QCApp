@@ -88,4 +88,9 @@
     <string name="solved_on">Solved on</string>
     <string name="solved">Solved</string>
     <string name="completed">Completed</string>
+
+    <string name="before_we_continue">Before we continue</string>
+    <string name="next">Next</string>
+    <string name="notice">Notice</string>
+    <string name="qc_start_notice_message">Connect the HDMI cable to this device before clicking on the next button. To cancel, press Cancel or the back button.</string>
 </resources>

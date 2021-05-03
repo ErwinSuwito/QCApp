@@ -2,9 +2,12 @@ package com.erwinsuwito.qcapp.ui.classrooms
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -36,16 +39,29 @@ class ClassDetailActivity : BaseActivity() {
 
         var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
+        var checkClassBtn: Button = findViewById(R.id.checkClassBtn)
+
         topAppBar.setNavigationOnClickListener { onBackPressed() }
 
         checkClassBtn.setOnClickListener {
-            showSnackbar(getString(R.string.lipsum_header), "Click Me", { snackbarActionClicked() })
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(R.string.before_we_continue)
+            builder.setMessage(R.string.qc_start_notice_message)
+            builder.setPositiveButton(R.string.next) { dialog, which ->
+
+            }
+            builder.setNegativeButton(R.string.cancel) { dialog, which ->
+
+            }
+            val alertDialog = builder.create()
+            alertDialog.show()
         }
 
         class_name.text = classroom?.className
         if (classroom?.isChecked == true)
         {
             class_status.text = "No problems found"
+            checkClassBtn.visibility = View.GONE
         }
         else
         {
