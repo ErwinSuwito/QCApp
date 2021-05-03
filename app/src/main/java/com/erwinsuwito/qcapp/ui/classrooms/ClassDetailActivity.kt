@@ -15,12 +15,14 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.BaseActivity
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.model.ClassCheck
 import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
 import com.microsoft.fluentui.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_class_detail.*
+import java.time.LocalDateTime
 
 
 class ClassDetailActivity : BaseActivity() {
@@ -80,6 +82,16 @@ class ClassDetailActivity : BaseActivity() {
 
         adapter.addFragment(ClassInfoFragment("D-08-09"), "Info")
         adapter.addFragment(ClassIssueListFragment("D-08-09"), "Issues")
+
+        var dummyCheckHistory = listOf<ClassCheck>(
+            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
+            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
+            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
+            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
+            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true)
+        )
+
+        adapter.addFragment(ClassCheckHistoryFragment(dummyCheckHistory), "Check history")
 
         viewpager.setAdapter(adapter)
     }
