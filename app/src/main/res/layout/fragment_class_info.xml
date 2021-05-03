@@ -18,38 +18,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector Model"
-            android:layout_margin="4dp" />
+            android:layout_margin="4dp"
+            android:text="@string/projector_model" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector IP Address"
+            android:layout_margin="4dp"
+            android:text="@string/projector_ip_address"
             tools:layout_editor_absoluteX="256dp"
-            tools:layout_editor_absoluteY="177dp"
-            android:layout_margin="4dp" />
+            tools:layout_editor_absoluteY="177dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="High Lamp Hour"
+            android:layout_margin="4dp"
+            android:text="@string/high_lamp_hour"
             tools:layout_editor_absoluteX="256dp"
-            tools:layout_editor_absoluteY="177dp"
-            android:layout_margin="4dp" />
+            tools:layout_editor_absoluteY="177dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Low Lamp Hour"
+            android:layout_margin="4dp"
+            android:text="@string/low_lamp_hour"
             tools:layout_editor_absoluteX="256dp"
-            tools:layout_editor_absoluteY="177dp"
-            android:layout_margin="4dp" />
+            tools:layout_editor_absoluteY="177dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Checked"
-            android:layout_margin="4dp" />
+            android:layout_margin="4dp"
+            android:text="@string/last_checked" />
 
     </LinearLayout>
 
@@ -62,37 +62,40 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/projector_model_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector Model"
+            tools:text="Projector Model"
             android:layout_margin="4dp" />
 
         <TextView
+            android:id="@+id/projector_ip_address_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projector IP Address"
+            tools:text="Projector IP Address"
             android:layout_margin="4dp" />
 
         <TextView
+            android:id="@+id/high_lamp_hour_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="High Lamp Hour"
+            tools:text="High Lamp Hour"
             tools:layout_editor_absoluteX="256dp"
             tools:layout_editor_absoluteY="177dp"
             android:layout_margin="4dp" />
 
         <TextView
+            android:id="@+id/low_lamp_hour_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Low Lamp Hour"
-            tools:layout_editor_absoluteX="256dp"
-            tools:layout_editor_absoluteY="177dp"
+            tools:text="Low Lamp Hour"
             android:layout_margin="4dp" />
 
         <TextView
+            android:id="@+id/last_checked_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Checked"
+            tools:text="Last Checked"
             android:layout_margin="4dp" />
 
     </LinearLayout>
