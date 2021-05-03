@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
     private var teamList: MutableList<Team>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_AppCompat_Light_NoActionBar)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
