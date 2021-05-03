@@ -16,9 +16,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
+import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.Task
 import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
+import com.google.android.material.chip.Chip
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 class HomeFragment : Fragment() {
@@ -52,19 +55,31 @@ class HomeFragment : Fragment() {
         val issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
         issues_card_list.adapter = IssueCardAdapter(root.context, dummyIssuesList, true, { issue -> issueItemClicked(root.context, issue)})
 
+        val B_06_08Chip = root.findViewById<Chip>(R.id.B_06_08Chip)
+        val B_06_10Chip = root.findViewById<Chip>(R.id.B_06_10Chip)
+
+        B_06_08Chip.setOnClickListener {
+            val intent = Intent(activity, ClassDetailActivity::class.java)
+            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, true, LocalDateTime.now()))
+            activity?.startActivity(intent)
+        }
+
+        B_06_10Chip.setOnClickListener {
+            val intent = Intent(activity, ClassDetailActivity::class.java)
+            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, false, LocalDateTime.now()))
+            activity?.startActivity(intent)
+        }
+
         return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
     }
 
     fun taskItemClicked(context: Context, taskItem: Task)
     {
-        val intent = Intent(activity, ClassDetailActivity::class.java)
-        intent.putExtra("selectedClass", "D-08-09")
-        activity?.startActivity(intent)
+        Toast.makeText(context, "A task is clicked.", Toast.LENGTH_SHORT).show()
         //requireView().findNavController().navigate(R.id.action_navigation_home_to_classDetailFragment)
     }
 

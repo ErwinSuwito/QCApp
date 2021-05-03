@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:text="B-06-07"
+        tools:text="B-06-07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_name"
-        android:text="No problems found"
+        tools:text="No problems found"
         android:textSize="12dp"/>
 
     <com.google.android.material.tabs.TabLayout

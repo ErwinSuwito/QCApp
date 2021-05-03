@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.BaseActivity
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
@@ -31,6 +32,7 @@ class ClassDetailActivity : BaseActivity() {
         tab_tablayout.setupWithViewPager(tab_viewpager)
 
         var selectedClass: String? = intent.extras?.getString("selectedClass")
+        var classroom: Classroom? = intent.extras?.getParcelable<Classroom>("class")
 
         var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
@@ -38,6 +40,16 @@ class ClassDetailActivity : BaseActivity() {
 
         checkClassBtn.setOnClickListener {
             showSnackbar(getString(R.string.lipsum_header), "Click Me", { snackbarActionClicked() })
+        }
+
+        class_name.text = classroom?.className
+        if (classroom?.isChecked == true)
+        {
+            class_status.text = "No problems found"
+        }
+        else
+        {
+            class_status.text = "Problems found"
         }
     }
 
