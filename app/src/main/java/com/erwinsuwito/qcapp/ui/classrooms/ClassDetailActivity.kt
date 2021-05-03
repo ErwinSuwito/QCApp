@@ -35,10 +35,10 @@ class ClassDetailActivity : BaseActivity() {
         var tab_viewpager = findViewById<ViewPager>(R.id.class_viewpager)
         var tab_tablayout = findViewById<TabLayout>(R.id.tabLayout)
 
-        setupViewPager(tab_viewpager)
         tab_tablayout.setupWithViewPager(tab_viewpager)
 
         var classroom: Classroom? = intent.extras?.getParcelable<Classroom>("class")
+        setupViewPager(tab_viewpager, classroom)
 
         var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
