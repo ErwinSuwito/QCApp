@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.ClassCheckHistoryAdapter
@@ -42,6 +43,12 @@ class ClassCheckHistoryFragment(var checkHistory: List<ClassCheck>) : Fragment()
         val checkHistoryRecylerView: RecyclerView = root.findViewById(R.id.checkHistoryRecylerView)
 
         checkHistoryRecylerView.adapter = ClassCheckHistoryAdapter(root.context, checkHistory, { })
+
+        val dividerItemDecoration = DividerItemDecoration(
+            checkHistoryRecylerView.context,
+            1
+        )
+        checkHistoryRecylerView.addItemDecoration(dividerItemDecoration)
 
         return root
     }
