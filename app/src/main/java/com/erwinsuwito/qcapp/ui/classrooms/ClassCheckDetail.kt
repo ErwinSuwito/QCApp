@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.erwinsuwito.qcapp.R
@@ -21,34 +22,16 @@ class ClassCheckDetail : AppCompatActivity() {
         var selectedCheck: ClassCheck? = intent.extras?.getParcelable<ClassCheck>("selectedClassCheck")
 
         val topAppBar = findViewById<MaterialToolbar>(R.id.classCheck_Toolbar)
+        val chatBtn = findViewById<Button>(R.id.button2)
 
-        topAppBar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.classcheck_chat_teams -> {
-
-                    if (selectedCheck != null)
-                    {
-                        val url = getString(R.string.teams_chat_link).replace("|users", selectedCheck.checkedBy)
-                        val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", selectedCheck.checkedBy)
-
-                        try
-                        {
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
-                        }
-                        catch (e: Exception)
-                        {
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                        }
-                    }
-                    else
-                    {
-                        Toast.makeText(this, "Unable to start a Teams chat. Please try again later.", Toast.LENGTH_SHORT).show()
-                    }
-
-                    true
-                }
-
-                else -> false
+        chatBtn.setOnClickListener {
+            if (selectedCheck != null)
+            {
+                launchTeams(selectedCheck.checkedBy)
+            }
+            else
+            {
+                Toast.makeText(this, "Unable to start a Teams chat. Please try again later.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -73,5 +56,20 @@ class ClassCheckDetail : AppCompatActivity() {
         ulSpeed_textView.text = selectedCheck?.ulSpeed.toString()
         ip_textView.text = selectedCheck?.ipAddress
         powerExt_textView.text = selectedCheck?.isPowerExtAvailable.toString()
+    }
+
+    fun launchTeams(user: String)
+    {
+        val url = getString(R.string.teams_chat_link).replace("|users", user)
+        val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", user)
+
+        try
+        {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+        }
+        catch (e: Exception)
+        {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+        }
     }
 }
