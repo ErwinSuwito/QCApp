@@ -102,5 +102,6 @@
     <string name="class_checked">Class has been checked</string>
     <string name="problems_found">Problems found</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="check_class">Check Class</string>
 
 </resources>
