@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.erwinsuwito.qcapp.R
 import kotlinx.android.synthetic.main.fragment_issue_list.*
-import kotlinx.android.synthetic.main.fragment_projector_list.*
-import kotlinx.android.synthetic.main.fragment_projector_list.addProjectorFab2
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
