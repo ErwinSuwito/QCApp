@@ -1,11 +1,15 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.ClassCheck
 import com.erwinsuwito.qcapp.model.Classroom
+import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_class_check_detail.*
 import org.w3c.dom.Text
 
@@ -15,6 +19,38 @@ class ClassCheckDetail : AppCompatActivity() {
         setContentView(R.layout.activity_class_check_detail)
 
         var selectedCheck: ClassCheck? = intent.extras?.getParcelable<ClassCheck>("selectedClassCheck")
+
+        val topAppBar = findViewById<MaterialToolbar>(R.id.classCheck_Toolbar)
+
+        topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.classcheck_chat_teams -> {
+
+                    if (selectedCheck != null)
+                    {
+                        val url = getString(R.string.teams_chat_link).replace("|users", selectedCheck.checkedBy)
+                        val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", selectedCheck.checkedBy)
+
+                        try
+                        {
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+                        }
+                        catch (e: Exception)
+                        {
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                        }
+                    }
+                    else
+                    {
+                        Toast.makeText(this, "Unable to start a Teams chat. Please try again later.", Toast.LENGTH_SHORT).show()
+                    }
+
+                    true
+                }
+
+                else -> false
+            }
+        }
 
         class_name_2.text = selectedCheck?.classId
         checked_on_textView.text = selectedCheck?.checkedOn.toString()
