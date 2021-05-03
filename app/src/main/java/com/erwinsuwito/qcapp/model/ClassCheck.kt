@@ -1,7 +1,10 @@
 package com.erwinsuwito.qcapp.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.time.LocalDateTime
 
+@Parcelize
 data class ClassCheck(
     var checkId: String,
     var checkedBy: String,
@@ -27,6 +30,4 @@ data class ClassCheck(
     var isPowerExtAvailable: Boolean,
     var checkedOn: LocalDateTime,
     var isEverythingOk: Boolean
-) {
-
-}
+) : Parcelable

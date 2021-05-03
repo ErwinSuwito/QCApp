@@ -53,7 +53,7 @@
                 android:layout_height="16dp"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_verified"
+                android:src="@drawable/ic_complete"
                 android:visibility="visible" />
 
             <TextView

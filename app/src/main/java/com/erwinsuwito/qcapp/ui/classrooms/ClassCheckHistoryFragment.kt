@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -42,7 +43,7 @@ class ClassCheckHistoryFragment(var checkHistory: List<ClassCheck>) : Fragment()
 
         val checkHistoryRecylerView: RecyclerView = root.findViewById(R.id.checkHistoryRecylerView)
 
-        checkHistoryRecylerView.adapter = ClassCheckHistoryAdapter(root.context, checkHistory, { })
+        checkHistoryRecylerView.adapter = ClassCheckHistoryAdapter(root.context, checkHistory, { itemClicked(it) })
 
         val dividerItemDecoration = DividerItemDecoration(
             checkHistoryRecylerView.context,
@@ -51,5 +52,12 @@ class ClassCheckHistoryFragment(var checkHistory: List<ClassCheck>) : Fragment()
         checkHistoryRecylerView.addItemDecoration(dividerItemDecoration)
 
         return root
+    }
+
+    fun itemClicked(classCheck: ClassCheck)
+    {
+        val intent  = Intent(activity, ClassCheckDetail::class.java)
+        intent.putExtra("selectedClassCheck", classCheck)
+        activity?.startActivity(intent)
     }
 }
