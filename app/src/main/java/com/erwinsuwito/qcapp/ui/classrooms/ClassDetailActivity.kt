@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
+import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -21,6 +22,7 @@ import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
 import com.microsoft.fluentui.snackbar.Snackbar
+import com.microsoft.fluentui.util.activity
 import kotlinx.android.synthetic.main.activity_class_detail.*
 import java.time.LocalDateTime
 
@@ -82,15 +84,19 @@ class ClassDetailActivity : BaseActivity() {
         adapter.addFragment(ClassInfoFragment("D-08-09"), "Info")
         adapter.addFragment(ClassIssueListFragment("D-08-09"), "Issues")
 
-        var dummyCheckHistory = listOf<ClassCheck>(
-            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
-            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
-            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
-            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
-            ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true)
-        )
+        var sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
+        {
+            var dummyCheckHistory = listOf<ClassCheck>(
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true)
+            )
 
-        adapter.addFragment(ClassCheckHistoryFragment(dummyCheckHistory), "Check history")
+            adapter.addFragment(ClassCheckHistoryFragment(dummyCheckHistory), "Check history")
+        }
 
         viewpager.setAdapter(adapter)
     }
