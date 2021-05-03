@@ -103,17 +103,13 @@
     <string name="problems_found">Problems found</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="check_class">Check Class</string>
-    <string name="projector_model">Projector Model</string>
     <string name="projector_ip_address">Projector IP Address</string>
-    <string name="high_lamp_hour">High Lamp Hour</string>
-    <string name="low_lamp_hour">Low Lamp Hour</string>
     <string name="last_checked">Last Checked</string>
     <string name="checked_on">Checked On</string>
     <string name="checked_by">Checked By</string>
     <string name="alignment">Alignment</string>
     <string name="clarity">Clarity</string>
     <string name="screen">Screen</string>
-    <string name="remote">Remote</string>
     <string name="short_hdmi">Short HDMI</string>
     <string name="long_hdmi">Long HDMI</string>
     <string name="remote">Remote</string>
