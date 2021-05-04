@@ -13,9 +13,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabContentStart="36dp"
-        app:tabMode="scrollable"
-        app:tabTextAppearance="@style/AppTabTextAppearance">
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/AppTabTextAppearance" >
 
     </com.google.android.material.tabs.TabLayout>
 
