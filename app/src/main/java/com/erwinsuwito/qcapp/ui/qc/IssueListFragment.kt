@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.ui.qc
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.erwinsuwito.qcapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_issue_list.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +26,8 @@ class IssueListFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var rootFab: FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,17 +41,15 @@ class IssueListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_issue_list, container, false)
-    }
+        val root = inflater.inflate(R.layout.fragment_issue_list, container, false)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        addTaskFab.setOnClickListener {
+        rootFab = root.findViewById(R.id.addIssueFab)
+        rootFab.setOnClickListener{
             requireView().findNavController().navigate(R.id.action_issueListFragment_to_addTaskFragment)
         }
-    }
 
+        return root
+    }
 
     companion object {
         /**
