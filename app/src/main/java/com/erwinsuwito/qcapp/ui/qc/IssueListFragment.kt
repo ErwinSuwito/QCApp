@@ -1,4 +1,4 @@
-package com.erwinsuwito.qcapp.ui.qcadmin
+package com.erwinsuwito.qcapp.ui.qc
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
