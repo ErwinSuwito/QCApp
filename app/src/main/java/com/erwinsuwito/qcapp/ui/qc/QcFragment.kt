@@ -8,13 +8,25 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.model.ClassCheck
+import com.erwinsuwito.qcapp.model.Classroom
+import com.erwinsuwito.qcapp.ui.classrooms.ClassCheckHistoryFragment
+import com.erwinsuwito.qcapp.ui.classrooms.ClassInfoFragment
+import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
+import com.microsoft.fluentui.util.activity
 import kotlinx.android.synthetic.main.qcadmin_fabs_layout.*
+import java.time.LocalDateTime
 
 class QcFragment : Fragment(), View.OnClickListener {
 
@@ -57,6 +69,12 @@ class QcFragment : Fragment(), View.OnClickListener {
         addTasksFab.setOnClickListener(this)
         addClassFab.setOnClickListener(this)
 
+        var tab_viewpager = root.findViewById<ViewPager>(R.id.qc_viewpager)
+        var tab_tablayout = root.findViewById<TabLayout>(R.id.qc_tabLayout)
+
+        tab_tablayout.setupWithViewPager(tab_viewpager)
+        setupViewPager(tab_viewpager)
+
         return root
     }
 
@@ -92,5 +110,40 @@ class QcFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun setupViewPager(viewpager: ViewPager) {
+        var adapter: ViewPagerAdapter = ViewPagerAdapter(childFragmentManager)
+
+        adapter.addFragment(ClassIssueListFragment("D-08-09"), "Issues")
+
+        viewpager.setAdapter(adapter)
+    }
+
+    private class ViewPagerAdapter : FragmentPagerAdapter {
+        private final var fragmentList1: ArrayList<Fragment> = ArrayList()
+        private final var fragmentTitleList1: ArrayList<String> = ArrayList()
+
+        public constructor(supportFragmentManager: FragmentManager)
+                : super(supportFragmentManager)
+
+        override fun getItem(position: Int): Fragment {
+            return fragmentList1.get(position)
+        }
+
+        @Nullable
+        override fun getPageTitle(position: Int): CharSequence {
+            return fragmentTitleList1.get(position)
+        }
+
+        override fun getCount(): Int {
+            return fragmentList1.size
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            fragmentList1.add(fragment)
+            fragmentTitleList1.add(title)
+        }
+
     }
 }

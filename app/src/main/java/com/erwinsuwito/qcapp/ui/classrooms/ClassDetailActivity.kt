@@ -103,7 +103,7 @@ class ClassDetailActivity : BaseActivity() {
         viewpager.setAdapter(adapter)
     }
 
-    class ViewPagerAdapter : FragmentPagerAdapter {
+    private class ViewPagerAdapter : FragmentPagerAdapter {
         private final var fragmentList1: ArrayList<Fragment> = ArrayList()
         private final var fragmentTitleList1: ArrayList<String> = ArrayList()
 
