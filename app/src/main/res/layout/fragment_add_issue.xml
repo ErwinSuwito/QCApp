@@ -3,58 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.qc.AddTaskFragment"
+    android:orientation="vertical"
     android:padding="24dp"
-    android:orientation="vertical">
+    tools:context=".ui.qc.AddIssueFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_a_task"
+        android:text="@string/add_an_issue"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextAppearance.MaterialComponents.Body2"
-        android:text="Describe your task below. Include any instructions and where you want the task to be done in." />
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/task_TaskTitleInputLayout"
+        android:id="@+id/issue_classNameInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Task Title">
-
+        android:hint="@string/class_name">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/task_TaskTitleTextBox"
+            android:id="@+id/issue_classNameTextBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"/>
-
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/task_TaskDetailInputLayout"
+        android:id="@+id/issue_problemInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Task Details">
-
+        android:hint="@string/problem">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/task_TaskDetailTextBox"
+            android:id="@+id/issue_problemTextBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"/>
-
+            android:inputType="textLongMessage"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <Button
-        android:id="@+id/task_saveBtn"
+        android:id="@+id/issue_saveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

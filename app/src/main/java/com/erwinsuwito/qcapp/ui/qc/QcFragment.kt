@@ -71,7 +71,7 @@ class QcFragment : Fragment() {
 
         if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
         {
-            adapter.addFragment(IssueListFragment(), "Tasks")
+            adapter.addFragment(TaskListFragment(), "Tasks")
         }
 
         viewpager.setAdapter(adapter)

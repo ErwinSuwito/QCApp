@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.erwinsuwito.qcapp.R
 import kotlinx.android.synthetic.main.fragment_class_list.*
 
@@ -42,7 +44,7 @@ class ClassListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         addClassFab2.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_classListFragment_to_addClassFragment)
+            findNavController().navigate(R.id.action_navigation_qc_to_addClassFragment2)
         }
     }
 

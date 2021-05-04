@@ -16,44 +16,37 @@
         android:id="@+id/navigation_qc"
         android:name="com.erwinsuwito.qcapp.ui.qc.QcFragment"
         android:label="@string/title_qc"
-        tools:layout="@layout/fragment_qc" />
+        tools:layout="@layout/fragment_qc" >
+        <action
+            android:id="@+id/action_navigation_qc_to_addClassFragment2"
+            app:destination="@id/addClassFragment" />
+        <action
+            android:id="@+id/action_navigation_qc_to_addTaskFragment2"
+            app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_navigation_qc_to_addIssueFragment"
+            app:destination="@id/addIssueFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_more"
         android:name="com.erwinsuwito.qcapp.ui.more.MoreFragment"
         android:label="@string/title_more"
         tools:layout="@layout/fragment_more" />
-
     <fragment
         android:id="@+id/addClassFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddClassFragment"
-        android:label="@string/qc_admin"
+        android:name="com.erwinsuwito.qcapp.ui.qc.AddClassFragment"
+        android:label="fragment_add_class"
         tools:layout="@layout/fragment_add_class" />
     <fragment
-        android:id="@+id/classListFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.ClassListFragment"
-        android:label="@string/qc_admin"
-        tools:layout="@layout/fragment_class_list">
-        <action
-            android:id="@+id/action_classListFragment_to_addClassFragment"
-            app:destination="@id/addClassFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/issueListFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.IssueListFragment"
-        android:label="@string/qc_admin"
-        tools:layout="@layout/fragment_issue_list">
-        <action
-            android:id="@+id/action_issueListFragment_to_addTaskFragment"
-            app:destination="@id/addTaskFragment" />
-        <action
-            android:id="@+id/action_issueListFragment_to_addTaskFragment2"
-            app:destination="@id/addTaskFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/addTaskFragment"
-        android:name="com.erwinsuwito.qcapp.ui.qcadmin.AddTaskFragment"
-        android:label="@string/qc_admin"
+        android:name="com.erwinsuwito.qcapp.ui.qc.AddTaskFragment"
+        android:label="fragment_add_task"
         tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/addIssueFragment"
+        android:name="com.erwinsuwito.qcapp.ui.qc.AddIssueFragment"
+        android:label="fragment_add_issue"
+        tools:layout="@layout/fragment_add_issue" />
 
 </navigation>

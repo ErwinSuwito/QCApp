@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -60,7 +59,7 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
         val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a")
 
         holder.taskTitle.text = item.taskTitle
-        holder.taskDesc.text = item.problem
+        holder.taskDesc.text = item.taskDetails
         holder.taskAuthor.text = item.creatorName
         holder.avatarAuthor.name = item.creatorName
 
