@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.erwinsuwito.qcapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_qc_admin.*
 import kotlinx.android.synthetic.main.qcadmin_fabs_layout.*
 
 class QcFragment : Fragment(), View.OnClickListener {
