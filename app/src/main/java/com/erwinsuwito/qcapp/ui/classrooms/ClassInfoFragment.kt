@@ -39,7 +39,7 @@ var highLampHour: Int, var lowLampHour: Int, var lastChecked: String) : Fragment
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_class_info, container, false)
 
-        val projModelTxt = root.findViewById<TextView>(R.id.projectorModelTextBox)
+        val projModelTxt = root.findViewById<TextView>(R.id.projector_model_textView)
         val projIpAddress = root.findViewById<TextView>(R.id.projector_ip_address_textView)
         val highLampHourTxt = root.findViewById<TextView>(R.id.high_lamp_hour_textView)
         val lowLampHourText = root.findViewById<TextView>(R.id.low_lamp_hour_textView)
