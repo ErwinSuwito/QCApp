@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.erwinsuwito.qcapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +37,14 @@ class TaskListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_task_list, container, false)
+        val root = inflater.inflate(R.layout.fragment_issue_list, container, false)
+
+        val rootFab = root.findViewById<FloatingActionButton>(R.id.addTaskFab)
+        rootFab.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_qc_to_addTaskFragment2)
+        }
+
+        return root
     }
 
     companion object {
