@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.ui.qc
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -42,6 +43,13 @@ class ClassListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+
+        if (sharedPreferences!!.getString("usr_role", "Technical Assistant") != "Board Member")
+        {
+            addClassFab2.visibility = View.GONE
+        }
 
         addClassFab2.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_qc_to_addClassFragment2)

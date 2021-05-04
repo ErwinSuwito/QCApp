@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.qc.TaskListFragment">
+    tools:context=".ui.qc.TasksListFragment">
 
     <ProgressBar
         android:id="@+id/task_progressBar"
@@ -16,40 +16,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/no_tasks_panel"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/no_tasks_textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="It's lonely in here"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_party" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yay! No issues!"
-            android:layout_margin="16dp"
-            style="@style/TextAppearance.MaterialComponents.Headline6"/>
-    </LinearLayout>
+        android:visibility="gone"
+        style="@style/TextAppearance.MaterialComponents.Headline6"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/task_recyclerView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:scrollbars="vertical"
         android:visibility="invisible"
@@ -60,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addTaskFab"
+        android:id="@+id/addTaskFabs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
