@@ -121,7 +121,7 @@
     <string name="ping">Ping</string>
     <string name="dl_speed">DL Speed</string>
     <string name="ul_speed">UL Speed</string>
-    <string name="ip_address_speed">IP Address Speed</string>
+    <string name="ip_address">IP Address</string>
     <string name="power_extension">Power Extension</string>
     <string name="add_an_issue">Add an issue</string>
 

@@ -1,6 +1,7 @@
 package com.erwinsuwito.qcapp.ui.classrooms
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -19,6 +20,7 @@ import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.ClassCheck
 import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
+import com.erwinsuwito.qcapp.ui.qc.ClassCheckActivity
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
 import com.microsoft.fluentui.snackbar.Snackbar
@@ -51,7 +53,8 @@ class ClassDetailActivity : BaseActivity() {
             builder.setTitle(R.string.before_we_continue)
             builder.setMessage(R.string.qc_start_notice_message)
             builder.setPositiveButton(R.string.next) { dialog, which ->
-                Toast.makeText(this, "Next button selected", Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, ClassCheckActivity::class.java)
+                activity?.startActivity(intent)
             }
             builder.setNegativeButton(R.string.cancel) { dialog, which ->
                 Toast.makeText(this, "Cancel button selected", Toast.LENGTH_SHORT).show()
@@ -71,11 +74,6 @@ class ClassDetailActivity : BaseActivity() {
         {
             class_status.text = getString(R.string.problems_found)
         }
-    }
-
-    fun snackbarActionClicked()
-    {
-        Toast.makeText(this, "Snackbar action clicked", Toast.LENGTH_SHORT).show()
     }
 
     private fun setupViewPager(viewpager: ViewPager, classroom: Classroom?) {
