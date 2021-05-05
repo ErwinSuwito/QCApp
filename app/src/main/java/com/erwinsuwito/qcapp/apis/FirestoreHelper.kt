@@ -1,6 +1,5 @@
 package com.erwinsuwito.qcapp.apis
 
-import android.app.Activity
 import com.erwinsuwito.qcapp.model.*
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -8,115 +7,77 @@ class FirestoreHelper {
 
     private val mFireStore = FirebaseFirestore.getInstance()
 
-    fun addIssue(activity: Activity, issue: Issue)
+    fun addIssue(issue: Issue, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("issues")
                 .add(issue)
                 .addOnSuccessListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onSuccess()
                 }
                 .addOnFailureListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onFailure()
                 }
     }
 
-    fun addSteps(activity: Activity, issue: Issue, step: Steps)
+    fun addSteps(issue: Issue, step: Steps, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("issues")
                 .document(issue.issueId)
                 .collection("steps")
                 .add(step)
                 .addOnSuccessListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onSuccess()
                 }
                 .addOnFailureListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onFailure()
                 }
     }
 
-    fun addChecks(activity: Activity, check: ClassCheck) {
+    fun addSteps(task: Task, step: Steps, onSuccess: () -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("tasks")
+                .document(task.issueId)
+                .collection("steps")
+                .add(step)
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    fun addChecks(check: ClassCheck, onSuccess: () -> Unit, onFailure: () -> Unit) {
         mFireStore.collection("checks")
                 .add(check)
                 .addOnSuccessListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onSuccess()
                 }
                 .addOnFailureListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onFailure()
                 }
     }
 
-    fun addClass(activity: Activity, classroom: Classroom) {
+    fun addClass(classroom: Classroom, onSuccess: () -> Unit, onFailure: () -> Unit) {
         mFireStore.collection("classes")
                 .add(classroom)
                 .addOnSuccessListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onSuccess()
                 }
                 .addOnFailureListener {
-                    when (activity)
-                    {
-                        // TO-DO: Add actions here
-                        /*
-                        is LoginActivity -> {
-                            activity.userLoggedInSuccess(user)
-                        }
-                         */
-                    }
+                    onFailure()
+                }
+    }
+
+    fun addTask(task: Task, onSuccess: () -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("tasks")
+                .add(task)
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
                 }
     }
 }
