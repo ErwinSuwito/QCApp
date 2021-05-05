@@ -21,6 +21,7 @@ import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.Task
 import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
+import com.erwinsuwito.qcapp.ui.tasks.TasksDetailActivity
 import com.google.android.material.chip.Chip
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -80,8 +81,8 @@ class HomeFragment : Fragment() {
 
     fun taskItemClicked(context: Context, taskItem: Task)
     {
-        Toast.makeText(context, "A task is clicked.", Toast.LENGTH_SHORT).show()
-        //requireView().findNavController().navigate(R.id.action_navigation_home_to_classDetailFragment)
+        val intent = Intent(activity, TasksDetailActivity::class.java)
+        activity?.startActivity(intent)
     }
 
     fun issueItemClicked(context: Context, issueItem: Issue)

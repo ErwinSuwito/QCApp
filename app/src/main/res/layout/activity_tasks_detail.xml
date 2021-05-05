@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.QCApp.NoActionBar"
-    tools:context=".ui.issues.IssueDetailActivity">
-
+    tools:context=".ui.tasks.TasksDetailActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/issue_AppBarLayout"
         android:layout_width="match_parent"
@@ -56,15 +54,16 @@
                     style="@style/TextAppearance.MaterialComponents.Body1" />
             </LinearLayout>
             <TextView
-                android:id="@+id/issueDetail_location"
-                android:layout_width="wrap_content"
+                android:id="@+id/taskDetail_taskTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:maxLines="2"
                 android:layout_marginTop="20dp"
-                android:text="B-06-05"
-                android:textStyle="bold"
-                style="@style/TextAppearance.MaterialComponents.Headline6" />
+                android:ellipsize="end"
+                android:text="@string/lipsum"/>
             <TextView
-                android:id="@+id/issueDetail_issueTitle"
+                android:id="@+id/taskDetail_taskBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.MaterialComponents.Body1"
@@ -82,7 +81,7 @@
                     style="@style/TextAppearance.MaterialComponents.Overline" />
 
                 <TextView
-                    android:id="@+id/issueDetail_addedOn"
+                    android:id="@+id/taskDetail_addedOn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -103,7 +102,7 @@
                     style="@style/TextAppearance.MaterialComponents.Overline" />
 
                 <TextView
-                    android:id="@+id/issueDetail_closedOn"
+                    android:id="@+id/taskDetail_closedOn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -146,5 +145,4 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

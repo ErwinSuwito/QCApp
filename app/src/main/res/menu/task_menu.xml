@@ -7,18 +7,4 @@
         android:icon="@drawable/ic_more_vertical"
         android:title="More"
         app:showAsAction="always" />
-
-    <!--
-    <item
-        android:icon="@drawable/ic_complete"
-        android:title="Mark as completed" />
-
-    <item
-        android:icon="@drawable/ic_error"
-        android:title="Re-open Task" />
-
-    <item
-        android:icon="@drawable/ic_teams"
-        android:title="Chat on Teams" />
-        -->
 </menu>
