@@ -35,6 +35,27 @@
             android:layout_height="wrap_content"
             android:padding="24dp"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+                <com.microsoft.fluentui.persona.AvatarView
+                    android:id="@+id/added_by_avatar"
+                    android:layout_gravity="start"
+                    app:avatarSize="small"
+                    app:name="Erwin Suwitoandojo"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:id="@+id/added_by_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Added by"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:textSize="12sp"
+                    style="@style/TextAppearance.MaterialComponents.Overline" />
+            </LinearLayout>
             <TextView
                 android:id="@+id/taskDetail_taskTitle"
                 android:layout_width="match_parent"
@@ -42,11 +63,11 @@
                 style="@style/TextAppearance.MaterialComponents.Headline5"
                 android:maxLines="3"
                 android:ellipsize="end"
-                tools:text="@string/lipsum"/>
+                android:text="@string/lipsum"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="12dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,28 +80,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    tools:text="@string/added_on"
+                    android:text="@string/added_on"
                     android:textSize="12sp"
                     style="@style/TextAppearance.MaterialComponents.Overline" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/issueDetail_closedOnPanel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-                <com.microsoft.fluentui.persona.AvatarView
-                    android:id="@+id/added_by_avatar"
-                    android:layout_gravity="start"
-                    app:avatarSize="medium"
-                    app:name="Erwin Suwitoandojo"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
+                android:layout_marginTop="12dp">
                 <TextView
-                    android:id="@+id/added_by_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Added by"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="8dp"
+                    android:text="@string/closed_on"
+                    android:textSize="12sp"
+                    style="@style/TextAppearance.MaterialComponents.Overline" />
+
+                <TextView
+                    android:id="@+id/taskDetail_closedOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/closed_on"
                     android:textSize="12sp"
                     style="@style/TextAppearance.MaterialComponents.Overline" />
             </LinearLayout>

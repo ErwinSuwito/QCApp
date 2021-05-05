@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.QCApp.NoActionBar">
-        <activity android:name=".ui.issues.IssueDetailFragment"></activity>
+        <activity android:name=".ui.issues.IssueDetailActivity"></activity>
         <activity android:name=".ui.qc.ClassCheckActivity" />
         <activity android:name=".ui.classrooms.ClassCheckDetail" />
         <activity android:name=".ui.classrooms.ClassDetailActivity" />

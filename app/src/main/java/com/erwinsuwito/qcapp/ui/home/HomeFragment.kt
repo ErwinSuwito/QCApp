@@ -20,6 +20,7 @@ import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.Task
 import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
+import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.google.android.material.chip.Chip
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -85,6 +86,7 @@ class HomeFragment : Fragment() {
 
     fun issueItemClicked(context: Context, issueItem: Issue)
     {
-        Toast.makeText(context, "An issue is clicked.", Toast.LENGTH_SHORT).show()
+        val intent = Intent(activity, IssueDetailActivity::class.java)
+        activity?.startActivity(intent)
     }
 }
