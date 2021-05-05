@@ -74,6 +74,8 @@ class ClassDetailActivity : BaseActivity() {
         {
             class_status.text = getString(R.string.problems_found)
         }
+
+        showProgressDialog()
     }
 
     private fun setupViewPager(viewpager: ViewPager, classroom: Classroom?) {

@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/loadTextView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -17,7 +18,7 @@
         android:id="@+id/loadTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         style="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:text="@string/just_a_moment"
         app:layout_constraintBottom_toBottomOf="parent"
