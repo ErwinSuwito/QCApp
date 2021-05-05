@@ -36,17 +36,14 @@
     <fragment
         android:id="@+id/addClassFragment"
         android:name="com.erwinsuwito.qcapp.ui.qc.AddClassFragment"
-        android:label="fragment_add_class"
         tools:layout="@layout/fragment_add_class" />
     <fragment
         android:id="@+id/addTaskFragment"
         android:name="com.erwinsuwito.qcapp.ui.qc.AddTaskFragment"
-        android:label="fragment_add_task"
         tools:layout="@layout/fragment_add_task" />
     <fragment
         android:id="@+id/addIssueFragment"
         android:name="com.erwinsuwito.qcapp.ui.qc.AddIssueFragment"
-        android:label="fragment_add_issue"
         tools:layout="@layout/fragment_add_issue" />
 
 </navigation>

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.erwinsuwito.qcapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -45,6 +46,10 @@ class TasksListFragment : Fragment() {
         if (sharedPreferences!!.getString("usr_role", "Technical Assistant") != "Board Member")
         {
             rootFab.visibility = View.GONE
+        }
+
+        rootFab.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_qc_to_addTaskFragment2)
         }
 
         return root
