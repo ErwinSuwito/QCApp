@@ -21,4 +21,13 @@ open class BaseActivity : AppCompatActivity() {
                 .setAction(actionText, View.OnClickListener { onClick() })
                 .show()
     }
+
+    fun showProgressDialog()
+    {
+        progressDialog = Dialog(this)
+        progressDialog.setContentView(R.layout.dialog_progress)
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
+        progressDialog.show()
+    }
 }
