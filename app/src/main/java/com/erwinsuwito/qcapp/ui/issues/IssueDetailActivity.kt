@@ -21,17 +21,33 @@ class IssueDetailActivity : AppCompatActivity() {
                 R.id.task_BottomSheet -> {
                     Toast.makeText(this, "Action clicked", Toast.LENGTH_SHORT).show()
 
+                    // TO-DO: Add code to modify the following list
                     val bottomSheet = BottomSheet.newInstance(
                         arrayListOf(
-                            BottomSheetItem(
-                                R.id.bottom_sheet_teams_group,
-                                R.drawable.ic_teams,
-                                "Group chat on Teams"
-                            ),
                             BottomSheetItem(
                                 R.id.bottom_sheet_item_reply,
                                 R.drawable.ic_chat,
                                 "Reply"
+                            ),
+                            BottomSheetItem(
+                                R.id.bottom_sheet_mark_close,
+                                R.drawable.ic_complete,
+                                "Close issue"
+                            ),
+                            BottomSheetItem(
+                                R.id.bottom_sheet_mark_re_open,
+                                R.drawable.ic_giftbox_open,
+                                "Re-open issue"
+                            ),
+                            BottomSheetItem(
+                                R.id.bottom_sheet_teams_pm,
+                                R.drawable.ic_teams,
+                                getString(R.string.chat_teams)
+                            ),
+                            BottomSheetItem(
+                                R.id.bottom_sheet_teams_group,
+                                R.drawable.ic_group,
+                                "Group chat on Teams"
                             )
                         )
                     )

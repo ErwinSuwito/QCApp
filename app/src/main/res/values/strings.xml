@@ -125,5 +125,6 @@
     <string name="power_extension">Power Extension</string>
     <string name="add_an_issue">Add an issue</string>
     <string name="closed_on">Closed on</string>
+    <string name="location">Location</string>
 
 </resources>

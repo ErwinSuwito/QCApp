@@ -57,6 +57,14 @@
                     style="@style/TextAppearance.MaterialComponents.Overline" />
             </LinearLayout>
             <TextView
+                android:id="@+id/taskDetail_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B-06-05"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                style="@style/TextAppearance.MaterialComponents.Body2" />
+            <TextView
                 android:id="@+id/taskDetail_taskTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
