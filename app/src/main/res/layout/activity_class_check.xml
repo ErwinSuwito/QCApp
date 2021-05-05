@@ -83,6 +83,13 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Only fill-in the ping google, signal strength, IP Address, download and upload speeds when Student@APU is useable."/>
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/check_ipAddressInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -112,12 +119,6 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Only fill-in the ping google, signal strength, IP Address, download and upload speeds when Student@APU is useable."/>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/check_pingGoogleInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -139,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/signal_strength">
+                android:hint="@string/ul_speed">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/check_ulSpeedTextBox"
@@ -154,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/ping">
+                android:hint="@string/dl_speed">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/check_dlSpeedTextBox"
@@ -163,7 +164,7 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:checked="true"
