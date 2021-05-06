@@ -44,6 +44,19 @@ class FirestoreHelper {
                 }
     }
 
+    fun getClassDetail(classId: String, onSuccess: (Classroom?) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("classes")
+                .document(classId)
+                .get()
+                .addOnSuccessListener {
+                    onSuccess(it.toObject(Classroom::class.java))
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
     //endregion
 
     //region Issues
@@ -55,6 +68,19 @@ class FirestoreHelper {
                 .set(issue, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    fun getIssue(issueId: String, onSuccess: (Issue?) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("issues")
+                .document(issueId)
+                .get()
+                .addOnSuccessListener {
+                    onSuccess(it.toObject(Issue::class.java))
                 }
                 .addOnFailureListener {
                     onFailure()
@@ -117,7 +143,36 @@ class FirestoreHelper {
                 }
     }
 
+    fun getTask(taskId: String, onSuccess: (Task?) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("tasks")
+                .document(taskId)
+                .get()
+                .addOnSuccessListener {
+                    onSuccess(it.toObject(Task::class.java))
+                }
+    }
+
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
+    {
+        mFireStore.collection("issues")
+                .get()
+                .addOnSuccessListener {
+                    var tasks = mutableListOf<Task>()
+
+                    for (i in it.documents) {
+                        val task = i.toObject(Task::class.java)
+                        if (task != null)
+                        {
+                            tasks.add(task)
+                        }
+                    }
+                    onSuccess(tasks)
+                }
+                .addOnFailureListener { onFailure() }
+    }
+
+    fun getLongRunningIssues(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
     {
         mFireStore.collection("issues")
                 .get()
@@ -240,5 +295,4 @@ class FirestoreHelper {
     }
 
     //endregion
-
 }
