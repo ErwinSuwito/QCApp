@@ -1,12 +1,15 @@
 package com.erwinsuwito.qcapp.model
 
+import android.os.Parcelable
+import com.google.firebase.Timestamp
 import com.google.firebase.ktx.Firebase
-import java.time.LocalDateTime
+import kotlinx.android.parcel.Parcelize
 
-data class Steps(var stepId: Int,
-                 var author: String,
-                 var authorName: String,
-                 var content: String,
-                 var addedOn: LocalDateTime,
-                 var clossesIssue: Boolean) {
+@Parcelize
+data class Steps(var stepId: String = "",
+                 var author: String = "",
+                 var authorName: String = "",
+                 var content: String = "",
+                 var addedOn: Timestamp = Timestamp.now(),
+                 var clossesIssue: Boolean = false) : Parcelable {
 }
