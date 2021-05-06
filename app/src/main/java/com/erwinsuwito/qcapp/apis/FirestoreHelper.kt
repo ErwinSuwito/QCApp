@@ -1,13 +1,52 @@
 package com.erwinsuwito.qcapp.apis
 
 import com.erwinsuwito.qcapp.model.*
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.*
 import kotlinx.coroutines.flow.merge
 
 class FirestoreHelper {
 
     private val mFireStore = FirebaseFirestore.getInstance()
+
+    //region Classes
+
+    fun addClass(classroom: Classroom, onSuccess: () -> Unit, onFailure: () -> Unit) {
+        mFireStore.collection("classes")
+                .document(classroom.className)
+                .set(classroom, SetOptions.merge())
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    fun getClassList(onSuccess: (MutableList<Classroom>) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("classes")
+                .get()
+                .addOnSuccessListener {
+                    var classes = mutableListOf<Classroom>()
+
+                    for (i in it.documents) {
+                        val classroom = i.toObject(Classroom::class.java)
+                        if (classroom != null)
+                        {
+                            classes.add(classroom)
+                        }
+                    }
+
+                    onSuccess(classes)
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    //endregion
+
+    //region Issues
 
     fun addIssue(issue: Issue, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
@@ -21,6 +60,66 @@ class FirestoreHelper {
                     onFailure()
                 }
     }
+
+    fun getIssueList(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit )
+    {
+        mFireStore.collection("issues")
+                .get()
+                .addOnSuccessListener {
+                    var issues = mutableListOf<Issue>()
+
+                    for (i in it.documents) {
+                        val issue = i.toObject(Issue::class.java)
+                        if (issue != null)
+                        {
+                            issues.add(issue)
+                        }
+                    }
+                    onSuccess(issues)
+                }
+                .addOnFailureListener { onFailure() }
+    }
+
+    fun getIssueList(className: String, onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("issues")
+                .whereEqualTo("className", className)
+                .get()
+                .addOnSuccessListener {
+                    var issues = mutableListOf<Issue>()
+
+                    for (i in it.documents) {
+                        val issue = i.toObject(Issue::class.java)
+                        if (issue != null)
+                        {
+                            issues.add(issue)
+                        }
+                    }
+                    onSuccess(issues)
+                }
+                .addOnFailureListener { onFailure() }
+    }
+
+    //endregion
+
+    //region Tasks
+
+    fun addTask(task: Task, onSuccess: () -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("tasks")
+                .document(task.issueId)
+                .set(task, SetOptions.merge())
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    //endregion
+
+    //region Troubleshooting steps
 
     fun addSteps(issue: Issue, step: Steps, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
@@ -52,6 +151,28 @@ class FirestoreHelper {
                 }
     }
 
+    fun getSteps(issueId: String, isIssue: Boolean, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("steps")
+                .whereEqualTo("className", className)
+                .get()
+                .addOnSuccessListener {
+                    var checkHistory = mutableListOf<ClassCheck>()
+
+                    for (i in it.documents) {
+                        val check = i.toObject(ClassCheck::class.java)
+                        if (check != null)
+                        {
+                            checkHistory.add(check)
+                        }
+                    }
+                }
+    }
+
+    //endregion
+
+    //region Checks
+
     fun addChecks(check: ClassCheck, onSuccess: () -> Unit, onFailure: () -> Unit) {
         mFireStore.collection("checks")
                 .document(check.checkId)
@@ -64,50 +185,24 @@ class FirestoreHelper {
                 }
     }
 
-    fun addClass(classroom: Classroom, onSuccess: () -> Unit, onFailure: () -> Unit) {
-        mFireStore.collection("classes")
-                .document(classroom.className)
-                .set(classroom, SetOptions.merge())
-                .addOnSuccessListener {
-                    onSuccess()
-                }
-                .addOnFailureListener {
-                    onFailure()
-                }
-    }
-
-    fun addTask(task: Task, onSuccess: () -> Unit, onFailure: () -> Unit)
-    {
-        mFireStore.collection("tasks")
-                .document(task.issueId)
-                .set(task, SetOptions.merge())
-                .addOnSuccessListener {
-                    onSuccess()
-                }
-                .addOnFailureListener {
-                    onFailure()
-                }
-    }
-
-    fun classList(onSuccess: (MutableList<Classroom>) -> Unit, onFailure: () -> Unit)
-    {
-        mFireStore.collection("classes")
+    fun getCheckHistory(className: String, onSuccess: (MutableList<ClassCheck>) -> Unit, onFailure: () -> Unit) {
+        mFireStore.collection("checks")
+                .whereEqualTo("className", className)
                 .get()
                 .addOnSuccessListener {
-                    var classes = mutableListOf<Classroom>()
+                    var checkHistory = mutableListOf<ClassCheck>()
 
                     for (i in it.documents) {
-                        val classroom = i.toObject(Classroom::class.java)
-                        if (classroom != null)
+                        val check = i.toObject(ClassCheck::class.java)
+                        if (check != null)
                         {
-                            classes.add(classroom)
+                            checkHistory.add(check)
                         }
                     }
-
-                    onSuccess(classes)
-                }
-                .addOnFailureListener {
-                    onFailure()
                 }
     }
+
+    //endregion
+
+
 }
