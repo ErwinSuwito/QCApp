@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.erwinsuwito.qcapp.BaseActivity
 import com.erwinsuwito.qcapp.R
 import com.google.android.material.appbar.MaterialToolbar
 import com.microsoft.fluentui.bottomsheet.BottomSheet
 import com.microsoft.fluentui.bottomsheet.BottomSheetItem
 
-class IssueDetailActivity : AppCompatActivity() {
+class IssueDetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_issue_detail)
