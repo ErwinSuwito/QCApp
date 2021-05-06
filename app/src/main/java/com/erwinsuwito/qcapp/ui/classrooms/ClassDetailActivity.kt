@@ -23,6 +23,7 @@ import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.erwinsuwito.qcapp.ui.qc.ClassCheckActivity
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.Timestamp
 import com.microsoft.fluentui.snackbar.Snackbar
 import com.microsoft.fluentui.util.activity
 import kotlinx.android.synthetic.main.activity_class_detail.*
@@ -90,11 +91,11 @@ class ClassDetailActivity : BaseActivity() {
         if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
         {
             var dummyCheckHistory = listOf<ClassCheck>(
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), false),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, LocalDateTime.now(), true)
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), false),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), false),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true),
+                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true)
             )
 
             adapter.addFragment(ClassCheckHistoryFragment(dummyCheckHistory), "Check history")

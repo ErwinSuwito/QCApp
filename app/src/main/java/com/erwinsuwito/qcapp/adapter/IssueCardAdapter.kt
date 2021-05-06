@@ -65,11 +65,11 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
         if (item.isOpen)
         {
             holder.addedOnText.text = context.resources.getString(R.string.added_on)
-            holder.submittedOn.text = item.openedOn.format(formatter)
+            holder.submittedOn.text = item.openedOn.toDate().toLocaleString()
         }
         else
         {
-            holder.submittedOn.text = item.closedOn.format(formatter)
+            holder.submittedOn.text = item.closedOn.toDate().toLocaleString()
             holder.addedOnText.text = context.resources.getString(R.string.solved_on)
             holder.issueSolvedPanel.visibility = View.VISIBLE
         }

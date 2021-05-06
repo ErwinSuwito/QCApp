@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -23,6 +24,7 @@ import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.erwinsuwito.qcapp.ui.tasks.TasksDetailActivity
 import com.google.android.material.chip.Chip
+import com.google.firebase.Timestamp
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -39,16 +41,16 @@ class HomeFragment : Fragment() {
         })
 
         var dummyTasksList = mutableListOf(
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", LocalDateTime.now(),  LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
         )
 
         var dummyIssuesList = mutableListOf(
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", LocalDateTime.now(), LocalDateTime.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
         )
 
         val task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
@@ -62,15 +64,20 @@ class HomeFragment : Fragment() {
 
         B_06_08Chip.setOnClickListener {
             val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, LocalDateTime.now()))
+            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, Timestamp.now()))
             activity?.startActivity(intent)
         }
 
         B_06_10Chip.setOnClickListener {
             val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, LocalDateTime.now()))
+            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
             activity?.startActivity(intent)
         }
+
+        val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+
+        val usrNameTextView = root.findViewById<TextView>(R.id.home_username_textView)
+        usrNameTextView.text = sharedPreferences!!.getString("usr_name", "User")
 
         return root
     }

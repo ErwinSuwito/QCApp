@@ -66,12 +66,12 @@ class TaskCardAdapter(private val context: Context, private val dataset: List<Ta
         if (item.isOpen)
         {
             holder.taskAddedText.text = context.resources.getString(R.string.added_on)
-            holder.taskAddedDate.text = item.openedOn.format(formatter)
+            holder.taskAddedDate.text = item.openedOn.toDate().toLocaleString()
         }
         else
         {
             holder.taskAddedText.text = context.resources.getString(R.string.completed_on)
-            holder.taskAddedDate.text = item.closedOn.format(formatter)
+            holder.taskAddedDate.text = item.closedOn.toDate().toLocaleString()
             holder.completedCheckMark.visibility = View.VISIBLE
         }
 
