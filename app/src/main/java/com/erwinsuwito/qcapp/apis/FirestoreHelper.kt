@@ -2,6 +2,8 @@ package com.erwinsuwito.qcapp.apis
 
 import com.erwinsuwito.qcapp.model.*
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import kotlinx.coroutines.flow.merge
 
 class FirestoreHelper {
 
@@ -10,7 +12,8 @@ class FirestoreHelper {
     fun addIssue(issue: Issue, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("issues")
-                .add(issue)
+                .document(issue.issueId)
+                .set(issue, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
                 }
@@ -24,7 +27,8 @@ class FirestoreHelper {
         mFireStore.collection("issues")
                 .document(issue.issueId)
                 .collection("steps")
-                .add(step)
+                .document(step.stepId)
+                .set(step, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
                 }
@@ -38,7 +42,8 @@ class FirestoreHelper {
         mFireStore.collection("tasks")
                 .document(task.issueId)
                 .collection("steps")
-                .add(step)
+                .document(step.stepId)
+                .set(step, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
                 }
@@ -49,7 +54,8 @@ class FirestoreHelper {
 
     fun addChecks(check: ClassCheck, onSuccess: () -> Unit, onFailure: () -> Unit) {
         mFireStore.collection("checks")
-                .add(check)
+                .document(check.checkId)
+                .set(check, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
                 }
@@ -60,7 +66,8 @@ class FirestoreHelper {
 
     fun addClass(classroom: Classroom, onSuccess: () -> Unit, onFailure: () -> Unit) {
         mFireStore.collection("classes")
-                .add(classroom)
+                .document(classroom.className)
+                .set(classroom, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
                 }
@@ -72,9 +79,32 @@ class FirestoreHelper {
     fun addTask(task: Task, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("tasks")
-                .add(task)
+                .document(task.issueId)
+                .set(task, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
+                }
+    }
+
+    fun classList(onSuccess: (MutableList<Classroom>) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("classes")
+                .get()
+                .addOnSuccessListener {
+                    var classes = mutableListOf<Classroom>()
+
+                    for (i in it.documents) {
+                        val classroom = i.toObject(Classroom::class.java)
+                        if (classroom != null)
+                        {
+                            classes.add(classroom)
+                        }
+                    }
+
+                    onSuccess(classes)
                 }
                 .addOnFailureListener {
                     onFailure()
