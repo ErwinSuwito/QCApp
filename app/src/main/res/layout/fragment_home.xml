@@ -99,13 +99,6 @@
                         android:layout_height="wrap_content"
                         android:text="D-06-10" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/MoreClassesChip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="More"
-                        android:layout_marginEnd="48dp"/>
-
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
 

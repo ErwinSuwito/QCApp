@@ -28,7 +28,7 @@ import com.google.firebase.Timestamp
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
 
@@ -61,18 +61,17 @@ class HomeFragment : Fragment() {
 
         val B_06_08Chip = root.findViewById<Chip>(R.id.B_06_08Chip)
         val B_06_10Chip = root.findViewById<Chip>(R.id.B_06_10Chip)
+        val B_07_01Chip = root.findViewById<Chip>(R.id.B_07_01Chip)
+        val B_07_02Chip = root.findViewById<Chip>(R.id.B_07_02Chip)
+        val D_06_08Chip = root.findViewById<Chip>(R.id.D_06_08Chip)
+        val D_06_10Chip = root.findViewById<Chip>(R.id.D_06_10Chip)
 
-        B_06_08Chip.setOnClickListener {
-            val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, Timestamp.now()))
-            activity?.startActivity(intent)
-        }
-
-        B_06_10Chip.setOnClickListener {
-            val intent = Intent(activity, ClassDetailActivity::class.java)
-            intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
-            activity?.startActivity(intent)
-        }
+        B_06_08Chip.setOnClickListener(this)
+        B_06_10Chip.setOnClickListener(this)
+        B_07_01Chip.setOnClickListener(this)
+        B_07_02Chip.setOnClickListener(this)
+        D_06_08Chip.setOnClickListener(this)
+        D_06_10Chip.setOnClickListener(this)
 
         val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
@@ -96,5 +95,47 @@ class HomeFragment : Fragment() {
     {
         val intent = Intent(activity, IssueDetailActivity::class.java)
         activity?.startActivity(intent)
+    }
+
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
+                R.id.B_06_08Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+
+                R.id.B_06_10Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+
+                R.id.B_07_01Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("B-07-01", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+
+                R.id.B_07_02Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("B-07-02", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+
+                R.id.D_06_08Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("D-06-08", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+
+                R.id.D_06_10Chip -> {
+                    val intent = Intent(activity, ClassDetailActivity::class.java)
+                    intent.putExtra("class", Classroom("D-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    activity?.startActivity(intent)
+                }
+            }
+        }
     }
 }
