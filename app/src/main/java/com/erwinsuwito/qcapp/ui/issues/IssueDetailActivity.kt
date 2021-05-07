@@ -49,6 +49,7 @@ class IssueDetailActivity : BaseActivity() {
                     )
                 )
             )
+
             bottomSheet.show(supportFragmentManager, null)
         }
     }

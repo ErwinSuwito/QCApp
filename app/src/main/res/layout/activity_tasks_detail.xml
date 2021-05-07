@@ -137,6 +137,7 @@
                 android:layout_marginEnd="-24dp"
                 android:background="@color/glyphFillColor" />
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskDetail_repliesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
