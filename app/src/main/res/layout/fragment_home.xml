@@ -103,6 +103,7 @@
             </HorizontalScrollView>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_taskHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tasks"
@@ -125,6 +126,7 @@
                 android:layout_marginTop="16dp" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_issueHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Long-running Issues"

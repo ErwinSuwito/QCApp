@@ -25,6 +25,7 @@ import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.erwinsuwito.qcapp.ui.tasks.TasksDetailActivity
 import com.google.android.material.chip.Chip
+import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.Timestamp
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -34,6 +35,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var homeViewModel: HomeViewModel
     var issues_card_list: RecyclerView? = null
     var task_card_list: RecyclerView? = null
+    var home_issueHeader: MaterialTextView? = null
+    var home_taskHeader: MaterialTextView? = null
 
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -46,6 +49,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
         task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
+        home_issueHeader = root.findViewById(R.id.home_issueHeader)
+        home_taskHeader = root.findViewById(R.id.home_taskHeader)
 
         val B_06_08Chip = root.findViewById<Chip>(R.id.B_06_08Chip)
         val B_06_10Chip = root.findViewById<Chip>(R.id.B_06_10Chip)
@@ -71,12 +76,28 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     fun getTaskListSuccess(tasks: MutableList<Task>)
     {
-        task_card_list!!.adapter = TaskCardAdapter(App.context!!, tasks, { task -> taskItemClicked(task)})
+        if (tasks.count() < 1)
+        {
+            task_card_list!!.visibility = View.GONE
+            home_taskHeader!!.visibility = View.GONE
+        }
+        else
+        {
+            task_card_list!!.adapter = TaskCardAdapter(App.context!!, tasks, { task -> taskItemClicked(task)})
+        }
     }
 
     fun getIssueListSuccess(issues: MutableList<Issue>)
     {
-        issues_card_list!!.adapter = IssueCardAdapter(App.context!!, issues, true, { issue -> issueItemClicked(issue)})
+        if (issues.count() < 1)
+        {
+            issues_card_list!!.visibility = View.GONE
+            home_issueHeader!!.visibility = View.GONE
+        }
+        else
+        {
+            issues_card_list!!.adapter = IssueCardAdapter(App.context!!, issues, true, { issue -> issueItemClicked(issue)})
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
