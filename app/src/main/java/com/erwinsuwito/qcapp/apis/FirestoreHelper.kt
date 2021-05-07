@@ -141,9 +141,9 @@ class FirestoreHelper {
     fun getLongRunningIssues(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("issues")
-                .whereEqualTo("isOpened", true)
-                .orderBy("addedOn")
-                .limitToLast(6)
+                .whereEqualTo("open", true)
+                .orderBy("openedOn", Query.Direction.ASCENDING)
+                .limit(6)
                 .get()
                 .addOnSuccessListener {
                     var issues = mutableListOf<Issue>()
@@ -220,8 +220,8 @@ class FirestoreHelper {
     fun getLongRunningTasks(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("tasks")
-                .whereEqualTo("isOpened", true)
-                .orderBy("addedOn")
+                .whereEqualTo("open", true)
+                .orderBy("openedOn", Query.Direction.ASCENDING)
                 .limitToLast(6)
                 .get()
                 .addOnSuccessListener {
