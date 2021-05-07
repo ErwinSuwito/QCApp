@@ -22,7 +22,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/class_name">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextClassName"
+            android:id="@+id/addClass_ClassName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -35,7 +35,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/projector_asset_tag">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextProjectorId"
+            android:id="@+id/addClass_projectorAssetTag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,7 +48,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/projector_model">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/projectorModelTextBox"
+            android:id="@+id/addClass_projectorModel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -59,9 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="@string/serial_number">
+        android:hint="@string/ip_address">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/projectorSerialTextBox"
+            android:id="@+id/addClass_ipAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +74,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/high_lamp_hour">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/projectorHighLampTextBox"
+            android:id="@+id/addClass_highLampHour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"/>
@@ -88,14 +88,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/low_lamp_hour">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/projectorLowLampTextBox"
+            android:id="@+id/addClass_lowLampHour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/saveBtn"
+        android:id="@+id/addClass_saveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

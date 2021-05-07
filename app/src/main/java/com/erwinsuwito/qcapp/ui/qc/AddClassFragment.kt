@@ -5,7 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
+import com.erwinsuwito.qcapp.model.Classroom
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.Timestamp
+import kotlinx.android.synthetic.main.fragment_add_class.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +43,33 @@ class AddClassFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_class, container, false)
+        val root =  inflater.inflate(R.layout.fragment_add_class, container, false)
+
+        val className: TextInputEditText = root.findViewById(R.id.addClass_ClassName)
+        addClass_saveBtn.setOnClickListener {
+            var classroom = Classroom(className.text.toString(), addClass_projectorAssetTag.text.toString(), addClass_projectorModel.text.toString(), addClass_ipAddress.text.toString(), addClass_highLampHour.text.toString().toInt(), addClass_lowLampHour.text.toString().toInt(), Timestamp.now())
+            FirestoreHelper().addClass(classroom, { onSuccess() }, { onFailure() })
+        }
+
+        return root
+    }
+
+    fun onSuccess()
+    {
+        Toast.makeText(App.context, "Class has been added", Toast.LENGTH_SHORT).show()
+        activity?.onBackPressed()
+    }
+
+    fun onFailure()
+    {
+        val builder = AlertDialog.Builder(App.context!!)
+        builder.setTitle(R.string.unable_add_class)
+        builder.setMessage(R.string.unable_add_class_message)
+        builder.setPositiveButton(R.string.okay) { dialog, which ->
+
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     companion object {

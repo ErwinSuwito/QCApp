@@ -131,4 +131,7 @@
 
     <string name="unable_display_class">Unable to display class detail</string>
     <string name="unable_display_class_message">We\'re unable to display the requested class detail. Please try again later.</string>
+
+    <string name="unable_add_class">Unable to add class</string>
+    <string name="unable_add_class_message">We\'re unable to add the class. Please try again later.</string>
 </resources>
