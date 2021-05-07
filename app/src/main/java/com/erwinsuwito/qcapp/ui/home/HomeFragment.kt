@@ -41,16 +41,16 @@ class HomeFragment : Fragment(), View.OnClickListener {
         })
 
         var dummyTasksList = mutableListOf(
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "B-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
+            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
+            Task("D",  "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
+            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
         )
 
         var dummyIssuesList = mutableListOf(
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo",false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
+            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
         )
 
         val task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
