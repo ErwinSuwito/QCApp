@@ -3,6 +3,7 @@ package com.erwinsuwito.qcapp.ui.classrooms
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.format.DateUtils
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -118,11 +119,13 @@ class ClassDetailActivity : BaseActivity() {
         {
             this.classroom = passedClass
             class_name.text = passedClass?.className
-            if (passedClass.isChecked)
+
+            if (DateUtils.isToday(passedClass.lastChecked.toDate().toInstant().toEpochMilli()))
             {
                 checkClassBtn.isEnabled = false
                 checkClassBtn.text = getString(R.string.class_checked)
             }
+
             setupViewPager(tab_viewpager!!)
         }
         else

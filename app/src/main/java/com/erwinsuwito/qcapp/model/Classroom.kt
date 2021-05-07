@@ -8,8 +8,8 @@ import java.time.LocalDateTime
 @Parcelize
 data class Classroom(var className: String = "",
                      var projectorId: String = "",
+                     var projectorModel: String = "",
                      var ipAddress: String = "",
                      var highLampHour: Int = 0,
                      var lowLampHour: Int = 0,
-                     var isChecked: Boolean = false,
                      var lastChecked: Timestamp = Timestamp.now()) : Parcelable
