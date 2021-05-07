@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.erwinsuwito.qcapp.App
@@ -48,7 +49,7 @@ class AddIssueFragment : Fragment() {
 
         val issue_classNameTextBox = root.findViewById<TextInputEditText>(R.id.issue_classNameTextBox)
         val issue_problemTextBox = root.findViewById<TextInputEditText>(R.id.issue_problemTextBox)
-        val issue_saveBtn = root.findViewById<TextInputEditText>(R.id.issue_saveBtn)
+        val issue_saveBtn = root.findViewById<Button>(R.id.issue_saveBtn)
         val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
         val usrName = sharedPreferences!!.getString("usr_name", "User")
         val upn = sharedPreferences!!.getString("upn", "someone@cloudmails.apu.edu.my")
