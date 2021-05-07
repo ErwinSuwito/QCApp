@@ -18,6 +18,7 @@ import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.model.Task
@@ -46,6 +47,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
         })
 
+        FirestoreHelper().getLongRunningIssues({getIssueListSuccess(it)}, {getIssueListFailed()})
+        FirestoreHelper().getLongRunningTasks({getTaskListSuccess(it)}, {getTaskListFailed()})
 
         issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
         task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
@@ -98,6 +101,18 @@ class HomeFragment : Fragment(), View.OnClickListener {
         {
             issues_card_list!!.adapter = IssueCardAdapter(App.context!!, issues, true, { issue -> issueItemClicked(issue)})
         }
+    }
+
+    fun getIssueListFailed()
+    {
+        issues_card_list!!.visibility = View.GONE
+        home_issueHeader!!.visibility = View.GONE
+    }
+
+    fun getTaskListFailed()
+    {
+        task_card_list!!.visibility = View.GONE
+        home_taskHeader!!.visibility = View.GONE
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.apis
 
+import android.util.Log
 import com.erwinsuwito.qcapp.model.*
 import com.google.firebase.firestore.*
 import kotlinx.coroutines.flow.merge
@@ -18,6 +19,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -40,6 +42,7 @@ class FirestoreHelper {
                     onSuccess(classes)
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -53,6 +56,7 @@ class FirestoreHelper {
                     onSuccess(it.toObject(Classroom::class.java))
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -70,6 +74,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -83,6 +88,7 @@ class FirestoreHelper {
                     onSuccess(it.toObject(Issue::class.java))
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -103,7 +109,10 @@ class FirestoreHelper {
                     }
                     onSuccess(issues)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     fun getIssueList(className: String, onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
@@ -123,7 +132,10 @@ class FirestoreHelper {
                     }
                     onSuccess(issues)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     fun getLongRunningIssues(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
@@ -145,7 +157,10 @@ class FirestoreHelper {
                     }
                     onSuccess(issues)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     //endregion
@@ -161,6 +176,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -174,6 +190,7 @@ class FirestoreHelper {
                     onSuccess(it.toObject(Task::class.java))
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -194,7 +211,10 @@ class FirestoreHelper {
                     }
                     onSuccess(tasks)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     fun getLongRunningTasks(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit)
@@ -216,7 +236,10 @@ class FirestoreHelper {
                     }
                     onSuccess(tasks)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     //endregion
@@ -234,6 +257,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -249,6 +273,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -271,7 +296,10 @@ class FirestoreHelper {
 
                     onSuccess(steps)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     fun getTaskSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
@@ -292,7 +320,10 @@ class FirestoreHelper {
 
                     onSuccess(steps)
                 }
-                .addOnFailureListener { onFailure() }
+                .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
+                    onFailure()
+                }
     }
 
     //endregion
@@ -307,6 +338,7 @@ class FirestoreHelper {
                     onSuccess()
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
@@ -329,6 +361,7 @@ class FirestoreHelper {
                     onSuccess(checkHistory)
                 }
                 .addOnFailureListener {
+                    Log.e("FirestoreHelper", it.message.toString())
                     onFailure()
                 }
     }
