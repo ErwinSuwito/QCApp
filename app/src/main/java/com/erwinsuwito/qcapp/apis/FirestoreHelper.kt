@@ -126,6 +126,28 @@ class FirestoreHelper {
                 .addOnFailureListener { onFailure() }
     }
 
+    fun getLongRunningIssues(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
+    {
+        mFireStore.collection("issues")
+                .whereEqualTo("isOpened", true)
+                .orderBy("addedOn")
+                .limitToLast(6)
+                .get()
+                .addOnSuccessListener {
+                    var issues = mutableListOf<Issue>()
+
+                    for (i in it.documents) {
+                        val issue = i.toObject(Issue::class.java)
+                        if (issue != null)
+                        {
+                            issues.add(issue)
+                        }
+                    }
+                    onSuccess(issues)
+                }
+                .addOnFailureListener { onFailure() }
+    }
+
     //endregion
 
     //region Tasks
@@ -158,7 +180,7 @@ class FirestoreHelper {
 
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
     {
-        mFireStore.collection("issues")
+        mFireStore.collection("tasks")
                 .get()
                 .addOnSuccessListener {
                     var tasks = mutableListOf<Task>()
@@ -175,9 +197,12 @@ class FirestoreHelper {
                 .addOnFailureListener { onFailure() }
     }
 
-    fun getLongRunningIssues(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
+    fun getLongRunningTasks(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
+        mFireStore.collection("tasks")
+                .whereEqualTo("isOpened", true)
+                .orderBy("addedOn")
+                .limitToLast(6)
                 .get()
                 .addOnSuccessListener {
                     var tasks = mutableListOf<Task>()
