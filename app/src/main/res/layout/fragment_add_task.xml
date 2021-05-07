@@ -51,8 +51,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
     <Button
         android:id="@+id/task_saveBtn"
         android:layout_width="match_parent"

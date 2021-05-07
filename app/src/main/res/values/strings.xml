@@ -132,6 +132,19 @@
     <string name="unable_display_class">Unable to display class detail</string>
     <string name="unable_display_class_message">We\'re unable to display the requested class detail. Please try again later.</string>
 
+    <string name="class_added">Class has been added successfully</string>
     <string name="unable_add_class">Unable to add class</string>
     <string name="unable_add_class_message">We\'re unable to add the class. Please try again later.</string>
+
+    <string name="task_added">Task has been added successfully</string>
+    <string name="unable_add_task">Unable to add task</string>
+    <string name="unable_add_task_message">We\'re unable to add the task. Please try again later.</string>
+
+    <string name="issue_added">Issue has been added successfully</string>
+    <string name="unable_add_issue">Unable to add issue</string>
+    <string name="unable_add_issue_message">We\'re unable to add the issue. Please try again later.</string>
+
+    <string name="reply_added">Reply has been added successfully</string>
+    <string name="unable_add_reply">Unable to add reply</string>
+    <string name="unable_add_reply_message">We\'re unable to add your reply. Please try again later.</string>
 </resources>

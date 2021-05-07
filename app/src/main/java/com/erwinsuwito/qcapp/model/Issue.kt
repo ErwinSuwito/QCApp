@@ -13,5 +13,6 @@ data class Issue(var issueId: String = "",
                  var openedOn: Timestamp = Timestamp.now(),
                  var closedOn: Timestamp = Timestamp.now(),
                  var closedBy: String = "",
+                 var closedByName: String = "",
                  var isOpen: Boolean = false) : Parcelable {
 }

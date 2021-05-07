@@ -1,11 +1,20 @@
 package com.erwinsuwito.qcapp.ui.qc
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.model.Issue
+import com.google.android.material.textfield.TextInputEditText
+import com.erwinsuwito.qcapp.apis.FirebaseIDGenerator
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
+import com.google.firebase.Timestamp
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +44,39 @@ class AddIssueFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_issue, container, false)
+        val root = inflater.inflate(R.layout.fragment_add_issue, container, false)
+
+        val issue_classNameTextBox = root.findViewById<TextInputEditText>(R.id.issue_classNameTextBox)
+        val issue_problemTextBox = root.findViewById<TextInputEditText>(R.id.issue_problemTextBox)
+        val issue_saveBtn = root.findViewById<TextInputEditText>(R.id.issue_saveBtn)
+        val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val usrName = sharedPreferences!!.getString("usr_name", "User")
+        val upn = sharedPreferences!!.getString("upn", "someone@cloudmails.apu.edu.my")
+
+        issue_saveBtn.setOnClickListener{
+            var issue = Issue(FirebaseIDGenerator.generateId(), issue_classNameTextBox.text.toString(), upn!!, usrName!!, issue_problemTextBox.text.toString(), Timestamp.now(), Timestamp.now(), "", "", true)
+            FirestoreHelper().addIssue(issue, {onSuccess()}, {onFailure()})
+        }
+
+        return root
+    }
+
+    fun onSuccess()
+    {
+        Toast.makeText(App.context, getString(R.string.issue_added), Toast.LENGTH_SHORT).show()
+        activity?.onBackPressed()
+    }
+
+    fun onFailure()
+    {
+        val builder = AlertDialog.Builder(App.context!!)
+        builder.setTitle(R.string.unable_add_issue)
+        builder.setMessage(R.string.unable_add_issue_message)
+        builder.setPositiveButton(R.string.okay) { dialog, which ->
+
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     companion object {
