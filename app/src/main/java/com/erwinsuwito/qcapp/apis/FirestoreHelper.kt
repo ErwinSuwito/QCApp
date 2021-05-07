@@ -228,39 +228,43 @@ class FirestoreHelper {
                 }
     }
 
-    fun getIssueSteps(issueId: String, isIssue: Boolean, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
+    fun getIssueSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("issues")
                 .whereEqualTo("issueId", issueId)
                 .get()
                 .addOnSuccessListener {
-                    var checkHistory = mutableListOf<ClassCheck>()
+                    var steps = mutableListOf<Steps>()
 
                     for (i in it.documents) {
-                        val check = i.toObject(ClassCheck::class.java)
-                        if (check != null)
+                        val step = i.toObject(Steps::class.java)
+                        if (step != null)
                         {
-                            checkHistory.add(check)
+                            steps.add(step)
                         }
                     }
+
+                    onSuccess(steps)
                 }
     }
 
-    fun getTaskSteps(issueId: String, isIssue: Boolean, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
+    fun getTaskSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection("tasks")
                 .whereEqualTo("issueId", issueId)
                 .get()
                 .addOnSuccessListener {
-                    var checkHistory = mutableListOf<ClassCheck>()
+                    var steps = mutableListOf<Steps>()
 
                     for (i in it.documents) {
-                        val check = i.toObject(ClassCheck::class.java)
-                        if (check != null)
+                        val step = i.toObject(Steps::class.java)
+                        if (step != null)
                         {
-                            checkHistory.add(check)
+                            steps.add(step)
                         }
                     }
+
+                    onSuccess(steps)
                 }
     }
 
