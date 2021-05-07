@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
@@ -31,6 +32,8 @@ import java.time.LocalDateTime
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
+    var issues_card_list: RecyclerView? = null
+    var task_card_list: RecyclerView? = null
 
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -40,24 +43,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
         })
 
-        var dummyTasksList = mutableListOf(
-            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
-            Task("D",  "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true),
-            Task("D", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo" , "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", "All projection doesn't work", Timestamp.now(),  Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", true)
-        )
 
-        var dummyIssuesList = mutableListOf(
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo",false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", false),
-        )
-
-        val task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
-        task_card_list.adapter = TaskCardAdapter(root.context, dummyTasksList, { issue -> taskItemClicked(root.context, issue)})
-
-        val issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
-        issues_card_list.adapter = IssueCardAdapter(root.context, dummyIssuesList, true, { issue -> issueItemClicked(root.context, issue)})
+        issues_card_list = root.findViewById<RecyclerView>(R.id.issues_card_list)
+        task_card_list = root.findViewById<RecyclerView>(R.id.task_card_list)
 
         val B_06_08Chip = root.findViewById<Chip>(R.id.B_06_08Chip)
         val B_06_10Chip = root.findViewById<Chip>(R.id.B_06_10Chip)
@@ -81,19 +69,31 @@ class HomeFragment : Fragment(), View.OnClickListener {
         return root
     }
 
+    fun getTaskListSuccess(tasks: MutableList<Task>)
+    {
+        task_card_list!!.adapter = TaskCardAdapter(App.context!!, tasks, { task -> taskItemClicked(task)})
+    }
+
+    fun getIssueListSuccess(issues: MutableList<Issue>)
+    {
+        issues_card_list!!.adapter = IssueCardAdapter(App.context!!, issues, true, { issue -> issueItemClicked(issue)})
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
     }
 
-    fun taskItemClicked(context: Context, taskItem: Task)
+    fun taskItemClicked(taskItem: Task)
     {
         val intent = Intent(activity, TasksDetailActivity::class.java)
+        intent.extras!!.putParcelable("task", taskItem)
         activity?.startActivity(intent)
     }
 
-    fun issueItemClicked(context: Context, issueItem: Issue)
+    fun issueItemClicked(issueItem: Issue)
     {
         val intent = Intent(activity, IssueDetailActivity::class.java)
+        intent.extras!!.putParcelable("issue", issueItem)
         activity?.startActivity(intent)
     }
 
