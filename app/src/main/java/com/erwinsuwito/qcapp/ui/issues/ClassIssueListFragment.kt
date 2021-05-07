@@ -1,5 +1,6 @@
 package com.erwinsuwito.qcapp.ui.issues
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.model.Issue
+import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.google.firebase.Timestamp
 import java.time.LocalDateTime
 
@@ -43,13 +45,15 @@ class ClassIssueListFragment(var issueList: MutableList<Issue>) : Fragment() {
         val root = inflater.inflate(R.layout.fragment_class_issue_list, container, false)
 
         val issues_recyclerview_classIssues = root.findViewById<RecyclerView>(R.id.issues_recyclerview_classIssues)
-        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, issueList, false, { issue -> itemClicked() } )
+        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, issueList, false, { itemClicked(it) } )
 
         return root
     }
 
-    fun itemClicked()
+    fun itemClicked(issue: Issue)
     {
-
+        val intent = Intent(activity, IssueDetailActivity::class.java)
+        intent.putExtra("issue", issue)
+        activity?.startActivity(intent)
     }
 }
