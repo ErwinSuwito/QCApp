@@ -271,6 +271,7 @@ class FirestoreHelper {
 
                     onSuccess(steps)
                 }
+                .addOnFailureListener { onFailure() }
     }
 
     fun getTaskSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
@@ -291,6 +292,7 @@ class FirestoreHelper {
 
                     onSuccess(steps)
                 }
+                .addOnFailureListener { onFailure() }
     }
 
     //endregion
