@@ -17,8 +17,10 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.erwinsuwito.qcapp.BaseActivity
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.ClassCheck
 import com.erwinsuwito.qcapp.model.Classroom
+import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.ui.issues.ClassIssueListFragment
 import com.erwinsuwito.qcapp.ui.qc.ClassCheckActivity
 import com.google.android.material.appbar.MaterialToolbar
@@ -31,17 +33,24 @@ import java.time.LocalDateTime
 
 
 class ClassDetailActivity : BaseActivity() {
+    var tab_viewpager: ViewPager? = null
+    var tab_tablayout: TabLayout? = null
+    var classroom: Classroom? = null
+    var issueList: MutableList<Issue>? = null
+    var checkList: MutableList<ClassCheck>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_detail)
 
-        var tab_viewpager = findViewById<ViewPager>(R.id.class_viewpager)
-        var tab_tablayout = findViewById<TabLayout>(R.id.tabLayout)
+        showProgressDialog()
 
-        tab_tablayout.setupWithViewPager(tab_viewpager)
+        tab_viewpager = findViewById(R.id.class_viewpager)
+        tab_tablayout = findViewById(R.id.tabLayout)
 
-        var classroom: Classroom? = intent.extras?.getParcelable<Classroom>("class")
-        setupViewPager(tab_viewpager, classroom)
+        tab_tablayout!!.setupWithViewPager(tab_viewpager)
+
+        val selectedClass = intent.extras?.getString("class")
 
         var topAppBar: MaterialToolbar = findViewById(R.id.topAppBar)
 
@@ -64,41 +73,104 @@ class ClassDetailActivity : BaseActivity() {
             alertDialog.show()
         }
 
-        class_name.text = classroom?.className
-        if (classroom?.isChecked == true)
+        // Gets the required details
+        if (selectedClass != null) {
+            FirestoreHelper().getClassDetail(selectedClass, { displayClassDetail(it) }, { getClassFailure() })
+            FirestoreHelper().getIssueList(selectedClass, {displayIssueList(it)}, { getClassFailure() })
+
+            var sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+            if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
+            {
+                FirestoreHelper().getCheckHistory(selectedClass, {displayCheckHistory(it)}, {getClassFailure()})
+            }
+        }
+    }
+
+    fun displayCheckHistory(passedHistory: MutableList<ClassCheck>?)
+    {
+        if (passedHistory != null)
         {
-            class_status.text = getString(R.string.no_problems_found)
-            checkClassBtn.isEnabled = false
-            checkClassBtn.text = getString(R.string.class_checked)
+            this.checkList = passedHistory
+            setupViewPager(tab_viewpager!!)
         }
         else
         {
-            class_status.text = getString(R.string.problems_found)
+            getClassFailure()
         }
-
-        showProgressDialog()
     }
 
-    private fun setupViewPager(viewpager: ViewPager, classroom: Classroom?) {
+    fun displayIssueList(passedIssue: MutableList<Issue>?)
+    {
+        if (passedIssue != null)
+        {
+            this.issueList = passedIssue
+            setupViewPager(tab_viewpager!!)
+        }
+        else
+        {
+            getClassFailure()
+        }
+    }
+
+    fun displayClassDetail(passedClass: Classroom?)
+    {
+        if (passedClass != null)
+        {
+            this.classroom = passedClass
+            class_name.text = passedClass?.className
+            if (passedClass.isChecked)
+            {
+                checkClassBtn.isEnabled = false
+                checkClassBtn.text = getString(R.string.class_checked)
+            }
+            setupViewPager(tab_viewpager!!)
+        }
+        else
+        {
+            getClassFailure()
+        }
+    }
+
+    fun getClassFailure() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.unable_display_class))
+        builder.setMessage(getString(R.string.unable_display_class_message))
+        builder.setPositiveButton(R.string.okay) { dialog, which ->
+            finish()
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
+    }
+
+    private fun setupViewPager(viewpager: ViewPager) {
         var adapter: ViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        if (classroom != null) {
-            adapter.addFragment(ClassInfoFragment(classroom.projectorId, classroom.ipAddress, classroom.highLampHour, classroom.lowLampHour, classroom.lastChecked.toString()), "Info")
-        }
-        adapter.addFragment(ClassIssueListFragment("D-08-09"), "Issues")
+        var isSuccess = false
 
         var sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
         if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
         {
-            var dummyCheckHistory = listOf<ClassCheck>(
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), false),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), false),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true),
-                    ClassCheck("", "TP045000@mail.apu.edu.my", "ERWIN SUWITOANDOJO", "B-06-05", 1200, 200, true, true, true, true, true, true, true, true, true, true, 5, 10 , 120.1, 10.1, "192.168.1.1", true, Timestamp.now(), true)
-            )
+            if (classroom != null && issueList != null && checkList != null)
+            {
+                adapter.addFragment(ClassInfoFragment(classroom!!.projectorId, classroom!!.ipAddress, classroom!!.highLampHour, classroom!!.lowLampHour, classroom!!.lastChecked.toDate().toLocaleString()), "Info")
+                adapter.addFragment(ClassIssueListFragment(issueList!!), "Issues")
+                adapter.addFragment(ClassCheckHistoryFragment(checkList!!), "Check History")
+                isSuccess = true
+            }
+        }
+        else
+        {
+            if (classroom != null && issueList != null)
+            {
+                adapter.addFragment(ClassInfoFragment(classroom!!.projectorId, classroom!!.ipAddress, classroom!!.highLampHour, classroom!!.lowLampHour, classroom!!.lastChecked.toDate().toLocaleString()), "Info")
+                adapter.addFragment(ClassIssueListFragment(issueList!!), "Issues")
+                isSuccess = true
+            }
+        }
 
-            adapter.addFragment(ClassCheckHistoryFragment(dummyCheckHistory), "Check history")
+        if (isSuccess)
+        {
+            hideProgressDialog()
         }
 
         viewpager.setAdapter(adapter)

@@ -102,37 +102,37 @@ class HomeFragment : Fragment(), View.OnClickListener {
             when (v.id) {
                 R.id.B_06_08Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("B-06-08", "AP-P001", "192.168.1.2", 5000, 100, true, Timestamp.now()))
+                    intent.putExtra("class", "B-06-08")
                     activity?.startActivity(intent)
                 }
 
                 R.id.B_06_10Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("B-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    intent.putExtra("class", "B-06-10")
                     activity?.startActivity(intent)
                 }
 
                 R.id.B_07_01Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("B-07-01", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    intent.putExtra("class","B-07-01")
                     activity?.startActivity(intent)
                 }
 
                 R.id.B_07_02Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("B-07-02", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    intent.putExtra("class","B-07-02")
                     activity?.startActivity(intent)
                 }
 
                 R.id.D_06_08Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("D-06-08", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    intent.putExtra("class","D-06-08")
                     activity?.startActivity(intent)
                 }
 
                 R.id.D_06_10Chip -> {
                     val intent = Intent(activity, ClassDetailActivity::class.java)
-                    intent.putExtra("class", Classroom("D-06-10", "AP-P001", "192.168.1.2", 5000, 100, false, Timestamp.now()))
+                    intent.putExtra("class","D-06-10")
                     activity?.startActivity(intent)
                 }
             }

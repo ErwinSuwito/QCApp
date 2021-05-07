@@ -151,6 +151,9 @@ class FirestoreHelper {
                 .addOnSuccessListener {
                     onSuccess(it.toObject(Task::class.java))
                 }
+                .addOnFailureListener {
+                    onFailure()
+                }
     }
 
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
@@ -291,6 +294,11 @@ class FirestoreHelper {
                             checkHistory.add(check)
                         }
                     }
+
+                    onSuccess(checkHistory)
+                }
+                .addOnFailureListener {
+                    onFailure()
                 }
     }
 

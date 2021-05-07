@@ -22,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ClassIssueListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClassIssueListFragment(var className: String) : Fragment() {
+class ClassIssueListFragment(var issueList: MutableList<Issue>) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -42,14 +42,8 @@ class ClassIssueListFragment(var className: String) : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_class_issue_list, container, false)
 
-        var dummyIssuesList = mutableListOf(
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", true),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-            Issue("D", "D-08-09", "erwin.suwito@cloudmails.apu.edu.my", "Erwin Suwitoandojo", "The projector can't project from any sources. Long HDMI, Short HDMI and EasyMP projection doesn't work.", Timestamp.now(), Timestamp.now(), "erwin.suwito@cloudmails.apu.edu.my", false),
-        )
-
         val issues_recyclerview_classIssues = root.findViewById<RecyclerView>(R.id.issues_recyclerview_classIssues)
-        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, dummyIssuesList, false, { issue -> itemClicked() } )
+        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, issueList, false, { issue -> itemClicked() } )
 
         return root
     }

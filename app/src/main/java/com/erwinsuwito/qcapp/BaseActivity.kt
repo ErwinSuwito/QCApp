@@ -30,4 +30,9 @@ open class BaseActivity : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.show()
     }
+
+    fun hideProgressDialog()
+    {
+        progressDialog.hide()
+    }
 }
