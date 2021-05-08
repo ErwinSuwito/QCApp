@@ -1,6 +1,7 @@
 package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,12 +12,14 @@ import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.ClassroomAdapter
 import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Classroom
+import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_class_list.*
 
@@ -66,6 +69,11 @@ class ClassListFragment : Fragment() {
         {
             classList_RecyclerView.visibility = View.VISIBLE
             classList_RecyclerView.adapter = ClassroomAdapter(App.context!!, classList, {itemOnClick(it)})
+            val dividerItemDecoration = DividerItemDecoration(
+                    classList_RecyclerView.context,
+                    1
+            )
+            classList_RecyclerView.addItemDecoration(dividerItemDecoration)
         }
     }
 
@@ -76,7 +84,9 @@ class ClassListFragment : Fragment() {
     }
 
     fun itemOnClick(classroom: Classroom) {
-
+        val intent = Intent(activity, ClassDetailActivity::class.java)
+        intent.putExtra("class", classroom.className)
+        activity?.startActivity(intent)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
