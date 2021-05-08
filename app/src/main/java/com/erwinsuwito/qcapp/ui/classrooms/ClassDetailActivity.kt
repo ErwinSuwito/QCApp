@@ -54,7 +54,7 @@ class ClassDetailActivity : BaseActivity() {
             builder.setTitle(R.string.before_we_continue)
             builder.setMessage(R.string.qc_start_notice_message)
             builder.setPositiveButton(R.string.next) { dialog, which ->
-                val intent = Intent(activity, ClassCheckActivity::class.java)
+                val intent = Intent(activity, ClassCheckActivity::class.java).putExtra("classname", classroom!!.classroomName)
                 activity?.startActivity(intent)
             }
             builder.setNegativeButton(R.string.cancel) { dialog, which ->

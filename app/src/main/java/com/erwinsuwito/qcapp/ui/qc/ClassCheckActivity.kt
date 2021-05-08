@@ -13,12 +13,16 @@ import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.ClassCheck
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
+import com.microsoft.fluentui.util.activity
 import kotlinx.android.synthetic.main.activity_class_check.*
 
 class ClassCheckActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_check)
+
+        val classname = this.intent.extras!!.getString("classname")
+        findViewById<TextInputEditText>(R.id.check_classNameTextBox).setText(classname)
 
         val topAppBar: MaterialToolbar = findViewById(R.id.check_topAppBar)
         topAppBar.setNavigationOnClickListener { onBackPressed() }
