@@ -35,6 +35,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
+    <TextView
+        android:id="@+id/class_statusTextView"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_name"
+        tools:text="No problems found" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         app:tabTextAppearance="@style/AppTabTextAppearance"
@@ -43,7 +54,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/class_name"
+        app:layout_constraintTop_toBottomOf="@+id/class_statusTextView"
         app:tabMode="scrollable"
         app:tabContentStart="36dp">
 

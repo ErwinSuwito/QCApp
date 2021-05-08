@@ -65,6 +65,13 @@ class ClassDetailActivity : BaseActivity() {
         }
 
         class_name.text = classroom?.classroomName
+        if (classroom!!.isEverythingOk) {
+            class_statusTextView.text = getString(R.string.no_problems_found)
+        }
+        else {
+            class_statusTextView.text = getString(R.string.problems_found)
+        }
+
         if (DateUtils.isToday(classroom!!.lastChecked.toDate().toInstant().toEpochMilli()))
         {
             checkClassBtn.isEnabled = false
