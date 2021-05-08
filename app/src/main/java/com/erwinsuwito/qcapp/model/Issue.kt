@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Issue(var issueId: String = "",
-                 var classroom: String = "",
+                 var classroomName: String = "",
                  var creator: String = "",
                  var creatorName: String = "",
                  var problem: String = "",

@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 import java.time.LocalDateTime
 
 @Parcelize
-data class Classroom(var className: String = "",
+data class Classroom(var classroomName: String = "",
                      var projectorId: String = "",
                      var projectorModel: String = "",
                      var ipAddress: String = "",

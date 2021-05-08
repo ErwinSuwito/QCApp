@@ -85,7 +85,7 @@ class ClassListFragment : Fragment() {
 
     fun itemOnClick(classroom: Classroom) {
         val intent = Intent(activity, ClassDetailActivity::class.java)
-        intent.putExtra("class", classroom.className)
+        intent.putExtra("class", classroom)
         activity?.startActivity(intent)
     }
 

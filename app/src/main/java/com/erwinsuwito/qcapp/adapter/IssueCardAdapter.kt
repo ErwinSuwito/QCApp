@@ -4,18 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
-import com.erwinsuwito.qcapp.model.Classroom
 import com.erwinsuwito.qcapp.model.Issue
-import com.erwinsuwito.qcapp.model.MoreItem
-import kotlinx.android.synthetic.main.class_list_item.view.*
 import java.time.format.DateTimeFormatter
 
 class IssueCardAdapter(private val context: Context, private val dataset: List<Issue>, private val showClassName: Boolean, private val onClick: (Issue) -> Unit)
@@ -59,7 +54,7 @@ class IssueCardAdapter(private val context: Context, private val dataset: List<I
         val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a")
 
         val item = dataset[position]
-        holder.className.text = item.classroom
+        holder.className.text = item.classroomName
         holder.problem.text = item.problem
 
         if (item.isOpen)

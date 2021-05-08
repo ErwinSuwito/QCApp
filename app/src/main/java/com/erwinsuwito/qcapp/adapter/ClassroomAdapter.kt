@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.Classroom
-import com.erwinsuwito.qcapp.model.MoreItem
-import kotlinx.android.synthetic.main.class_list_item.view.*
 
 class ClassroomAdapter(private val context: Context, private val dataset: List<Classroom>, private val onClick: (Classroom) -> Unit)
     : ListAdapter<Classroom, ClassroomAdapter.ItemViewHolder>(classItemDiffCallback)
@@ -47,7 +45,7 @@ class ClassroomAdapter(private val context: Context, private val dataset: List<C
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        holder.textView.text = item.className
+        holder.textView.text = item.classroomName
         holder.bind(item)
     }
 }
@@ -58,6 +56,6 @@ object classItemDiffCallback : DiffUtil.ItemCallback<Classroom>() {
     }
 
     override fun areContentsTheSame(oldItem: Classroom, newItem: Classroom): Boolean {
-        return oldItem.className == newItem.className
+        return oldItem.classroomName == newItem.classroomName
     }
 }

@@ -1,9 +1,9 @@
 package com.erwinsuwito.qcapp.apis
 
 import android.util.Log
+import com.erwinsuwito.qcapp.Constants
 import com.erwinsuwito.qcapp.model.*
 import com.google.firebase.firestore.*
-import kotlinx.coroutines.flow.merge
 
 class FirestoreHelper {
 
@@ -12,8 +12,8 @@ class FirestoreHelper {
     //region Classes
 
     fun addClass(classroom: Classroom, onSuccess: () -> Unit, onFailure: () -> Unit) {
-        mFireStore.collection("classes")
-                .document(classroom.className)
+        mFireStore.collection(Constants.CLASSES)
+                .document(classroom.classroomName)
                 .set(classroom, SetOptions.merge())
                 .addOnSuccessListener {
                     onSuccess()
@@ -26,7 +26,7 @@ class FirestoreHelper {
 
     fun getClassList(onSuccess: (MutableList<Classroom>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("classes")
+        mFireStore.collection(Constants.CLASSES)
                 .get()
                 .addOnSuccessListener {
                     var classes = mutableListOf<Classroom>()
@@ -49,7 +49,7 @@ class FirestoreHelper {
 
     fun getClassDetail(classId: String, onSuccess: (Classroom?) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("classes")
+        mFireStore.collection(Constants.CLASSES)
                 .document(classId)
                 .get()
                 .addOnSuccessListener {
@@ -67,7 +67,7 @@ class FirestoreHelper {
 
     fun addIssue(issue: Issue, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
+        mFireStore.collection(Constants.ISSUES)
                 .document(issue.issueId)
                 .set(issue, SetOptions.merge())
                 .addOnSuccessListener {
@@ -81,7 +81,7 @@ class FirestoreHelper {
 
     fun getIssue(issueId: String, onSuccess: (Issue?) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
+        mFireStore.collection(Constants.ISSUES)
                 .document(issueId)
                 .get()
                 .addOnSuccessListener {
@@ -95,7 +95,7 @@ class FirestoreHelper {
 
     fun getIssueList(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit )
     {
-        mFireStore.collection("issues")
+        mFireStore.collection(Constants.ISSUES)
                 .get()
                 .addOnSuccessListener {
                     var issues = mutableListOf<Issue>()
@@ -117,8 +117,8 @@ class FirestoreHelper {
 
     fun getIssueList(className: String, onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
-                .whereEqualTo("className", className)
+        mFireStore.collection(Constants.ISSUES)
+                .whereEqualTo(Constants.CLASSID, className)
                 .get()
                 .addOnSuccessListener {
                     var issues = mutableListOf<Issue>()
@@ -140,9 +140,9 @@ class FirestoreHelper {
 
     fun getLongRunningIssues(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
-                .whereEqualTo("open", true)
-                .orderBy("openedOn", Query.Direction.ASCENDING)
+        mFireStore.collection(Constants.ISSUES)
+                .whereEqualTo(Constants.ISOPEN, true)
+                .orderBy(Constants.OPENEDON, Query.Direction.ASCENDING)
                 .limit(6)
                 .get()
                 .addOnSuccessListener {
@@ -169,7 +169,7 @@ class FirestoreHelper {
 
     fun addTask(task: Task, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
+        mFireStore.collection(Constants.TASKS)
                 .document(task.issueId)
                 .set(task, SetOptions.merge())
                 .addOnSuccessListener {
@@ -183,7 +183,7 @@ class FirestoreHelper {
 
     fun getTask(taskId: String, onSuccess: (Task?) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
+        mFireStore.collection(Constants.TASKS)
                 .document(taskId)
                 .get()
                 .addOnSuccessListener {
@@ -197,7 +197,7 @@ class FirestoreHelper {
 
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
     {
-        mFireStore.collection("tasks")
+        mFireStore.collection(Constants.TASKS)
                 .get()
                 .addOnSuccessListener {
                     var tasks = mutableListOf<Task>()
@@ -219,9 +219,9 @@ class FirestoreHelper {
 
     fun getLongRunningTasks(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
-                .whereEqualTo("open", true)
-                .orderBy("openedOn", Query.Direction.ASCENDING)
+        mFireStore.collection(Constants.TASKS)
+                .whereEqualTo(Constants.ISOPEN, true)
+                .orderBy(Constants.OPENEDON, Query.Direction.ASCENDING)
                 .limitToLast(6)
                 .get()
                 .addOnSuccessListener {
@@ -248,9 +248,9 @@ class FirestoreHelper {
 
     fun addIssueSteps(issue: Issue, step: Steps, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
+        mFireStore.collection(Constants.ISSUES)
                 .document(issue.issueId)
-                .collection("steps")
+                .collection(Constants.STEPS)
                 .document(step.stepId)
                 .set(step, SetOptions.merge())
                 .addOnSuccessListener {
@@ -264,9 +264,9 @@ class FirestoreHelper {
 
     fun addTaskSteps(task: Task, step: Steps, onSuccess: () -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
+        mFireStore.collection(Constants.TASKS)
                 .document(task.issueId)
-                .collection("steps")
+                .collection(Constants.STEPS)
                 .document(step.stepId)
                 .set(step, SetOptions.merge())
                 .addOnSuccessListener {
@@ -280,8 +280,8 @@ class FirestoreHelper {
 
     fun getIssueSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("issues")
-                .whereEqualTo("issueId", issueId)
+        mFireStore.collection(Constants.ISSUES)
+                .whereEqualTo(Constants.ISSUEID, issueId)
                 .get()
                 .addOnSuccessListener {
                     var steps = mutableListOf<Steps>()
@@ -304,8 +304,8 @@ class FirestoreHelper {
 
     fun getTaskSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
-                .whereEqualTo("issueId", issueId)
+        mFireStore.collection(Constants.TASKS)
+                .whereEqualTo(Constants.ISSUEID, issueId)
                 .get()
                 .addOnSuccessListener {
                     var steps = mutableListOf<Steps>()
@@ -331,7 +331,7 @@ class FirestoreHelper {
     //region Checks
 
     fun addChecks(check: ClassCheck, onSuccess: () -> Unit, onFailure: () -> Unit) {
-        mFireStore.collection("checks")
+        mFireStore.collection(Constants.CHECKS)
                 .document(check.checkId)
                 .set(check, SetOptions.merge())
                 .addOnSuccessListener {
@@ -344,8 +344,8 @@ class FirestoreHelper {
     }
 
     fun getCheckHistory(className: String, onSuccess: (MutableList<ClassCheck>) -> Unit, onFailure: () -> Unit) {
-        mFireStore.collection("checks")
-                .whereEqualTo("className", className)
+        mFireStore.collection(Constants.CHECKS)
+                .whereEqualTo(Constants.CLASSID, className)
                 .get()
                 .addOnSuccessListener {
                     var checkHistory = mutableListOf<ClassCheck>()

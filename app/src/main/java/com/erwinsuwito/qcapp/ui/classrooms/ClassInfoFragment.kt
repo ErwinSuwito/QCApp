@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.model.Classroom
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,8 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ClassInfoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClassInfoFragment(var projectorModel: String, var projectorIpAddress: String,
-var highLampHour: Int, var lowLampHour: Int, var lastChecked: String) : Fragment() {
+class ClassInfoFragment(var classroom: Classroom) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -45,11 +45,11 @@ var highLampHour: Int, var lowLampHour: Int, var lastChecked: String) : Fragment
         val lowLampHourText = root.findViewById<TextView>(R.id.low_lamp_hour_textView)
         val lastCheckedTxt = root.findViewById<TextView>(R.id.last_checked_textView)
 
-        projModelTxt.text = projectorModel
-        projIpAddress.text = projectorIpAddress
-        highLampHourTxt.text = highLampHour.toString()
-        lowLampHourText.text = lowLampHour.toString()
-        lastCheckedTxt.text = lastChecked
+        projModelTxt.text = classroom.projectorModel
+        projIpAddress.text = classroom.ipAddress
+        highLampHourTxt.text = classroom.highLampHour.toString()
+        lowLampHourText.text = classroom.lowLampHour.toString()
+        lastCheckedTxt.text = classroom.lastChecked.toDate().toLocaleString()
 
         return root;
     }

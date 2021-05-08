@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.ui.classrooms.ClassDetailActivity
 import com.google.firebase.Timestamp
@@ -24,10 +27,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ClassIssueListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClassIssueListFragment(var issueList: MutableList<Issue>) : Fragment() {
+class ClassIssueListFragment(var className: String) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var issues_recyclerview_classIssues: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,10 +48,19 @@ class ClassIssueListFragment(var issueList: MutableList<Issue>) : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_class_issue_list, container, false)
 
-        val issues_recyclerview_classIssues = root.findViewById<RecyclerView>(R.id.issues_recyclerview_classIssues)
-        issues_recyclerview_classIssues.adapter = IssueCardAdapter(root.context, issueList, false, { itemClicked(it) } )
+        issues_recyclerview_classIssues = root.findViewById(R.id.issues_recyclerview_classIssues)
+
+        FirestoreHelper().getIssueList(className, {onSuccess(it)},{onFailure()} )
 
         return root
+    }
+
+    fun onSuccess(issueList: MutableList<Issue>) {
+        issues_recyclerview_classIssues.adapter = IssueCardAdapter(App.context!!, issueList, false, { itemClicked(it) } )
+    }
+
+    fun onFailure() {
+        Toast.makeText(App.context!!, "Unable to get issue list", Toast.LENGTH_SHORT).show()
     }
 
     fun itemClicked(issue: Issue)
