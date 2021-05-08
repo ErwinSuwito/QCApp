@@ -127,7 +127,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     fun issueItemClicked(issueItem: Issue)
     {
-        val intent = Intent(activity, IssueDetailActivity::class.java).putExtra("task", issueItem)
+        val intent = Intent(activity, IssueDetailActivity::class.java).putExtra("issue", issueItem)
         activity?.startActivity(intent)
     }
 

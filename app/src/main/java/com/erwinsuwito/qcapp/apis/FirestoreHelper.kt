@@ -281,7 +281,8 @@ class FirestoreHelper {
     fun getIssueSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection(Constants.ISSUES)
-                .whereEqualTo(Constants.ISSUEID, issueId)
+                .document(issueId)
+                .collection(Constants.STEPS)
                 .get()
                 .addOnSuccessListener {
                     var steps = mutableListOf<Steps>()
@@ -304,9 +305,9 @@ class FirestoreHelper {
 
     fun getTaskSteps(issueId: String, onSuccess: (MutableList<Steps>) -> Unit, onFailure: () -> Unit)
     {
-        mFireStore.collection("tasks")
+        mFireStore.collection(Constants.TASKS)
                 .document(issueId)
-                .collection("steps")
+                .collection(Constants.STEPS)
                 .get()
                 .addOnSuccessListener {
                     var steps = mutableListOf<Steps>()
