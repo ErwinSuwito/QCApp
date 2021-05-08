@@ -12,4 +12,5 @@ data class Classroom(var classroomName: String = "",
                      var ipAddress: String = "",
                      var highLampHour: Int = 0,
                      var lowLampHour: Int = 0,
+                     var isEverythingOk: Boolean = false,
                      var lastChecked: Timestamp = Timestamp.now()) : Parcelable
