@@ -2,7 +2,8 @@
 <resources>
     <item name="bottom_sheet_item_reply" type="id" />
     <item name="bottom_sheet_teams_group" type="id" />
-    <item name="bottom_sheet_teams_pm" type="id" />
+    <item name="bottom_sheet_teams_pm_starter" type="id" />
+    <item name="bottom_sheet_teams_pm_participant" type="id" />
     <item name="bottom_sheet_mark_close" type="id" />
     <item name="bottom_sheet_mark_re_open" type="id" />
 </resources>

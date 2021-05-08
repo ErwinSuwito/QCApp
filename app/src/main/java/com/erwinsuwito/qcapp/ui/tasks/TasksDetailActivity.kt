@@ -22,6 +22,10 @@ import kotlinx.android.synthetic.main.activity_tasks_detail.*
 
 class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
     var selectedTask: Task? = null
+    lateinit var usrName: String
+    lateinit var upn: String
+    lateinit var role: String
+    lateinit var participant_upn: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +65,10 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
 
     fun onOverflowButtonClicked() {
         val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        usrName = sharedPreferences.getString("usr_name", "User")!!
+        upn = sharedPreferences.getString("upn", "someone@cloudmails.apu.edu.my")!!
+        role = sharedPreferences.getString("usr_role", "Technical Assistant")!!
+
         var bottomSheetItems = arrayListOf(
                 BottomSheetItem(
                         R.id.bottom_sheet_item_reply,
@@ -69,15 +77,15 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
                 )
         )
 
-        if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
+        if (role == "Board Member")
         {
             if (selectedTask!!.isOpen)
             {
-                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_close, R.drawable.ic_complete, "Close issue"))
+                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_close, R.drawable.ic_complete, "Close task"))
             }
             else
             {
-                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_re_open, R.drawable.ic_giftbox_open, "Re-open issue"))
+                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_re_open, R.drawable.ic_giftbox_open, "Re-open task"))
             }
         }
 
@@ -87,7 +95,8 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
 
     fun onReplyClicked(reply: Steps)
     {
-        val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        participant_upn = reply.author
+
         var bottomSheetItems = arrayListOf(
                 BottomSheetItem(
                         R.id.bottom_sheet_item_reply,
@@ -95,7 +104,7 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
                         getString(R.string.reply)
                 ),
                 BottomSheetItem(
-                        R.id.bottom_sheet_teams_pm,
+                        R.id.bottom_sheet_teams_pm_participant,
                         R.drawable.ic_teams,
                         getString(R.string.chat_teams)
                 )
@@ -124,9 +133,23 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
                 this.startActivity(intent)
             }
 
-            R.id.bottom_sheet_teams_pm -> {
+            R.id.bottom_sheet_teams_pm_starter -> {
                 val url = getString(R.string.teams_chat_link).replace("|users", selectedTask!!.creator)
                 val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", selectedTask!!.creatorName)
+
+                try
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+                }
+                catch (e: Exception)
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                }
+            }
+
+            R.id.bottom_sheet_teams_pm_participant -> {
+                val url = getString(R.string.teams_chat_link).replace("|users", participant_upn)
+                val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", participant_upn)
 
                 try
                 {
@@ -146,6 +169,8 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
             R.id.bottom_sheet_mark_close -> {
                 selectedTask!!.isOpen = false
                 selectedTask!!.closedOn = Timestamp.now()
+                selectedTask!!.closedBy = upn
+                selectedTask!!.closedByName = usrName
                 updateTask()
             }
         }
