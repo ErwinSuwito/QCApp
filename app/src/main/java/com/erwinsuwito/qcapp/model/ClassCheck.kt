@@ -29,5 +29,4 @@ data class ClassCheck(
     var ipAddress: String = "",
     var isPowerExtAvailable: Boolean = false,
     var checkedOn: Timestamp = Timestamp.now(),
-    var isEverythingOk: Boolean = false
 ) : Parcelable
