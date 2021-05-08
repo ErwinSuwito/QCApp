@@ -1,14 +1,24 @@
 package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
+import com.erwinsuwito.qcapp.model.Issue
+import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_issue_list.*
 
@@ -28,6 +38,12 @@ class IssueListFragment : Fragment() {
     private var param2: String? = null
 
     lateinit var rootFab: FloatingActionButton
+    lateinit var no_issues_panel: LinearLayout
+    lateinit var issueList_recylerView: RecyclerView
+    lateinit var issue_progressBar: ProgressBar
+    lateinit var party_icon: ImageView
+    lateinit var noIssues_Text: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +66,29 @@ class IssueListFragment : Fragment() {
         }
 
         return root
+    }
+
+    fun onSuccess(issueList: MutableList<Issue>) {
+        issue_progressBar.visibility = View.GONE
+        if (issueList.count() < 1) {
+            no_issues_panel.visibility = View.VISIBLE
+        }
+        else {
+            issueList_recylerView.visibility = View.VISIBLE
+            issueList_recylerView.adapter = IssueCardAdapter(App.context!!, issueList, true, { issue -> onItemClick(issue)})
+        }
+    }
+
+    fun onFail() {
+        party_icon.visibility = View.GONE
+        noIssues_Text.text = getString(R.string.unable_display_issue_list)
+        no_issues_panel.visibility = View.VISIBLE
+    }
+
+    fun onItemClick(issue: Issue) {
+        val intent = Intent(activity, IssueDetailActivity::class.java)
+        intent.extras!!.putParcelable("issue", issue)
+        activity?.startActivity(intent)
     }
 
     companion object {

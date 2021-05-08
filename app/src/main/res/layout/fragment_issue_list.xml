@@ -29,27 +29,25 @@
         android:visibility="gone">
 
         <ImageView
+            android:id="@+id/party_icon"
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_party" />
 
         <TextView
+            android:id="@+id/noIssues_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yay! No issues!"
+            android:text="@string/yay_no_issues"
             android:layout_margin="16dp"
             style="@style/TextAppearance.MaterialComponents.Headline6"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
+        android:id="@+id/issueList_recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:scrollbars="vertical"
         android:visibility="invisible"

@@ -79,7 +79,7 @@ class ClassListFragment : Fragment() {
 
     fun onFail() {
         no_classes_textView.visibility = View.VISIBLE
-        no_classes_textView.text = "Unable to get classes"
+        no_classes_textView.text = getString(R.string.unable_display_class_list)
         class_progressBar.visibility = View.GONE
     }
 

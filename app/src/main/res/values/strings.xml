@@ -147,4 +147,10 @@
     <string name="reply_added">Reply has been added successfully</string>
     <string name="unable_add_reply">Unable to add reply</string>
     <string name="unable_add_reply_message">We\'re unable to add your reply. Please try again later.</string>
+    <string name="yay_no_issues">Yay! No issues!</string>
+
+    <string name="unable_display_class_list">Unable to display class list</string>
+    <string name="unable_display_issue_list">Unable to display issues list</string>
+    <string name="unable_display_task_list">Unable to display tasks list</string>
+
 </resources>
