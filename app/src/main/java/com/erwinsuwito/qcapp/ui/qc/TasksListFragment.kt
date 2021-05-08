@@ -1,14 +1,23 @@
 package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
+import android.content.Intent
 import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
+import com.erwinsuwito.qcapp.adapter.TaskCardAdapter
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
+import com.erwinsuwito.qcapp.model.Task
+import com.erwinsuwito.qcapp.ui.tasks.TasksDetailActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,6 +35,10 @@ class TasksListFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var task_progressBar: ProgressBar
+    lateinit var no_tasks_textView: TextView
+    lateinit var taskList_RecyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -40,6 +53,9 @@ class TasksListFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_tasks_list, container, false)
 
         val rootFab = root.findViewById<FloatingActionButton>(R.id.addTaskFabs)
+        task_progressBar = root.findViewById(R.id.task_progressBar)
+        no_tasks_textView = root.findViewById(R.id.no_tasks_textView)
+        taskList_RecyclerView = root.findViewById(R.id.taskList_RecyclerView)
 
         val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
@@ -52,7 +68,32 @@ class TasksListFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_qc_to_addTaskFragment2)
         }
 
+        FirestoreHelper().getTasksList({onSuccess(it)}, {onFail()})
+
         return root
+    }
+
+    fun onSuccess(taskList: MutableList<Task>) {
+        task_progressBar.visibility = View.GONE
+        if (taskList.count() < 1) {
+            no_tasks_textView.visibility = View.VISIBLE
+        }
+        else {
+            taskList_RecyclerView.visibility = View.VISIBLE
+            taskList_RecyclerView.adapter = TaskCardAdapter(App.context!!, taskList, { task -> onItemClick(task)})
+        }
+    }
+
+    fun onFail() {
+        task_progressBar.visibility = View.GONE
+        no_tasks_textView.text = getString(R.string.unable_display_task_list)
+        no_tasks_textView.visibility = View.VISIBLE
+    }
+
+    fun onItemClick(task: Task) {
+        val intent = Intent(activity, TasksDetailActivity::class.java)
+        intent.extras!!.putParcelable("task", task)
+        activity?.startActivity(intent)
     }
 
     companion object {

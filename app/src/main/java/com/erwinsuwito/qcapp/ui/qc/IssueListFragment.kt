@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erwinsuwito.qcapp.App
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
+import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -60,10 +61,18 @@ class IssueListFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_issue_list, container, false)
 
+        no_issues_panel = root.findViewById(R.id.no_issues_panel)
+        issueList_recylerView = root.findViewById(R.id.issueList_recyclerView)
+        issue_progressBar = root.findViewById(R.id.issue_progressBar)
+        party_icon = root.findViewById(R.id.party_icon)
+        noIssues_Text = root.findViewById(R.id.noIssues_Text)
+
         rootFab = root.findViewById(R.id.addIssueFab)
         rootFab.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_qc_to_addIssueFragment)
         }
+
+        FirestoreHelper().getIssueList({onSuccess(it)}, {onFail()})
 
         return root
     }
