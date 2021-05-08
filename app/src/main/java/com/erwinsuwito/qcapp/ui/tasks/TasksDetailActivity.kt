@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.tasks
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -117,24 +118,53 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
 
     override fun onBottomSheetItemClick(item: BottomSheetItem) {
         when (item.id) {
-            // TO-DO: Add actions here
-
             R.id.bottom_sheet_item_reply -> {
                 val intent = Intent(this, AddReplyActivity::class.java).putExtra("task", selectedTask).putExtra("itemType", 1)
                 this.startActivity(intent)
             }
 
             R.id.bottom_sheet_teams_pm -> {
+                val url = getString(R.string.teams_chat_link).replace("|users", selectedTask!!.creator)
+                val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", selectedTask!!.creatorName)
 
+                try
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
+                }
+                catch (e: Exception)
+                {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                }
             }
 
             R.id.bottom_sheet_mark_re_open -> {
-
+                selectedTask!!.isOpen = true
+                updateTask()
             }
 
             R.id.bottom_sheet_mark_close -> {
-
+                selectedTask!!.isOpen = false
+                updateTask()
             }
         }
+    }
+
+    fun updateTask() {
+        FirestoreHelper().addTask(selectedTask!!, {updateSuccess()}, {updateFailed()})
+    }
+
+    fun updateSuccess() {
+        Toast.makeText(this, "Task updated", Toast.LENGTH_LONG).show()
+    }
+
+    fun updateFailed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Unable to close/re-open task")
+        builder.setMessage("We're unable to update the task details. Please try again later.")
+        builder.setPositiveButton(R.string.okay) { dialog, which ->
+            finish()
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 }

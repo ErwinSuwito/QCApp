@@ -126,8 +126,6 @@ class MoreFragment : Fragment() {
                 val url = getString(R.string.teams_chat_link).replace("|users", users)
                 val teamsIntent = getString(R.string.teams_chat_intent).replace("|users", users)
 
-                Log.d("TEAMS", url)
-
                 try
                 {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(teamsIntent)))
