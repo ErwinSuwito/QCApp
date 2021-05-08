@@ -53,7 +53,7 @@ class ClassCheckHistoryAdapter(private val context: Context, private val dataset
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.checkerName.text = item.checkedByName
-        holder.checkedOn.text = item.checkedOn.toString()
+        holder.checkedOn.text = item.checkedOn.toDate().toLocaleString()
 
         if (item.isEverythingOk)
         {

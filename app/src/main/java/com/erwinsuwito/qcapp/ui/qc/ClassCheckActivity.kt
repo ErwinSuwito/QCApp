@@ -1,7 +1,6 @@
 package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CheckBox
 import android.widget.Toast
@@ -37,8 +36,8 @@ class ClassCheckActivity : BaseActivity() {
         val ipAddress: String = findViewById<TextInputEditText>(R.id.check_ipAddressTextBox).text.toString()
         val signalStrength: Int = findViewById<TextInputEditText>(R.id.check_signalStrengthTextBox).text.toString().toInt()
         val pingGoogle: Int = findViewById<TextInputEditText>(R.id.check_pingGoogleTextBox).text.toString().toInt()
-        val ulSpeed: Double = findViewById<TextInputEditText>(R.id.check_ulSpeedTextBox).toString().toDouble()
-        val dlSpeed: Double = findViewById<TextInputEditText>(R.id.check_dlSpeedTextBox).toString().toDouble()
+        val ulSpeed: Double = findViewById<TextInputEditText>(R.id.check_ulSpeedTextBox).text.toString().toDouble()
+        val dlSpeed: Double = findViewById<TextInputEditText>(R.id.check_dlSpeedTextBox).text.toString().toDouble()
         val alignment: Boolean = findViewById<CheckBox>(R.id.classCheck_alignment).isChecked
         val clarity: Boolean = findViewById<CheckBox>(R.id.classCheck_clarity).isChecked
         val screen: Boolean = findViewById<CheckBox>(R.id.classCheck_screen).isChecked
