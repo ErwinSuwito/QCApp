@@ -13,6 +13,7 @@
     <string name="task">Task</string>
     <string name="issue">Issue</string>
     <string name="chat_teams">Chat on Teams</string>
+    <string name="group_chat_teams">Group chat on Teams</string>
     <string name="offline">You\'re offline</string>
 
     <string name="class_details">Class details</string>

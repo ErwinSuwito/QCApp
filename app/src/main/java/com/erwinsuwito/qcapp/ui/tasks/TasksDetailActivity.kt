@@ -1,6 +1,7 @@
 package com.erwinsuwito.qcapp.ui.tasks
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import com.erwinsuwito.qcapp.adapter.StepsAdapter
 import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Steps
 import com.erwinsuwito.qcapp.model.Task
+import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
 import com.microsoft.fluentui.bottomsheet.BottomSheet
 import com.microsoft.fluentui.bottomsheet.BottomSheetItem
 import kotlinx.android.synthetic.main.activity_tasks_detail.*
@@ -40,6 +42,8 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
             }
 
             FirestoreHelper().getTaskSteps(selectedTask!!.issueId, {displaySteps(it)}, {onFailure()})
+
+            issue_OverflowBtn.setOnClickListener {onOverflowButtonClicked()}
         }
         else
         {
@@ -50,21 +54,16 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
     fun displaySteps(steps: MutableList<Steps>)
     {
         taskDetail_repliesList.adapter = StepsAdapter(this, steps, {onReplyClicked(it)})
+        hideProgressDialog()
     }
 
-    fun onReplyClicked(reply: Steps)
-    {
+    fun onOverflowButtonClicked() {
         val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
         var bottomSheetItems = arrayListOf(
                 BottomSheetItem(
                         R.id.bottom_sheet_item_reply,
                         R.drawable.ic_chat,
                         getString(R.string.reply)
-                ),
-                BottomSheetItem(
-                        R.id.bottom_sheet_teams_pm,
-                        R.drawable.ic_teams,
-                        getString(R.string.chat_teams)
                 )
         )
 
@@ -84,7 +83,28 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
         bottomSheet.show(supportFragmentManager, null)
     }
 
+    fun onReplyClicked(reply: Steps)
+    {
+        val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        var bottomSheetItems = arrayListOf(
+                BottomSheetItem(
+                        R.id.bottom_sheet_item_reply,
+                        R.drawable.ic_chat,
+                        getString(R.string.reply)
+                ),
+                BottomSheetItem(
+                        R.id.bottom_sheet_teams_pm,
+                        R.drawable.ic_teams,
+                        getString(R.string.chat_teams)
+                )
+        )
+
+        val bottomSheet = BottomSheet.newInstance(bottomSheetItems)
+        bottomSheet.show(supportFragmentManager, null)
+    }
+
     fun onFailure() {
+        hideProgressDialog()
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Unable to get task details")
         builder.setMessage("We're unable to get the requested task details. Please try again later.")
@@ -100,7 +120,8 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
             // TO-DO: Add actions here
 
             R.id.bottom_sheet_item_reply -> {
-                Toast.makeText(this, "Reply is clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, AddReplyActivity::class.java).putExtra("task", selectedTask).putExtra("itemType", 1)
+                this.startActivity(intent)
             }
 
             R.id.bottom_sheet_teams_pm -> {

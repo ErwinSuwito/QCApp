@@ -11,7 +11,6 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.QCApp.NoActionBar">
         <activity android:name=".ui.tasks.AddReplyActivity"></activity>
-        <activity android:name=".ui.issues.AddTroubleshootingStepActivity" />
         <activity android:name=".ui.tasks.TasksDetailActivity" />
         <activity android:name=".ui.issues.IssueDetailActivity" />
         <activity android:name=".ui.qc.ClassCheckActivity" />
