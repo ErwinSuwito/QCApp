@@ -111,8 +111,7 @@
     <string name="alignment">Alignment</string>
     <string name="clarity">Clarity</string>
     <string name="screen">Screen</string>
-    <string name="short_hdmi">Short HDMI</string>
-    <string name="long_hdmi">Long HDMI</string>
+    <string name="hdmi">HDMI</string>
     <string name="remote">Remote</string>
     <string name="easymp">EasyMP</string>
     <string name="is_switch_ok">Switch</string>

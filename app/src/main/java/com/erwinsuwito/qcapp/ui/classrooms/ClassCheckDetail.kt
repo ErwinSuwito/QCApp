@@ -5,14 +5,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import com.erwinsuwito.qcapp.R
 import com.erwinsuwito.qcapp.model.ClassCheck
-import com.erwinsuwito.qcapp.model.Classroom
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_class_check_detail.*
-import org.w3c.dom.Text
 
 class ClassCheckDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +32,7 @@ class ClassCheckDetail : AppCompatActivity() {
             }
         }
 
-        class_name_2.text = selectedCheck?.classId
+        class_name_2.text = selectedCheck?.classroomName
         checked_on_textView.text = selectedCheck?.checkedOn.toString()
         checked_by_textView.text = selectedCheck?.checkedByName
         high_lamp_hour_checkDetail.text = selectedCheck?.highLampHour.toString()
@@ -44,9 +41,8 @@ class ClassCheckDetail : AppCompatActivity() {
         clarity_txtView.text = selectedCheck?.isClarityOk.toString()
         screen_textView.text = selectedCheck?.isScreenOk.toString()
         remote_textView.text = selectedCheck?.isRemoteOk.toString()
-        sHDMI_textView.text = selectedCheck?.isShortHdmiOk.toString()
-        lHDMI_textView.text = selectedCheck?.isLongHdmiOk.toString()
-        easyMP_textView.text = selectedCheck?.isEasyMPOk.toString()
+        lHDMI_textView.text = selectedCheck?.isHdmiOk.toString()
+        easyMP_textView.text = selectedCheck?.isEasyMpOk.toString()
         switch_ok_textView.text = selectedCheck?.isSwitchLabelOk.toString()
         guideline_textView.text = selectedCheck?.isGuidelineOk.toString()
         ap_textView.text = selectedCheck?.isApOn.toString()

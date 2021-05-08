@@ -116,13 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="@string/short_hdmi" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="@string/long_hdmi" />
+                    android:text="@string/hdmi" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -255,18 +249,11 @@
                     android:text="@string/remote" />
 
                 <TextView
-                    android:id="@+id/sHDMI_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="@string/short_hdmi" />
-
-                <TextView
                     android:id="@+id/lHDMI_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="@string/long_hdmi" />
+                    android:text="@string/hdmi" />
 
                 <TextView
                     android:id="@+id/easyMP_textView"
@@ -344,10 +331,10 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        style="@style/Widget.FluentUI.Button"
         android:text="Chat on Teams"
         app:icon="@drawable/ic_teams"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.QCApp.NoActionBar">
-        <activity android:name=".ui.tasks.AddReplyActivity"></activity>
+        <activity android:name=".ui.qc.AddClassCheckActivity"></activity>
+        <activity android:name=".ui.tasks.AddReplyActivity" />
         <activity android:name=".ui.tasks.TasksDetailActivity" />
         <activity android:name=".ui.issues.IssueDetailActivity" />
         <activity android:name=".ui.qc.ClassCheckActivity" />
