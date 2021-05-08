@@ -15,6 +15,7 @@ import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Steps
 import com.erwinsuwito.qcapp.model.Task
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
+import com.google.firebase.Timestamp
 import com.microsoft.fluentui.bottomsheet.BottomSheet
 import com.microsoft.fluentui.bottomsheet.BottomSheetItem
 import kotlinx.android.synthetic.main.activity_tasks_detail.*
@@ -144,6 +145,7 @@ class TasksDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
 
             R.id.bottom_sheet_mark_close -> {
                 selectedTask!!.isOpen = false
+                selectedTask!!.closedOn = Timestamp.now()
                 updateTask()
             }
         }
