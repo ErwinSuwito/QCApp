@@ -91,8 +91,7 @@ class TasksListFragment : Fragment() {
     }
 
     fun onItemClick(task: Task) {
-        val intent = Intent(activity, TasksDetailActivity::class.java)
-        intent.extras!!.putParcelable("task", task)
+        val intent = Intent(activity, TasksDetailActivity::class.java).putExtra("task", task)
         activity?.startActivity(intent)
     }
 

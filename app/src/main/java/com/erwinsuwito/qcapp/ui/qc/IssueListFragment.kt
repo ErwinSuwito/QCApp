@@ -20,6 +20,7 @@ import com.erwinsuwito.qcapp.adapter.IssueCardAdapter
 import com.erwinsuwito.qcapp.apis.FirestoreHelper
 import com.erwinsuwito.qcapp.model.Issue
 import com.erwinsuwito.qcapp.ui.issues.IssueDetailActivity
+import com.erwinsuwito.qcapp.ui.tasks.TasksDetailActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_issue_list.*
 
@@ -95,8 +96,7 @@ class IssueListFragment : Fragment() {
     }
 
     fun onItemClick(issue: Issue) {
-        val intent = Intent(activity, IssueDetailActivity::class.java)
-        intent.extras!!.putParcelable("issue", issue)
+        val intent = Intent(activity, IssueDetailActivity::class.java).putExtra("issue", issue)
         activity?.startActivity(intent)
     }
 

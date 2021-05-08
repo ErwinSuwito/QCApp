@@ -121,15 +121,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     fun taskItemClicked(taskItem: Task)
     {
-        val intent = Intent(activity, TasksDetailActivity::class.java)
-        intent.extras!!.putParcelable("task", taskItem)
+        val intent = Intent(activity, TasksDetailActivity::class.java).putExtra("task", taskItem)
         activity?.startActivity(intent)
     }
 
     fun issueItemClicked(issueItem: Issue)
     {
-        val intent = Intent(activity, IssueDetailActivity::class.java)
-        intent.extras!!.putParcelable("issue", issueItem)
+        val intent = Intent(activity, IssueDetailActivity::class.java).putExtra("task", issueItem)
         activity?.startActivity(intent)
     }
 
