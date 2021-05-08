@@ -49,8 +49,9 @@ class ClassCheckActivity : BaseActivity() {
         val guideline: Boolean = findViewById<CheckBox>(R.id.classCheck_Guideline).isChecked
         val powerExt: Boolean = findViewById<CheckBox>(R.id.classCheck_powerExt).isChecked
         val ap: Boolean = signalStrength > 0
+        val isEverythingOk: Boolean = alignment && clarity && screen && remote && hdmi && easyMp && switch && guideline && powerExt && ap
 
-        val qcCheck = ClassCheck(FirebaseIDGenerator.generateId(), upn!!, usrName!!, className, highLampHour, lowLampHour, alignment, clarity, screen, remote, hdmi, easyMp, switch, guideline, ap, signalStrength, pingGoogle, dlSpeed,ulSpeed, ipAddress, powerExt)
+        val qcCheck = ClassCheck(FirebaseIDGenerator.generateId(), upn!!, usrName!!, className, highLampHour, lowLampHour, alignment, clarity, screen, remote, hdmi, easyMp, switch, guideline, ap, signalStrength, pingGoogle, dlSpeed,ulSpeed, ipAddress, powerExt, isEverythingOk)
         FirestoreHelper().addChecks(qcCheck, {onSaveSuccess()}, {onSaveFailure()})
     }
 

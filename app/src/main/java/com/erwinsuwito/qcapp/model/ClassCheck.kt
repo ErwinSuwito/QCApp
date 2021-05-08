@@ -28,5 +28,6 @@ data class ClassCheck(
     var ulSpeed: Double = 0.0,
     var ipAddress: String = "",
     var isPowerExtAvailable: Boolean = false,
-    var checkedOn: Timestamp = Timestamp.now(),
+    var isEverythingOk: Boolean = false,
+    var checkedOn: Timestamp = Timestamp.now()
 ) : Parcelable
