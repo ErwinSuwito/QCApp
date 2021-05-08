@@ -54,7 +54,7 @@ class AddClassFragment : Fragment() {
         val addClass_lowLampHour = root.findViewById<TextInputEditText>(R.id.addClass_lowLampHour)
 
         addClass_saveBtn.setOnClickListener {
-            var classroom = Classroom(className.text.toString(), addClass_projectorAssetTag.text.toString(), addClass_projectorModel.text.toString(), addClass_ipAddress.text.toString(), addClass_highLampHour.text.toString().toInt(), addClass_lowLampHour.text.toString().toInt(), Timestamp.now())
+            var classroom = Classroom(className.text.toString(), addClass_projectorAssetTag.text.toString(), addClass_projectorModel.text.toString(), addClass_ipAddress.text.toString(), addClass_highLampHour.text.toString().toInt(), addClass_lowLampHour.text.toString().toInt(), true,Timestamp.now())
             FirestoreHelper().addClass(classroom, { onSuccess() }, { onFailure() })
         }
 

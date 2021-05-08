@@ -23,7 +23,7 @@ class ClassCheckActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_class_check)
 
-        val classroom = this.intent.extras!!.getParcelable<Classroom>("classroom")
+        classroom = this.intent.extras!!.getParcelable<Classroom>("classroom")!!
         findViewById<TextInputEditText>(R.id.check_classNameTextBox).setText(classroom!!.classroomName)
 
         val topAppBar: MaterialToolbar = findViewById(R.id.check_topAppBar)

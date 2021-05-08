@@ -331,10 +331,10 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
+        android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        style="@style/Widget.FluentUI.Button"
         android:text="Chat on Teams"
         app:icon="@drawable/ic_teams"
         app:layout_constraintBottom_toBottomOf="parent"
