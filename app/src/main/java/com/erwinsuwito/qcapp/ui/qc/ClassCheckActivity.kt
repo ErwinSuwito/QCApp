@@ -79,7 +79,7 @@ class ClassCheckActivity : BaseActivity() {
         hideProgressDialog()
         val builder = AlertDialog.Builder(App.context!!)
         builder.setTitle("Completed with failure")
-        builder.setMessage("Your QC check has been successfully. However, the class data wasn't updated successfully. You may see expired data for the class")
+        builder.setMessage("Your QC check has been saved successfully. However, the class data wasn't updated successfully. You may see expired data for the class")
         builder.setPositiveButton(R.string.okay) { dialog, which ->
             finish()
         }

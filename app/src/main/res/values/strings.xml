@@ -154,5 +154,6 @@
     <string name="unable_display_task_list">Unable to display tasks list</string>
     <string name="qc_wifi_notice">Only fill-in the ping google, signal strength, IP Address, download and upload speeds when Student@APU is usable.</string>
     <string name="it_s_lonely_in_here">It\'s lonely in here</string>
+    <string name="this_closes_the_issue_or_task">This closes the issue or task</string>
 
 </resources>
