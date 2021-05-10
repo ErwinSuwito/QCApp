@@ -98,13 +98,20 @@ class AddReplyActivity : BaseActivity() {
             }
         }
         else {
-            Toast.makeText(this, "Reply added successfully!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.reply_added), Toast.LENGTH_SHORT).show()
             finish()
         }
     }
 
     fun onFailed() {
-        Toast.makeText(this, "Unable to add reply", Toast.LENGTH_SHORT).show()
+        val builder = AlertDialog.Builder(App.context!!)
+        builder.setTitle(getString(R.string.unable_add_reply))
+        builder.setMessage(getString(R.string.unable_add_reply_message))
+        builder.setPositiveButton(R.string.okay) { dialog, which ->
+            finish()
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     fun updateTaskFailed() {

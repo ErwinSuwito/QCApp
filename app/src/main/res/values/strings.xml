@@ -15,6 +15,7 @@
     <string name="chat_teams">Chat on Teams</string>
     <string name="group_chat_teams">Group chat on Teams</string>
     <string name="offline">You\'re offline</string>
+    <string name="successfully_saved">Successfully saved</string>
 
     <string name="class_details">Class details</string>
     <string name="class_check_details">Class check details</string>
@@ -93,6 +94,7 @@
     <string name="solved_on">Solved on</string>
     <string name="solved">Solved</string>
     <string name="completed">Completed</string>
+    <string name="completed_failure">Completed with failure</string>
 
     <string name="before_we_continue">Before we continue</string>
     <string name="next">Next</string>
@@ -144,7 +146,7 @@
     <string name="unable_add_issue">Unable to add issue</string>
     <string name="unable_add_issue_message">We\'re unable to add the issue. Please try again later.</string>
 
-    <string name="reply_added">Reply has been added successfully</string>
+    <string name="reply_added">Reply added successfully</string>
     <string name="unable_add_reply">Unable to add reply</string>
     <string name="unable_add_reply_message">We\'re unable to add your reply. Please try again later.</string>
     <string name="yay_no_issues">Yay! No issues!</string>
@@ -156,4 +158,8 @@
     <string name="it_s_lonely_in_here">It\'s lonely in here</string>
     <string name="this_closes_the_issue_or_task">This closes the issue or task</string>
 
+    <string name="unable_update_class_qc">Your QC check has been saved successfully. However, the class data wasn\'t updated successfully. You may see out-of-date data for the class</string>
+
+    <string name="unable_save_qc">Unable to save QC check</string>
+    <string name="unable_save_qc_message">We\'re unable to save your QC check. Please try again later.</string>
 </resources>

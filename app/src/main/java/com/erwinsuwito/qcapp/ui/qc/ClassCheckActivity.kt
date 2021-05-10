@@ -71,15 +71,15 @@ class ClassCheckActivity : BaseActivity() {
 
     private fun completeCheck() {
         hideProgressDialog()
-        Toast.makeText(this, "Successfully saved", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.successfully_saved), Toast.LENGTH_LONG).show()
         finish()
     }
 
     private fun onUpdateClassFailure() {
         hideProgressDialog()
         val builder = AlertDialog.Builder(App.context!!)
-        builder.setTitle("Completed with failure")
-        builder.setMessage("Your QC check has been saved successfully. However, the class data wasn't updated successfully. You may see expired data for the class")
+        builder.setTitle(getString(R.string.completed_failure))
+        builder.setMessage(getString(R.string.unable_update_class_qc))
         builder.setPositiveButton(R.string.okay) { dialog, which ->
             finish()
         }
@@ -90,8 +90,8 @@ class ClassCheckActivity : BaseActivity() {
     private fun onCheckSaveFailure() {
         hideProgressDialog()
         val builder = AlertDialog.Builder(App.context!!)
-        builder.setTitle("Unable to save QC check")
-        builder.setMessage("We're unable to save your QC check. Please try again later.")
+        builder.setTitle(getString(R.string.unable_save_qc))
+        builder.setMessage(getString(R.string.unable_save_qc_message))
         builder.setPositiveButton(R.string.okay) { dialog, which ->
 
         }
