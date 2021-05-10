@@ -26,10 +26,6 @@ class ClassCheckDetail : AppCompatActivity() {
             {
                 launchTeams(selectedCheck.checkedBy)
             }
-            else
-            {
-                Toast.makeText(this, "Unable to start a Teams chat. Please try again later.", Toast.LENGTH_SHORT).show()
-            }
         }
 
         class_name_2.text = selectedCheck?.classroomName

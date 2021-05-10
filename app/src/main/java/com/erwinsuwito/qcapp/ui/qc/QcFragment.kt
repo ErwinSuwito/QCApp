@@ -40,17 +40,6 @@ class QcFragment : Fragment() {
                 ViewModelProvider(this).get(QcFragmentViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_qc, container, false)
 
-        /*
-        TO-DO: Move this code to the other fragments
-        var sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
-
-        if (sharedPreferences!!.getString("usr_role", "Technical Assistant") == "Board Member")
-        {
-            rootFab.isEnabled = true
-            rootFab.visibility = View.VISIBLE
-        }
-         */
-
         var tab_viewpager = root.findViewById<ViewPager>(R.id.qc_viewpager)
         var tab_tablayout = root.findViewById<TabLayout>(R.id.qc_tabLayout)
 

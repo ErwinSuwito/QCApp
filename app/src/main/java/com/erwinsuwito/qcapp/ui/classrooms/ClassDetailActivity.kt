@@ -58,7 +58,6 @@ class ClassDetailActivity : BaseActivity() {
                 activity?.startActivity(intent)
             }
             builder.setNegativeButton(R.string.cancel) { dialog, which ->
-                Toast.makeText(this, "Cancel button selected", Toast.LENGTH_SHORT).show()
             }
             val alertDialog = builder.create()
             alertDialog.show()

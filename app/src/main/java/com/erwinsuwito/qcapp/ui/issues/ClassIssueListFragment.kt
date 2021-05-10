@@ -60,7 +60,7 @@ class ClassIssueListFragment(var className: String) : Fragment() {
     }
 
     fun onFailure() {
-        Toast.makeText(App.context!!, "Unable to get issue list", Toast.LENGTH_SHORT).show()
+        Toast.makeText(App.context!!, getString(R.string.unable_get_issue_list), Toast.LENGTH_SHORT).show()
     }
 
     fun itemClicked(issue: Issue)

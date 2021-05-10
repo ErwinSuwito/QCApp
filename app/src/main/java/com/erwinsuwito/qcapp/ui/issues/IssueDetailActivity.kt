@@ -87,11 +87,11 @@ class IssueDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
         {
             if (selectedIssue!!.isOpen)
             {
-                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_close, R.drawable.ic_complete, "Close issue"))
+                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_close, R.drawable.ic_complete, getString(R.string.close_issue)))
             }
             else
             {
-                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_re_open, R.drawable.ic_giftbox_open, "Re-open issue"))
+                bottomSheetItems.add(BottomSheetItem(R.id.bottom_sheet_mark_re_open, R.drawable.ic_giftbox_open, getString(R.string.reopen_issue)))
             }
         }
 
@@ -122,8 +122,8 @@ class IssueDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
     fun onFailure() {
         hideProgressDialog()
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Unable to get issue details")
-        builder.setMessage("We're unable to get the requested issue details. Please try again later.")
+        builder.setTitle(getString(R.string.unable_get_issue_detail))
+        builder.setMessage(getString(R.string.unable_get_issue_detail_message))
         builder.setPositiveButton(R.string.okay) { dialog, which ->
             finish()
         }
@@ -186,13 +186,13 @@ class IssueDetailActivity : BaseActivity(), BottomSheetItem.OnClickListener {
     }
 
     fun updateSuccess() {
-        Toast.makeText(this, "Issue updated", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.issue_updated), Toast.LENGTH_LONG).show()
     }
 
     fun updateFailed() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Unable to close/re-open issue")
-        builder.setMessage("We're unable to update the issue details. Please try again later.")
+        builder.setTitle(R.string.unable_update_issue)
+        builder.setMessage(getString(R.string.unable_update_issue_message))
         builder.setPositiveButton(R.string.okay) { dialog, which ->
             finish()
         }

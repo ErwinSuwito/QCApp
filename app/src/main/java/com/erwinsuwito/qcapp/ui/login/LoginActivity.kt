@@ -98,7 +98,7 @@ class LoginActivity : AppCompatActivity() {
         override fun onCancel() {
             // User canceled the authentication
             Log.d("AUTH", "Authentication canceled")
-            findViewById<TextView>(R.id.welcomeBody).text = "Sorry that didn't work. Please try again."
+            findViewById<TextView>(R.id.welcomeBody).text = getString(R.string.relogin_message)
         }
 
         override fun onError(exception: MsalException?): Unit = with(exception) {

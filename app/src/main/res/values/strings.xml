@@ -162,4 +162,16 @@
 
     <string name="unable_save_qc">Unable to save QC check</string>
     <string name="unable_save_qc_message">We\'re unable to save your QC check. Please try again later.</string>
+    <string name="unable_get_check_history">Unable to get check history</string>
+    <string name="unable_get_issue_list">Unable to get issue list</string>
+    <string name="close_issue">Close issue</string>
+    <string name="reopen_issue">Re-open issue</string>
+
+    <string name="unable_get_issue_detail">Unable to get issue details</string>
+    <string name="unable_get_issue_detail_message">We\'re unable to get the requested issue details. Please try again later.</string>
+    <string name="issue_updated">Issue updated</string>
+    <string name="unable_update_issue">Unable to close/re-open issue</string>
+    <string name="unable_update_issue_message">We\'re unable to update the issue details. Please try again later.</string>
+
+    <string name="relogin_message">Sorry that didn\'t work. Please try again</string>
 </resources>

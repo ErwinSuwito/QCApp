@@ -63,7 +63,7 @@ class ClassCheckHistoryFragment(var className: String) : Fragment() {
     }
 
     fun onFailure() {
-        Toast.makeText(App.context!!, "Unable to get check history", Toast.LENGTH_SHORT).show()
+        Toast.makeText(App.context!!, getString(R.string.unable_get_check_history), Toast.LENGTH_SHORT).show()
     }
 
     fun itemClicked(classCheck: ClassCheck)
