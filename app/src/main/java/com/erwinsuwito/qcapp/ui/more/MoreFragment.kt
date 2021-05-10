@@ -85,8 +85,8 @@ class MoreFragment : Fragment() {
         //Toast.makeText(context, "$string is clicked.", Toast.LENGTH_SHORT).show()
         when (action) {
             "Logout" -> {
-                var authHelper: AuthenticationHelper = AuthenticationHelper.getInstance()
-                authHelper.signOut()
+                //var authHelper: AuthenticationHelper = AuthenticationHelper.getInstance()
+                //authHelper.signOut()
 
                 val intent = Intent(activity, LoginActivity::class.java)
                 startActivity(intent)

@@ -52,9 +52,13 @@ class LoginActivity : AppCompatActivity() {
         val loginButton: Button = findViewById(R.id.button)
         loginButton.setOnClickListener()
         {
-            sharedPreferences.putString("usr_role", getString(R.string.board))
-            sharedPreferences.putString("usr_name", "Test User")
-            sharedPreferences.putString("upn", "test@cloudmails.apu.edu.my")
+            sharedPreferences.putString("usr_role", "Board Member")
+            sharedPreferences.putString("usr_name", "Robo User")
+            sharedPreferences.putString("upn", "robo@cloudmails.apu.edu.my")
+            sharedPreferences.commit()
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
