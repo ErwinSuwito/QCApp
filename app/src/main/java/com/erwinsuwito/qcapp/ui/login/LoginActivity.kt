@@ -45,23 +45,17 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        authHelper = AuthenticationHelper.getInstance(applicationContext)
+        sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).edit()
+
+
 
         val loginButton: Button = findViewById(R.id.button)
         loginButton.setOnClickListener()
         {
-            signIn()
+            sharedPreferences.putString("usr_role", getString(R.string.board))
+            sharedPreferences.putString("usr_name", "Test User")
+            sharedPreferences.putString("upn", "test@cloudmails.apu.edu.my")
         }
-
-        savedInstanceState?.apply {
-            isSignedIn = getBoolean(SAVED_IS_SIGNED_IN)
-        } ?: run {
-            val handler = Handler().postDelayed({
-                doSilentSignIn()
-            }, 2000)
-        }
-
-        sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).edit()
     }
 
     override fun onSaveInstanceState(outState: Bundle) = with(outState) {
