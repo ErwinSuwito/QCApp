@@ -43,6 +43,7 @@ class AddReplyActivity : BaseActivity() {
             }
         }
 
+        content = findViewById(R.id.issue_replyTextBox)
         var taskAddReply_SaveBtn: Button = findViewById(R.id.issueAddReply_SaveBtn)
         taskAddReply_SaveBtn.setOnClickListener {
             clearErrors()

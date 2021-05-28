@@ -32,6 +32,9 @@ class ClassCheckActivity : BaseActivity() {
         classroom = this.intent.extras!!.getParcelable<Classroom>("classroom")!!
         classNameEditText = findViewById(R.id.check_classNameTextBox)
         classNameEditText.setText(classroom!!.classroomName)
+        highLampHourEditText = findViewById(R.id.check_highLampHourTextBox)
+        lowLampHourEditText = findViewById(R.id.check_lowLampHourTextBox)
+        signalStrengthEditText = findViewById(R.id.check_signalStrengthTextBox)
 
         val topAppBar: MaterialToolbar = findViewById(R.id.check_topAppBar)
         topAppBar.setNavigationOnClickListener { onBackPressed() }
