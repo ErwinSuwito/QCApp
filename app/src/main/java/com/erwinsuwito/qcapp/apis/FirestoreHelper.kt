@@ -47,6 +47,7 @@ class FirestoreHelper {
                 }
     }
 
+    /*
     fun getClassDetail(classId: String, onSuccess: (Classroom?) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection(Constants.CLASSES)
@@ -60,6 +61,7 @@ class FirestoreHelper {
                     onFailure()
                 }
     }
+     */
 
     //endregion
 
@@ -79,6 +81,7 @@ class FirestoreHelper {
                 }
     }
 
+    /*
     fun getIssue(issueId: String, onSuccess: (Issue?) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection(Constants.ISSUES)
@@ -92,6 +95,7 @@ class FirestoreHelper {
                     onFailure()
                 }
     }
+     */
 
     fun getIssueList(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit )
     {
@@ -181,6 +185,7 @@ class FirestoreHelper {
                 }
     }
 
+    /*
     fun getTask(taskId: String, onSuccess: (Task?) -> Unit, onFailure: () -> Unit)
     {
         mFireStore.collection(Constants.TASKS)
@@ -194,6 +199,7 @@ class FirestoreHelper {
                     onFailure()
                 }
     }
+     */
 
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
     {

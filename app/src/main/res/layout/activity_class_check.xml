@@ -125,7 +125,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/ping">
+                android:hint="@string/ping"
+                app:suffixText="ms">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/check_pingGoogleTextBox"
@@ -140,7 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/ul_speed">
+                android:hint="@string/ul_speed"
+                app:suffixText="Kbps">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/check_ulSpeedTextBox"
@@ -155,7 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/dl_speed">
+                android:hint="@string/dl_speed"
+                app:suffixText="Kbps">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/check_dlSpeedTextBox"
@@ -168,7 +171,7 @@
                 android:id="@+id/classCheck_alignment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:checked="true"
+                android:layout_marginTop="8dp"
                 android:text="@string/alignment" />
 
             <CheckBox
@@ -193,7 +196,6 @@
                 android:id="@+id/classCheck_Hdmi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:checked="true"
                 android:text="@string/hdmi" />
 
             <CheckBox

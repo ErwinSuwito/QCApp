@@ -26,8 +26,10 @@ import com.microsoft.identity.client.exception.MsalException
 import com.microsoft.identity.client.exception.MsalServiceException
 import com.microsoft.identity.client.exception.MsalUiRequiredException
 
-
 private const val SAVED_IS_SIGNED_IN = "isSignedIn"
+
+// Portions of the following code is adapted from
+// https://github.com/Mohamed-Ibrahim-6b/GraphTutorialKotlin
 
 class LoginActivity : AppCompatActivity() {
     private var isSignedIn = false
@@ -147,11 +149,6 @@ class LoginActivity : AppCompatActivity() {
                             isAllowedSignIn = true
                             return@breaker
                         }
-                        it.displayName.equals("Sandbox") -> {
-                            sharedPreferences.putString("usr_role", getString(R.string.trainee))
-                            isAllowedSignIn = true
-                            return@breaker
-                        }
                     }
                 }
             }
@@ -186,6 +183,7 @@ class LoginActivity : AppCompatActivity() {
         {
             if (!isAllowedSignIn)
             {
+                // The following code is adapted from
                 // https://www.geeksforgeeks.org/android-alert-dialog-box-and-how-to-create-it/#:~:text=Below%20are%20the%20steps%20for%20Creating%20the%20Alert,back%20button%20of%20your%20device.%20More%20items...%20
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(R.string.acc_not_authorized_message)

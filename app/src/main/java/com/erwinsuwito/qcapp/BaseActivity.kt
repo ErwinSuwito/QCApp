@@ -9,15 +9,15 @@ import com.google.android.material.snackbar.Snackbar
 open class BaseActivity : AppCompatActivity() {
     private lateinit var progressDialog: Dialog
 
-    fun showSnackbar(message: String)
+    fun showSnackbar(message: String, duration: Int)
     {
-        Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT)
+        Snackbar.make(findViewById(android.R.id.content), message, duration)
                 .show()
     }
 
-    fun showSnackbar(message: String, actionText: String,  onClick: () -> Unit)
+    fun showSnackbar(message: String, duration:Int, actionText: String,  onClick: () -> Unit)
     {
-        Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG)
+        Snackbar.make(findViewById(android.R.id.content), message, duration)
                 .setAction(actionText, View.OnClickListener { onClick() })
                 .show()
     }
