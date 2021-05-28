@@ -154,7 +154,7 @@
     <string name="unable_display_class_list">Unable to display class list</string>
     <string name="unable_display_issue_list">Unable to display issues list</string>
     <string name="unable_display_task_list">Unable to display tasks list</string>
-    <string name="qc_wifi_notice">Only fill-in the ping google, signal strength, IP Address, download and upload speeds when Student@APU is usable.</string>
+    <string name="qc_wifi_notice">When Student@APU is not usable, make sure that signal strength is set to zero.</string>
     <string name="it_s_lonely_in_here">It\'s lonely in here</string>
     <string name="this_closes_the_issue_or_task">This closes the issue or task</string>
 
@@ -174,4 +174,5 @@
     <string name="unable_update_issue_message">We\'re unable to update the issue details. Please try again later.</string>
 
     <string name="relogin_message">Sorry that didn\'t work. Please try again</string>
+    <string name="require_data">This is required</string>
 </resources>

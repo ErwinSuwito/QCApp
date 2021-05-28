@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,10 @@ class AddIssueFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var issue_classNameTextBox: TextInputEditText
+    lateinit var issue_problemTextBox: TextInputEditText
+    lateinit var issue_saveBtn: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,19 +52,45 @@ class AddIssueFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_add_issue, container, false)
 
-        val issue_classNameTextBox = root.findViewById<TextInputEditText>(R.id.issue_classNameTextBox)
-        val issue_problemTextBox = root.findViewById<TextInputEditText>(R.id.issue_problemTextBox)
-        val issue_saveBtn = root.findViewById<Button>(R.id.issue_saveBtn)
+        issue_classNameTextBox = root.findViewById(R.id.issue_classNameTextBox)
+        issue_problemTextBox = root.findViewById(R.id.issue_problemTextBox)
+        issue_saveBtn = root.findViewById(R.id.issue_saveBtn)
         val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
         val usrName = sharedPreferences!!.getString("usr_name", "User")
         val upn = sharedPreferences!!.getString("upn", "someone@cloudmails.apu.edu.my")
 
         issue_saveBtn.setOnClickListener{
-            var issue = Issue(FirebaseIDGenerator.generateId(), issue_classNameTextBox.text.toString(), upn!!, usrName!!, issue_problemTextBox.text.toString(), Timestamp.now(), Timestamp.now(), "", "", true)
-            FirestoreHelper().addIssue(issue, {onSuccess()}, {onFailure()})
+            clearErorrs()
+            val isValidationSuccessful = validateDetails()
+            if (isValidationSuccessful)
+            {
+                var issue = Issue(FirebaseIDGenerator.generateId(), issue_classNameTextBox.text.toString(), upn!!, usrName!!, issue_problemTextBox.text.toString(), Timestamp.now(), Timestamp.now(), "", "", true)
+                FirestoreHelper().addIssue(issue, {onSuccess()}, {onFailure()})
+            }
         }
 
         return root
+    }
+
+    fun validateDetails(): Boolean
+    {
+        return when {
+            TextUtils.isEmpty(issue_classNameTextBox.text.toString().trim { it <= ' ' }) -> {
+                issue_classNameTextBox.error = getString(R.string.require_data)
+                false
+            }
+            TextUtils.isEmpty(issue_problemTextBox.text.toString().trim { it <= ' ' }) -> {
+                issue_problemTextBox.error = getString(R.string.require_data)
+                false
+            }
+            else -> true
+        }
+    }
+
+    fun clearErorrs()
+    {
+        issue_classNameTextBox.error = null
+        issue_problemTextBox.error = null
     }
 
     fun onSuccess()

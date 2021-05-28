@@ -3,6 +3,7 @@ package com.erwinsuwito.qcapp.ui.tasks
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
@@ -23,6 +24,7 @@ class AddReplyActivity : BaseActivity() {
     var selectedTask: Task? = null
     var selectedIssue: Issue? = null
     var closingItem = false
+    lateinit var content: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,46 +45,66 @@ class AddReplyActivity : BaseActivity() {
 
         var taskAddReply_SaveBtn: Button = findViewById(R.id.issueAddReply_SaveBtn)
         taskAddReply_SaveBtn.setOnClickListener {
-            val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
-            val usrName = sharedPreferences!!.getString("usr_name", "User")
-            val upn = sharedPreferences.getString("upn", "someone@cloudmails.apu.edu.my")
-            val content = findViewById<TextInputEditText>(R.id.issue_replyTextBox).text.toString()
-            closingItem = findViewById<CheckBox>(R.id.issueAddReply_closeCheckBox).isChecked
-
-            when (itemType)
+            clearErrors()
+            val isValidationSuccessful = validateDetails()
+            if (isValidationSuccessful)
             {
-                1 -> {
-                    var reply = Steps(FirebaseIDGenerator.generateId(), upn!!, usrName!!, content, Timestamp.now(), closingItem)
-                    FirestoreHelper().addTaskSteps(selectedTask!!, reply, {onSuccess()}, {onFailed()})
+                val sharedPreferences = this.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                val usrName = sharedPreferences!!.getString("usr_name", "User")
+                val upn = sharedPreferences.getString("upn", "someone@cloudmails.apu.edu.my")
+                content = findViewById<TextInputEditText>(R.id.issue_replyTextBox)
+                closingItem = findViewById<CheckBox>(R.id.issueAddReply_closeCheckBox).isChecked
 
-                    if (closingItem) {
-                        var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
-                        var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
+                when (itemType)
+                {
+                    1 -> {
+                        var reply = Steps(FirebaseIDGenerator.generateId(), upn!!, usrName!!, content.text.toString(), Timestamp.now(), closingItem)
+                        FirestoreHelper().addTaskSteps(selectedTask!!, reply, {onSuccess()}, {onFailed()})
 
-                        selectedTask!!.isOpen = true
-                        selectedTask!!.closedBy = closedBy!!
-                        selectedTask!!.closedByName = closedByName!!
-                        selectedTask!!.closedOn = Timestamp.now()
+                        if (closingItem) {
+                            var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
+                            var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
+
+                            selectedTask!!.isOpen = true
+                            selectedTask!!.closedBy = closedBy!!
+                            selectedTask!!.closedByName = closedByName!!
+                            selectedTask!!.closedOn = Timestamp.now()
+                        }
                     }
-                }
-                2 -> {
-                    var reply = Steps(FirebaseIDGenerator.generateId(), upn!!, usrName!!, content, Timestamp.now(), closingItem)
-                    FirestoreHelper().addIssueSteps(selectedIssue!!, reply, {onSuccess()}, {onFailed()})
+                    2 -> {
+                        var reply = Steps(FirebaseIDGenerator.generateId(), upn!!, usrName!!, content.text.toString(), Timestamp.now(), closingItem)
+                        FirestoreHelper().addIssueSteps(selectedIssue!!, reply, {onSuccess()}, {onFailed()})
 
-                    if (closingItem) {
-                        var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
-                        var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
+                        if (closingItem) {
+                            var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
+                            var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
 
-                        selectedIssue!!.isOpen = true
-                        selectedIssue!!.closedBy = closedBy!!
-                        selectedIssue!!.closedByName = closedByName!!
-                        selectedIssue!!.closedOn = Timestamp.now()
+                            selectedIssue!!.isOpen = true
+                            selectedIssue!!.closedBy = closedBy!!
+                            selectedIssue!!.closedByName = closedByName!!
+                            selectedIssue!!.closedOn = Timestamp.now()
+                        }
+
                     }
 
                 }
-
             }
         }
+    }
+
+    fun validateDetails(): Boolean
+    {
+        return when {
+            TextUtils.isEmpty(content.text.toString().trim { it <= ' ' }) -> {
+                content.error = getString(R.string.require_data)
+                false
+            }
+            else -> true
+        }
+    }
+
+    fun clearErrors() {
+        content.error = null
     }
 
     fun onSuccess() {

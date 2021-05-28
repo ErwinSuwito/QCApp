@@ -2,6 +2,7 @@ package com.erwinsuwito.qcapp.ui.qc
 
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,10 @@ class AddTaskFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var task_TaskTitleTextBox: TextInputEditText
+    lateinit var task_TaskDetailTextBox: TextInputEditText
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,16 +52,42 @@ class AddTaskFragment : Fragment() {
         val sharedPreferences = activity?.getSharedPreferences("prefs", Context.MODE_PRIVATE)
         val usrName = sharedPreferences!!.getString("usr_name", "User")
         val upn = sharedPreferences!!.getString("upn", "someone@cloudmails.apu.edu.my")
-        val task_TaskTitleTextBox = root.findViewById<TextInputEditText>(R.id.task_TaskTitleTextBox)
-        val task_TaskDetailTextBox = root.findViewById<TextInputEditText>(R.id.task_TaskDetailTextBox)
+        task_TaskTitleTextBox = root.findViewById(R.id.task_TaskTitleTextBox)
+        task_TaskDetailTextBox = root.findViewById(R.id.task_TaskDetailTextBox)
         val saveBtn = root.findViewById<Button>(R.id.task_saveBtn)
 
         saveBtn.setOnClickListener {
-            var task = Task(FirebaseIDGenerator.generateId(), upn!!, usrName!!, task_TaskDetailTextBox.text.toString(), task_TaskTitleTextBox.text.toString())
-            FirestoreHelper().addTask(task, {onSuccess()}, {onFailure()})
+            clearErrors()
+            val isValidationSuccessful = validateDetails()
+            if (isValidationSuccessful)
+            {
+                var task = Task(FirebaseIDGenerator.generateId(), upn!!, usrName!!, task_TaskDetailTextBox.text.toString(), task_TaskTitleTextBox.text.toString())
+                FirestoreHelper().addTask(task, {onSuccess()}, {onFailure()})
+            }
         }
 
         return root
+    }
+
+    fun validateDetails(): Boolean
+    {
+        return when {
+            TextUtils.isEmpty(task_TaskTitleTextBox.text.toString().trim { it <= ' ' }) -> {
+                task_TaskTitleTextBox.error = getString(R.string.require_data)
+                false
+            }
+            TextUtils.isEmpty(task_TaskDetailTextBox.text.toString().trim { it <= ' ' }) -> {
+                task_TaskDetailTextBox.error = getString(R.string.require_data)
+                false
+            }
+            else -> true
+        }
+    }
+
+    fun clearErrors()
+    {
+        task_TaskTitleTextBox.error = null
+        task_TaskDetailTextBox.error = null
     }
 
     fun onSuccess()
