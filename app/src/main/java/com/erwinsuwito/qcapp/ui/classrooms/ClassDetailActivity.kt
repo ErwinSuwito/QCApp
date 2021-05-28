@@ -50,17 +50,8 @@ class ClassDetailActivity : BaseActivity() {
         topAppBar.setNavigationOnClickListener { onBackPressed() }
 
         checkClassBtn.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle(R.string.before_we_continue)
-            builder.setMessage(R.string.qc_start_notice_message)
-            builder.setPositiveButton(R.string.next) { dialog, which ->
-                val intent = Intent(activity, ClassCheckActivity::class.java).putExtra("classroom", classroom)
-                activity?.startActivity(intent)
-            }
-            builder.setNegativeButton(R.string.cancel) { dialog, which ->
-            }
-            val alertDialog = builder.create()
-            alertDialog.show()
+            val intent = Intent(activity, ClassCheckActivity::class.java).putExtra("classroom", classroom)
+            activity?.startActivity(intent)
         }
 
         class_name.text = classroom?.classroomName
