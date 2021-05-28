@@ -37,6 +37,7 @@ class ClassCheckActivity : BaseActivity() {
         topAppBar.setNavigationOnClickListener { onBackPressed() }
 
         classCheck_AddBtn.setOnClickListener {
+            clearErrors()
             if (validateDetails())
             {
                 saveQc()
@@ -64,6 +65,14 @@ class ClassCheckActivity : BaseActivity() {
             }
             else -> true
         }
+    }
+
+    fun clearErrors()
+    {
+        classNameEditText.error = null
+        highLampHourEditText.error = null
+        lowLampHourEditText.error = null
+        signalStrengthEditText.error = null
     }
 
     fun saveQc() {
