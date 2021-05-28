@@ -225,7 +225,6 @@
         </LinearLayout>
     </ScrollView>
 
-
     <Button
         android:id="@+id/classCheck_AddBtn"
         android:layout_width="match_parent"
