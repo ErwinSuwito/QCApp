@@ -12,4 +12,5 @@ object Constants {
     const val STEPS: String = "steps"
     const val ISOPEN: String = "open"
     const val OPENEDON: String = "openedOn"
+    const val CHECKEDON: String = "checkedOn"
 }

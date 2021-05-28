@@ -100,6 +100,7 @@ class FirestoreHelper {
     fun getIssueList(onSuccess: (MutableList<Issue>) -> Unit, onFailure: () -> Unit )
     {
         mFireStore.collection(Constants.ISSUES)
+                .orderBy(Constants.OPENEDON, Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener {
                     var issues = mutableListOf<Issue>()
@@ -123,6 +124,7 @@ class FirestoreHelper {
     {
         mFireStore.collection(Constants.ISSUES)
                 .whereEqualTo(Constants.CLASSID, className)
+                .orderBy(Constants.OPENEDON, Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener {
                     var issues = mutableListOf<Issue>()
@@ -204,6 +206,7 @@ class FirestoreHelper {
     fun getTasksList(onSuccess: (MutableList<Task>) -> Unit, onFailure: () -> Unit )
     {
         mFireStore.collection(Constants.TASKS)
+                .orderBy(Constants.OPENEDON, Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener {
                     var tasks = mutableListOf<Task>()
@@ -354,6 +357,7 @@ class FirestoreHelper {
     fun getCheckHistory(className: String, onSuccess: (MutableList<ClassCheck>) -> Unit, onFailure: () -> Unit) {
         mFireStore.collection(Constants.CHECKS)
                 .whereEqualTo(Constants.CLASSID, className)
+                .orderBy(Constants.CHECKEDON, Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener {
                     var checkHistory = mutableListOf<ClassCheck>()
