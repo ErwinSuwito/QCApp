@@ -66,7 +66,7 @@ class AddReplyActivity : BaseActivity() {
                             var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
                             var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
 
-                            selectedTask!!.isOpen = true
+                            selectedTask!!.isOpen = false
                             selectedTask!!.closedBy = closedBy!!
                             selectedTask!!.closedByName = closedByName!!
                             selectedTask!!.closedOn = Timestamp.now()
@@ -80,7 +80,7 @@ class AddReplyActivity : BaseActivity() {
                             var closedBy = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("upn", "someone@cloudmails.apu.edu.my")
                             var closedByName = this.getSharedPreferences("prefs", Context.MODE_PRIVATE).getString("usr_name", "User")
 
-                            selectedIssue!!.isOpen = true
+                            selectedIssue!!.isOpen = false
                             selectedIssue!!.closedBy = closedBy!!
                             selectedIssue!!.closedByName = closedByName!!
                             selectedIssue!!.closedOn = Timestamp.now()
