@@ -1,7 +1,7 @@
 [
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619021131,
+    "timestamp": 1622272905282,
     "replacementText": "Login",
     "actionCode": -1,
     "delayTime": 0,
@@ -12,7 +12,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/button",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/button",
         "contentDescription": "",
         "text": "Login"
       },
@@ -21,7 +21,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/welcomeConstraintLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/welcomeConstraintLayout",
         "contentDescription": "",
         "text": ""
       },
@@ -38,7 +38,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619037345,
+    "timestamp": 1622272921257,
     "replacementText": "B-06-08",
     "actionCode": -1,
     "delayTime": 0,
@@ -49,7 +49,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/B_06_08Chip",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/B_06_08Chip",
         "contentDescription": "",
         "text": "B-06-08"
       },
@@ -58,7 +58,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/chipGroup",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/chipGroup",
         "contentDescription": "",
         "text": ""
       },
@@ -75,7 +75,7 @@
   },
   {
     "eventType": "PRESSED_BACK",
-    "timestamp": 1620619049784,
+    "timestamp": 1622272936698,
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
@@ -83,52 +83,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619052272,
-    "replacementText": "B-07-02",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.chip.Chip",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 3,
-        "resourceId": "com.erwinsuwito.qcapp:id/B_07_02Chip",
-        "contentDescription": "",
-        "text": "B-07-02"
-      },
-      {
-        "className": "com.google.android.material.chip.ChipGroup",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/chipGroup",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.HorizontalScrollView",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 3,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619065427,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619070129,
+    "timestamp": 1622272938510,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -148,7 +103,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/task_card_list",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_card_list",
         "contentDescription": "",
         "text": ""
       },
@@ -157,7 +112,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/home_layout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/home_layout",
         "contentDescription": "",
         "text": ""
       }
@@ -165,7 +120,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619088455,
+    "timestamp": 1622272954965,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -176,7 +131,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_OverflowBtn",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_OverflowBtn",
         "contentDescription": "",
         "text": ""
       },
@@ -202,7 +157,192 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619098267,
+    "timestamp": 1622272969225,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/drawer_container",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.FitWindowsFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/action_bar_root",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622272982873,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.card.MaterialCardView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/taskDetail_repliesList",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273015385,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.card.MaterialCardView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/taskDetail_repliesList",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273031723,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.microsoft.fluentui.listitem.ListItemView",
+        "recyclerViewChildPosition": 1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/bottom_sheet_items",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273060220,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.card.MaterialCardView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/taskDetail_repliesList",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273080148,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -222,7 +362,44 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/bottom_sheet_items",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/bottom_sheet_items",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273092303,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.microsoft.fluentui.listitem.ListItemView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/bottom_sheet_items",
         "contentDescription": "",
         "text": ""
       },
@@ -239,7 +416,7 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619106239,
+    "timestamp": 1622273101305,
     "replacementText": "Test",
     "actionCode": -1,
     "delayTime": 0,
@@ -250,7 +427,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_replyTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -268,52 +445,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619125859,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619126217,
-    "replacementText": "Test reply",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
-        "contentDescription": "",
-        "text": "Test"
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_replyInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -321,20 +453,20 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619177597,
-    "replacementText": "Save",
+    "timestamp": 1622273133567,
+    "replacementText": "This closes the issue or task",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
     "elementDescriptors": [
       {
-        "className": "com.google.android.material.button.MaterialButton",
+        "className": "com.google.android.material.checkbox.MaterialCheckBox",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/issueAddReply_SaveBtn",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issueAddReply_closeCheckBox",
         "contentDescription": "",
-        "text": "Save"
+        "text": "This closes the issue or task"
       },
       {
         "className": "androidx.constraintlayout.widget.ConstraintLayout",
@@ -357,8 +489,16 @@
     ]
   },
   {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273141914,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619182223,
+    "timestamp": 1622273143101,
     "replacementText": "Save",
     "actionCode": -1,
     "delayTime": 0,
@@ -368,8 +508,8 @@
         "className": "com.google.android.material.button.MaterialButton",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/issueAddReply_SaveBtn",
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issueAddReply_SaveBtn",
         "contentDescription": "",
         "text": "Save"
       },
@@ -395,7 +535,7 @@
   },
   {
     "eventType": "PRESSED_BACK",
-    "timestamp": 1620619192481,
+    "timestamp": 1622273154391,
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
@@ -403,7 +543,171 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619195427,
+    "timestamp": 1622273155874,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": true,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.card.MaterialCardView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 5,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_card_list",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/home_layout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273167025,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.card.MaterialCardView",
+        "recyclerViewChildPosition": 17,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/taskDetail_repliesList",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273184646,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/drawer_container",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.FitWindowsFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/action_bar_root",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273189792,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/drawer_container",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.FitWindowsFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/action_bar_root",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273197620,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273203826,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273206964,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -423,7 +727,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 7,
-        "resourceId": "com.erwinsuwito.qcapp:id/issues_card_list",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issues_card_list",
         "contentDescription": "",
         "text": ""
       },
@@ -432,7 +736,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/home_layout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/home_layout",
         "contentDescription": "",
         "text": ""
       }
@@ -440,7 +744,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619203522,
+    "timestamp": 1622273215716,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -451,7 +755,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_OverflowBtn",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_OverflowBtn",
         "contentDescription": "",
         "text": ""
       },
@@ -477,7 +781,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619213907,
+    "timestamp": 1622273244401,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -485,7 +789,7 @@
     "elementDescriptors": [
       {
         "className": "com.microsoft.fluentui.listitem.ListItemView",
-        "recyclerViewChildPosition": 0,
+        "recyclerViewChildPosition": 1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": -1,
         "resourceId": "",
@@ -497,7 +801,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/bottom_sheet_items",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/bottom_sheet_items",
         "contentDescription": "",
         "text": ""
       },
@@ -513,127 +817,8 @@
     ]
   },
   {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619220967,
-    "replacementText": "Hell",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
     "eventType": "PRESSED_BACK",
-    "timestamp": 1620619240216,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619240543,
-    "replacementText": "Hello",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
-        "contentDescription": "",
-        "text": "Hell"
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619245257,
-    "replacementText": "Save",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.button.MaterialButton",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/issueAddReply_SaveBtn",
-        "contentDescription": "",
-        "text": "Save"
-      },
-      {
-        "className": "androidx.constraintlayout.widget.ConstraintLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "androidx.appcompat.widget.ContentFrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "android:id/content",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619252208,
+    "timestamp": 1622273259893,
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
@@ -641,52 +826,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619253418,
-    "replacementText": "",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.card.MaterialCardView",
-        "recyclerViewChildPosition": 0,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": -1,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "androidx.recyclerview.widget.RecyclerView",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 7,
-        "resourceId": "com.erwinsuwito.qcapp:id/issues_card_list",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.LinearLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/home_layout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619259699,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619261369,
+    "timestamp": 1622273273676,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -697,7 +837,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/navigation_qc",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/navigation_qc",
         "contentDescription": "QC",
         "text": ""
       },
@@ -715,7 +855,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/nav_view",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/nav_view",
         "contentDescription": "",
         "text": ""
       }
@@ -723,7 +863,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619269816,
+    "timestamp": 1622273283521,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -731,7 +871,7 @@
     "elementDescriptors": [
       {
         "className": "android.widget.LinearLayout",
-        "recyclerViewChildPosition": 3,
+        "recyclerViewChildPosition": 0,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": -1,
         "resourceId": "",
@@ -743,7 +883,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/classList_RecyclerView",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classList_RecyclerView",
         "contentDescription": "",
         "text": ""
       },
@@ -760,7 +900,126 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619279592,
+    "timestamp": 1622273293101,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.tabs.TabLayout$TabView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "",
+        "contentDescription": "Issues",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.tabs.TabLayout$SlidingTabIndicator",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.tabs.TabLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/tabLayout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273302389,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.tabs.TabLayout$TabView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "",
+        "contentDescription": "Check History",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.tabs.TabLayout$SlidingTabIndicator",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.tabs.TabLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/tabLayout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273313024,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/checkHistoryRecylerView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273321798,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273325175,
     "replacementText": "Check Class",
     "actionCode": -1,
     "delayTime": 0,
@@ -771,7 +1030,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/checkClassBtn",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/checkClassBtn",
         "contentDescription": "",
         "text": "Check Class"
       },
@@ -796,45 +1055,8 @@
     ]
   },
   {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619285776,
-    "replacementText": "Next",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.button.MaterialButton",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 3,
-        "resourceId": "android:id/button1",
-        "contentDescription": "",
-        "text": "Next"
-      },
-      {
-        "className": "androidx.appcompat.widget.ButtonBarLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.ScrollView",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 3,
-        "resourceId": "com.erwinsuwito.qcapp:id/buttonPanel",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619294441,
+    "timestamp": 1622273333925,
     "replacementText": "5",
     "actionCode": -1,
     "delayTime": 0,
@@ -845,7 +1067,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_highLampHourTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_highLampHourTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -863,7 +1085,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_highLampHourInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_highLampHourInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -871,8 +1093,8 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619304072,
-    "replacementText": "5",
+    "timestamp": 1622273342774,
+    "replacementText": "60",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": true,
@@ -882,7 +1104,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_lowLampHourTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_lowLampHourTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -900,7 +1122,44 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_lowLampHourInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_lowLampHourInputLayout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_EDITOR_ACTION",
+    "timestamp": 1622273360907,
+    "replacementText": "60",
+    "actionCode": 5,
+    "delayTime": 0,
+    "canScrollTo": true,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.textfield.TextInputEditText",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_lowLampHourTextBox",
+        "contentDescription": "",
+        "text": "60"
+      },
+      {
+        "className": "android.widget.FrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.textfield.TextInputLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_lowLampHourInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -908,7 +1167,7 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619311107,
+    "timestamp": 1622273371823,
     "replacementText": "192.168.1.1 ",
     "actionCode": -1,
     "delayTime": 0,
@@ -919,7 +1178,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ipAddressTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_ipAddressTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -937,7 +1196,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 4,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ipAddressInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_ipAddressInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -945,7 +1204,7 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619339369,
+    "timestamp": 1622273440410,
     "replacementText": "5",
     "actionCode": -1,
     "delayTime": 0,
@@ -955,10 +1214,10 @@
         "className": "com.google.android.material.textfield.TextInputEditText",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_signalStrengthTextBox",
+        "groupViewChildPosition": 1,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_signalStrengthTextBox",
         "contentDescription": "",
-        "text": ""
+        "text": "0"
       },
       {
         "className": "android.widget.FrameLayout",
@@ -974,44 +1233,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_signalStrengthInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_EDITOR_ACTION",
-    "timestamp": 1620619344892,
-    "replacementText": "5",
-    "actionCode": 5,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_signalStrengthTextBox",
-        "contentDescription": "",
-        "text": "5"
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_signalStrengthInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_signalStrengthInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1019,8 +1241,8 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619350753,
-    "replacementText": "5",
+    "timestamp": 1622273465698,
+    "replacementText": "20",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": true,
@@ -1030,7 +1252,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_pingGoogleTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_pingGoogleTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -1048,7 +1270,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 6,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_pingGoogleInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_pingGoogleInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1056,8 +1278,8 @@
   },
   {
     "eventType": "PRESSED_EDITOR_ACTION",
-    "timestamp": 1620619355975,
-    "replacementText": "5",
+    "timestamp": 1622273485520,
+    "replacementText": "20",
     "actionCode": 5,
     "delayTime": 0,
     "canScrollTo": true,
@@ -1067,9 +1289,9 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_pingGoogleTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_pingGoogleTextBox",
         "contentDescription": "",
-        "text": "5"
+        "text": "20"
       },
       {
         "className": "android.widget.FrameLayout",
@@ -1085,7 +1307,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 6,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_pingGoogleInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_pingGoogleInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1093,8 +1315,8 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619363232,
-    "replacementText": "6",
+    "timestamp": 1622273501470,
+    "replacementText": "500",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": true,
@@ -1104,7 +1326,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_ulSpeedTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -1122,44 +1344,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 7,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_EDITOR_ACTION",
-    "timestamp": 1620619369903,
-    "replacementText": "6",
-    "actionCode": 5,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedTextBox",
-        "contentDescription": "",
-        "text": "6"
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 7,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_ulSpeedInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1167,8 +1352,8 @@
   },
   {
     "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619373608,
-    "replacementText": "64957",
+    "timestamp": 1622273564020,
+    "replacementText": "500",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": true,
@@ -1178,52 +1363,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedTextBox",
-        "contentDescription": "",
-        "text": "6"
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 7,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_ulSpeedInputLayout",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619394246,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619397590,
-    "replacementText": "",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": true,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_dlSpeedTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_dlSpeedTextBox",
         "contentDescription": "",
         "text": ""
       },
@@ -1241,31 +1381,39 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 8,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_dlSpeedInputLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/check_dlSpeedInputLayout",
         "contentDescription": "",
         "text": ""
       }
     ]
   },
   {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619403953,
-    "replacementText": "555",
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273595545,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273598375,
+    "replacementText": "Alignment",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": true,
     "elementDescriptors": [
       {
-        "className": "com.google.android.material.textfield.TextInputEditText",
+        "className": "com.google.android.material.checkbox.MaterialCheckBox",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_dlSpeedTextBox",
+        "groupViewChildPosition": 9,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_alignment",
         "contentDescription": "",
-        "text": ""
+        "text": "Alignment"
       },
       {
-        "className": "android.widget.FrameLayout",
+        "className": "android.widget.LinearLayout",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
@@ -1274,27 +1422,19 @@
         "text": ""
       },
       {
-        "className": "com.google.android.material.textfield.TextInputLayout",
+        "className": "android.widget.ScrollView",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 8,
-        "resourceId": "com.erwinsuwito.qcapp:id/check_dlSpeedInputLayout",
+        "groupViewChildPosition": 1,
+        "resourceId": "",
         "contentDescription": "",
         "text": ""
       }
     ]
   },
   {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619418633,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619428780,
+    "timestamp": 1622273601640,
     "replacementText": "Clarity",
     "actionCode": -1,
     "delayTime": 0,
@@ -1305,7 +1445,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 10,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_clarity",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_clarity",
         "contentDescription": "",
         "text": "Clarity"
       },
@@ -1331,7 +1471,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619431275,
+    "timestamp": 1622273606580,
     "replacementText": "Screen",
     "actionCode": -1,
     "delayTime": 0,
@@ -1342,7 +1482,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 11,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_screen",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_screen",
         "contentDescription": "",
         "text": "Screen"
       },
@@ -1368,7 +1508,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619435076,
+    "timestamp": 1622273611210,
     "replacementText": "Remote",
     "actionCode": -1,
     "delayTime": 0,
@@ -1379,7 +1519,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 12,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_Remote",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_Remote",
         "contentDescription": "",
         "text": "Remote"
       },
@@ -1405,7 +1545,44 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619438495,
+    "timestamp": 1622273618107,
+    "replacementText": "HDMI",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": true,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.checkbox.MaterialCheckBox",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 13,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_Hdmi",
+        "contentDescription": "",
+        "text": "HDMI"
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.ScrollView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273624621,
     "replacementText": "EasyMP",
     "actionCode": -1,
     "delayTime": 0,
@@ -1416,7 +1593,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 14,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_EasyMp",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_EasyMp",
         "contentDescription": "",
         "text": "EasyMP"
       },
@@ -1442,7 +1619,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619442421,
+    "timestamp": 1622273630991,
     "replacementText": "Switch",
     "actionCode": -1,
     "delayTime": 0,
@@ -1453,7 +1630,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 15,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_Switch",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_Switch",
         "contentDescription": "",
         "text": "Switch"
       },
@@ -1479,7 +1656,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619446323,
+    "timestamp": 1622273636513,
     "replacementText": "Guideline",
     "actionCode": -1,
     "delayTime": 0,
@@ -1490,7 +1667,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 16,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_Guideline",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_Guideline",
         "contentDescription": "",
         "text": "Guideline"
       },
@@ -1516,7 +1693,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619450484,
+    "timestamp": 1622273643837,
     "replacementText": "Power Extension",
     "actionCode": -1,
     "delayTime": 0,
@@ -1527,7 +1704,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 17,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_powerExt",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_powerExt",
         "contentDescription": "",
         "text": "Power Extension"
       },
@@ -1553,7 +1730,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619454532,
+    "timestamp": 1622273651632,
     "replacementText": "Save",
     "actionCode": -1,
     "delayTime": 0,
@@ -1564,7 +1741,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/classCheck_AddBtn",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classCheck_AddBtn",
         "contentDescription": "",
         "text": "Save"
       },
@@ -1590,7 +1767,7 @@
   },
   {
     "eventType": "PRESSED_BACK",
-    "timestamp": 1620619463817,
+    "timestamp": 1622273663038,
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
@@ -1598,7 +1775,52 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619465484,
+    "timestamp": 1622273665104,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/classList_RecyclerView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273681773,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273686285,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -1627,7 +1849,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/qc_tabLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/qc_tabLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1635,7 +1857,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619471863,
+    "timestamp": 1622273696151,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -1655,7 +1877,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/issueList_recyclerView",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issueList_recyclerView",
         "contentDescription": "",
         "text": ""
       },
@@ -1672,14 +1894,23 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619481573,
+    "timestamp": 1622273708106,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
     "elementDescriptors": [
       {
-        "className": "androidx.appcompat.widget.AppCompatImageButton",
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 5,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_OverflowBtn",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
@@ -1688,20 +1919,11 @@
         "text": ""
       },
       {
-        "className": "com.google.android.material.appbar.MaterialToolbar",
+        "className": "androidx.core.widget.NestedScrollView",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_TopAppBar",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.appbar.AppBarLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_AppBarLayout",
+        "groupViewChildPosition": 1,
+        "resourceId": "",
         "contentDescription": "",
         "text": ""
       }
@@ -1709,7 +1931,142 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619488365,
+    "timestamp": 1622273724656,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.microsoft.fluentui.listitem.ListItemView",
+        "recyclerViewChildPosition": 0,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/bottom_sheet_items",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_TEXT_CHANGED",
+    "timestamp": 1622273733834,
+    "replacementText": "Test",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.textfield.TextInputEditText",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_replyTextBox",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.FrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.textfield.TextInputLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issue_replyInputLayout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273760841,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273763533,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273764818,
+    "replacementText": "Save",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.button.MaterialButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/issueAddReply_SaveBtn",
+        "contentDescription": "",
+        "text": "Save"
+      },
+      {
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.appcompat.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "PRESSED_BACK",
+    "timestamp": 1622273776183,
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273778385,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -1738,7 +2095,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/qc_tabLayout",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/qc_tabLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1746,7 +2103,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619494112,
+    "timestamp": 1622273790346,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -1766,7 +2123,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/taskList_RecyclerView",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/taskList_RecyclerView",
         "contentDescription": "",
         "text": ""
       },
@@ -1776,117 +2133,6 @@
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
         "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619501909,
-    "replacementText": "",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "androidx.constraintlayout.widget.ConstraintLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 5,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_OverflowBtn",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.LinearLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "androidx.core.widget.NestedScrollView",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619511662,
-    "replacementText": "",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.microsoft.fluentui.listitem.ListItemView",
-        "recyclerViewChildPosition": 0,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": -1,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "androidx.recyclerview.widget.RecyclerView",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/bottom_sheet_items",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.LinearLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      }
-    ]
-  },
-  {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619521424,
-    "replacementText": "hiii",
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": [
-      {
-        "className": "com.google.android.material.textfield.TextInputEditText",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "android.widget.FrameLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 0,
-        "resourceId": "",
-        "contentDescription": "",
-        "text": ""
-      },
-      {
-        "className": "com.google.android.material.textfield.TextInputLayout",
-        "recyclerViewChildPosition": -1,
-        "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1894,28 +2140,65 @@
   },
   {
     "eventType": "PRESSED_BACK",
-    "timestamp": 1620619541073,
+    "timestamp": 1622273800384,
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
     "elementDescriptors": []
   },
   {
-    "eventType": "VIEW_TEXT_CHANGED",
-    "timestamp": 1620619541258,
-    "replacementText": "hiiiiiiiii",
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273802882,
+    "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
     "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.floatingactionbutton.FloatingActionButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/addTaskFabs",
+        "contentDescription": "Add a task",
+        "text": ""
+      },
+      {
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.viewpager.widget.ViewPager",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/qc_viewpager",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_TEXT_CHANGED",
+    "timestamp": 1622273813255,
+    "replacementText": "Test task",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": true,
     "elementDescriptors": [
       {
         "className": "com.google.android.material.textfield.TextInputEditText",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyTextBox",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_TaskTitleTextBox",
         "contentDescription": "",
-        "text": "hiii"
+        "text": ""
       },
       {
         "className": "android.widget.FrameLayout",
@@ -1930,8 +2213,45 @@
         "className": "com.google.android.material.textfield.TextInputLayout",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 1,
-        "resourceId": "com.erwinsuwito.qcapp:id/issue_replyInputLayout",
+        "groupViewChildPosition": 2,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_TaskTitleInputLayout",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_TEXT_CHANGED",
+    "timestamp": 1622273896041,
+    "replacementText": "testing ",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": true,
+    "elementDescriptors": [
+      {
+        "className": "com.google.android.material.textfield.TextInputEditText",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_TaskDetailTextBox",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.widget.FrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "com.google.android.material.textfield.TextInputLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 3,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_TaskDetailInputLayout",
         "contentDescription": "",
         "text": ""
       }
@@ -1939,7 +2259,7 @@
   },
   {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619566517,
+    "timestamp": 1622273947917,
     "replacementText": "Save",
     "actionCode": -1,
     "delayTime": 0,
@@ -1949,8 +2269,8 @@
         "className": "com.google.android.material.button.MaterialButton",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
-        "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/issueAddReply_SaveBtn",
+        "groupViewChildPosition": 1,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/task_saveBtn",
         "contentDescription": "",
         "text": "Save"
       },
@@ -1964,27 +2284,19 @@
         "text": ""
       },
       {
-        "className": "androidx.appcompat.widget.ContentFrameLayout",
+        "className": "androidx.fragment.app.FragmentContainerView",
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 1,
-        "resourceId": "android:id/content",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/nav_host_fragment",
         "contentDescription": "",
         "text": ""
       }
     ]
   },
   {
-    "eventType": "PRESSED_BACK",
-    "timestamp": 1620619573971,
-    "actionCode": -1,
-    "delayTime": 0,
-    "canScrollTo": false,
-    "elementDescriptors": []
-  },
-  {
     "eventType": "VIEW_CLICKED",
-    "timestamp": 1620619575554,
+    "timestamp": 1622273962018,
     "replacementText": "",
     "actionCode": -1,
     "delayTime": 0,
@@ -1995,7 +2307,7 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 2,
-        "resourceId": "com.erwinsuwito.qcapp:id/navigation_more",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/navigation_more",
         "contentDescription": "More",
         "text": ""
       },
@@ -2013,7 +2325,44 @@
         "recyclerViewChildPosition": -1,
         "adapterViewChildPosition": -1,
         "groupViewChildPosition": 0,
-        "resourceId": "com.erwinsuwito.qcapp:id/nav_view",
+        "resourceId": "com.erwinsuwito.qcapp.test:id/nav_view",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1622273972042,
+    "replacementText": "",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.widget.LinearLayout",
+        "recyclerViewChildPosition": 4,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": -1,
+        "resourceId": "",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.recyclerview.widget.RecyclerView",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/moreActionsListView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "androidx.constraintlayout.widget.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "com.erwinsuwito.qcapp.test:id/moreConstraintLayout",
         "contentDescription": "",
         "text": ""
       }
