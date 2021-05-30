@@ -14,6 +14,7 @@
     <color name="theme_purple_darker">#FF3E247F</color>
 
     <color name="glyphFillColor">#FF000000</color>
+    <color name="bg_color">#FFFFFFFF</color>
 
     <color name="red_warn">#FFD83B01</color>
 </resources>
