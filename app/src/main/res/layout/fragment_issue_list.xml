@@ -47,9 +47,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/issueList_recyclerView"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:layout_height="0dp"
         android:clickable="true"
         android:scrollbars="vertical"
         android:visibility="invisible"
